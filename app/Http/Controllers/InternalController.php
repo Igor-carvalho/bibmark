@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\User\{ LoginRequest, CreateOrUpdateUserUnderAccountRequest, GetAllUsersRequest, CreateOrUpdateUserRequest };
 use App\Http\Requests\Account\{ CreateOrUpdateAccountRequest };
 use App\Http\Requests\Charity\{ CreateOrUpdateCharityRequest };
@@ -23,17 +23,17 @@ class InternalController extends Controller
 {
     public function __construct()
     {
-        
+
     }
 
     /**
      * Authenticate a user
-     * 
+     *
      * @param App\Http\Requests\User\LoginRequest $request
      * @return Illuminate\Http\RedirectResponse
      */
 
-    public function login(LoginRequest $request)                                                                                     
+    public function login(LoginRequest $request)
     {
         $data = $request->all();
         $remember = isset($data['remember']) && $data['remember'] == 1;
@@ -41,7 +41,7 @@ class InternalController extends Controller
             'email' => $data['email'],
             'password' => $data['password']
         ], $remember);
-        
+
         if ($authenticated) {
             return redirect('/dashboard');
         } else {
@@ -51,19 +51,19 @@ class InternalController extends Controller
 
     /**
      * Log out a user
-     * 
+     *
      * @return Illuminate\Http\RedirectResponse
      */
     public function logout()
     {
         Auth::logout();
-        
+
         return redirect('/admin/login');
     }
 
     /**
      * Get all accounts
-     * 
+     *
      * @param App\Services\AccountService $accountService
      * @return \Illuminate\Http\Response
      */
@@ -76,7 +76,7 @@ class InternalController extends Controller
 
     /**
      * Create or Update an account
-     * 
+     *
      * @param App\Http\Requests\Account\CreateOrUpdateAccountRequest $request
      * @param App\Services\AccountService $accountService
      * @return \Illuminate\Http\Response
@@ -90,7 +90,7 @@ class InternalController extends Controller
 
     /**
      * Delete an account
-     * 
+     *
      * @param integer $accountId
      * @param App\Services\AccountService $accountService
      * @return \Illuminate\Http\Response
@@ -104,20 +104,20 @@ class InternalController extends Controller
 
     /**
      * Get all charities
-     * 
+     *
      * @param App\Services\CharityService $charityService
      * @return \Illuminate\Http\Response
      */
     public function charities(CharityService $charityService)
     {
         $result = new CharityCollection($charityService->getAllCharities());
-        
+
         return response()->json($result, 200);
     }
 
     /**
      * Create or Update a charity
-     * 
+     *
      * @param App\Http\Requests\Account\CreateOrUpdateCharityRequest $request
      * @param App\Services\CharityService $charityService
      * @return \Illuminate\Http\Response
@@ -131,7 +131,7 @@ class InternalController extends Controller
 
     /**
      * Delete a charity
-     * 
+     *
      * @param integer $charityId
      * @return \Illuminate\Http\Response
      */
@@ -144,7 +144,7 @@ class InternalController extends Controller
 
     /**
      * Get all events
-     * 
+     *
      * @param App\Services\EventService $eventService
      * @return \Illuminate\Http\Response
      */
@@ -157,7 +157,7 @@ class InternalController extends Controller
 
     /**
      * Create or Update an event
-     * 
+     *
      * @param App\Http\Requests\Event\CreateOrUpdateEventRequest $request
      * @param App\Services\EventService $eventService
      * @return \Illuminate\Http\Response
@@ -171,7 +171,7 @@ class InternalController extends Controller
 
     /**
      * Delete an event
-     * 
+     *
      * @param integer $eventId
      * @param App\Services\EventService $eventService
      * @return \Illuminate\Http\Response
@@ -185,7 +185,7 @@ class InternalController extends Controller
 
     /**
      * Register an event
-     * 
+     *
      * @param App\Http\Requests\Event\RegisterEventRequest $request
      * @param App\Services\EventService $eventService
      * @return App\Services\EventService $eventService
@@ -199,7 +199,7 @@ class InternalController extends Controller
 
     /**
      * Get all users belong the account
-     * 
+     *
      * @param integer $accountId
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
@@ -213,7 +213,7 @@ class InternalController extends Controller
 
     /**
      * Get all users
-     * 
+     *
      * @param App\Http\Requests\User\GetAllUsersRequest $request
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
@@ -228,7 +228,7 @@ class InternalController extends Controller
 
     /**
      * Create a user belongs to the account
-     * 
+     *
      * @param App\Http\Requests\User\CreateOrUpdateUserUnderAccountRequest $request
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
@@ -242,7 +242,7 @@ class InternalController extends Controller
 
     /**
      * Create a user
-     * 
+     *
      * @param App\Http\Requests\User\CreateUserUnderAccountRequest $request
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
@@ -256,7 +256,7 @@ class InternalController extends Controller
 
     /**
      * Delete a user
-     * 
+     *
      * @param integer $userId
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
@@ -270,7 +270,7 @@ class InternalController extends Controller
 
     /**
      * Get all products
-     * 
+     *
      * @param App\Services\ProductService $productService
      * @return \Illuminate\Http\Response
      */
@@ -283,7 +283,7 @@ class InternalController extends Controller
 
     /**
      * Create or Update a product
-     * 
+     *
      * @param App\Http\Requests\Account\CreateOrUpdateProductRequest $request
      * @param App\Services\ProductService $productService
      * @return \Illuminate\Http\Response
@@ -297,7 +297,7 @@ class InternalController extends Controller
 
     /**
      * Delete a product
-     * 
+     *
      * @param integer $productId
      * @return \Illuminate\Http\Response
      */
@@ -310,7 +310,7 @@ class InternalController extends Controller
 
     /**
      * Add a product to a category
-     * 
+     *
      * @param integer $productId
      * @param integer $categoryId
      * @return \Illuminate\Http\Response
@@ -324,7 +324,7 @@ class InternalController extends Controller
 
     /**
      * Delete a product from a category
-     * 
+     *
      * @param integer $productId
      * @param integer $categoryId
      * @return \Illuminate\Http\Response
@@ -338,7 +338,7 @@ class InternalController extends Controller
 
     /**
      * Add a product to a size
-     * 
+     *
      * @param App\Http\Requests\Product\AddProductToSizeRequest $request
      * @param integer $productId
      * @param integer $sizeId
@@ -354,7 +354,7 @@ class InternalController extends Controller
 
     /**
      * Delete a product from a size
-     * 
+     *
      * @param integer $productId
      * @param integer $sizeId
      * @return \Illuminate\Http\Response
@@ -368,7 +368,7 @@ class InternalController extends Controller
 
     /**
      * Get all locations
-     * 
+     *
      * @param App\Services\LocationService $locationService
      * @return \Illuminate\Http\Response
      */
@@ -381,7 +381,7 @@ class InternalController extends Controller
 
     /**
      * Create or Update a location
-     * 
+     *
      * @param App\Http\Requests\Location\CreateOrUpdateLocationRequest $request
      * @param App\Services\LocationService $locationService
      * @return \Illuminate\Http\Response
@@ -395,7 +395,7 @@ class InternalController extends Controller
 
     /**
      * Create an address
-     * 
+     *
      * @param App\Http\Requests\Location\CreateAddressRequest $request
      * @param App\Services\LocationService $locationService
      * @return \Illuminate\Http\Response
@@ -408,7 +408,7 @@ class InternalController extends Controller
 
     /**
      * Delete a location
-     * 
+     *
      * @param integer $locationId
      * @return \Illuminate\Http\Response
      */
@@ -421,7 +421,7 @@ class InternalController extends Controller
 
     /**
      * Get all orders
-     * 
+     *
      * @param App\Services\OrderService $orderService
      * @return \Illuminate\Http\Response
      */
@@ -434,7 +434,7 @@ class InternalController extends Controller
 
     /**
      * Create or Update an order item
-     * 
+     *
      * @param App\Http\Requests\Order\CreateOrUpdateOrderItemRequest $request
      * @param App\Services\OrderService $orderService
      * @return \Illuminate\Http\Response
@@ -448,7 +448,7 @@ class InternalController extends Controller
 
     /**
      * Update an order
-     * 
+     *
      * @param App\Http\Requests\Order\UpdateOrderRequest $request
      * @param App\Services\OrderService $orderService
      * @return \Illuminate\Http\Response
@@ -462,7 +462,7 @@ class InternalController extends Controller
 
     /**
      * Place an order
-     * 
+     *
      * @param App\Http\Requests\Order\PlaceOrderRequest $request
      * @param App\Services\OrderService $orderService
      * @return \Illuminate\Http\Response
@@ -476,7 +476,7 @@ class InternalController extends Controller
 
     /**
      * Create a billing
-     * 
+     *
      * @param App\Http\Requests\Billing\CreateBillingRequest $request
      * @param App\Services\BillingService $billingService
      * @return \Illuminate\Http\Response
@@ -490,7 +490,7 @@ class InternalController extends Controller
 
     /**
      * Get all billings belong to an account
-     * 
+     *
      * @param integer $accountId
      * @param App\Services\BillingService $billingService
      * @return \Illuminate\Http\Response
@@ -502,7 +502,7 @@ class InternalController extends Controller
 
     /**
      * Get all billings belong to a user
-     * 
+     *
      * @param integer $userId
      * @param App\Services\BillingService $billingService
      * @return \Illuminate\Http\Response
@@ -514,7 +514,7 @@ class InternalController extends Controller
 
     /**
      * Get all designs
-     * 
+     *
      * @param App\Services\DesignService $designService
      * @return \Illuminate\Http\Response
      */
@@ -527,7 +527,7 @@ class InternalController extends Controller
 
     /**
      * Create or Update a design
-     * 
+     *
      * @param App\Http\Requests\Order\CreateOrUpdateDesignRequest $request
      * @param App\Services\DesignService $designService
      * @return \Illuminate\Http\Response
@@ -541,7 +541,7 @@ class InternalController extends Controller
 
     /**
      * Delete a design
-     * 
+     *
      * @param integer $designId
      * @param App\Services\DesignService $designService
      * @return \Illuminate\Http\Response
@@ -555,7 +555,7 @@ class InternalController extends Controller
 
     /**
      * Upload a design file to AWS S3
-     * 
+     *
      * @param App\Http\Requests\Design\UploadDesignFileRequest $request
      * @param App\Services\ExtraService $extraService
      * @return \Illuminate\Http\Response
@@ -569,7 +569,7 @@ class InternalController extends Controller
 
     /**
      * Upload an image to AWS S3
-     * 
+     *
      * @param App\Http\Requests\UploadImageRequest $request
      * @param App\Services\ExtraService $extraService
      * @return \Illuminate\Http\Response
@@ -581,6 +581,15 @@ class InternalController extends Controller
         return response()->json(['url' => $result], 200);
     }
 
+    /**
+     * Get lower rate
+     *
+     * @param App\Models\Order $order
+     * @param App\Services\OrderService $orderService
+     * @param App\Http\Requests\UploadImageRequest $request
+     * @param App\Services\ShippingService $shippingService
+     * @return \Illuminate\Http\Response
+     */
     public function shippingRate(Order $order_id, OrderService $orderService, Request $request, ShippingService $shippingService)
     {
        $totalWeight = $orderService->getOrderTotalWeight($order_id);
@@ -591,4 +600,6 @@ class InternalController extends Controller
        return response()->json(['result' => $result], 200);
 
     }
+
+
 }
