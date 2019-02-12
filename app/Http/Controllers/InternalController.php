@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
 use App\Http\Requests\User\{ LoginRequest, CreateOrUpdateUserUnderAccountRequest, GetAllUsersRequest, CreateOrUpdateUserRequest };
@@ -14,7 +15,7 @@ use App\Http\Requests\Order\{ CreateOrUpdateOrderItemRequest, UpdateOrderRequest
 use App\Http\Requests\Billing\{ CreateBillingRequest };
 use App\Http\Requests\Design\{CreateOrUpdateDesignRequest, UploadDesignFileRequest };
 use App\Http\Requests\UploadImageRequest;
-use App\Services\{ AccountService, CharityService, EventService, UserService, ProductService, LocationService, AddressService, OrderService, BillingService, DesignService, ExtraService };
+use App\Services\{ AccountService, CharityService, EventService, UserService, ProductService, LocationService, AddressService, OrderService, BillingService, DesignService, ExtraService, ShippingService };
 use App\Http\Resources\{ AccountResource, AccountCollection, CharityResource, CharityCollection, EventResource, EventCollection, UserResource, UserCollection, ProductResource, ProductCollection };
 use App\Http\Resources\{ LocationResource, LocationCollection, AddressResource, OrderItemResource, OrderItemCollection, OrderResource, OrderCollection, DesignResource, DesignCollection };
 
@@ -578,5 +579,16 @@ class InternalController extends Controller
         $result = $extraService->uploadImage($request->all());
 
         return response()->json(['url' => $result], 200);
+    }
+
+    public function shippingRate(Order $order_id, OrderService $orderService, Request $request, ShippingService $shippingService)
+    {
+       $totalWeight = $orderService->getOrderTotalWeight($order_id);
+       $shippingMethod = $request->shipping_method ?? null;
+
+       $result = $shippingService->getLowRateShipping($order_id, $totalWeight, $shippingMethod);
+
+       return response()->json(['result' => $result], 200);
+
     }
 }

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/internal/order/:order_id/shipping_rate', 'InternalController@shippingRate');
 
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
     Route::prefix('dashboard')->group(function() {

@@ -157,4 +157,21 @@ class OrderService
 
         return $order;
     }
+
+    /**
+     * Retrieve total weight order
+     *
+     * @param App\Models\Order $order
+     * @return number
+     */
+    public function getOrderTotalWeight(Order $order)
+    {
+        $totalWeight = 0;
+        foreach ($order->orderItems() as $item)
+        {
+            $totalWeight += $item->quantiy * Product::findOrFail($item->product_id)->weight;
+        }
+
+        return $totalWeight;
+    }
 }
