@@ -90,7 +90,7 @@ Route::prefix('internal')->group(function() {
         Route::post('order/item', 'InternalController@createOrUpdateOrderItem');
         Route::post('order', 'InternalController@updateOrder');
         Route::post('order/place', 'InternalController@placeOrder');
-        Route::get('order/{order}/shipping_rate', 'InternalController@getLowestCarrierRate');
+        Route::get('order/{order_id}/shipping_rate', 'InternalController@getLowestCarrierRate');
 
         // billing
         Route::post('billing', 'InternalController@createBilling');

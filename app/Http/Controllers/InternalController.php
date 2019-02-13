@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\User\{LoginRequest, CreateOrUpdateUserUnderAccountRequest, GetAllUsersRequest, CreateOrUpdateUserRequest};
@@ -477,17 +476,17 @@ class InternalController extends Controller
     /**
      * Get lowest rate
      *
-     * @param App\Models\Order $order
+     * @param integer $orderId
      * @param App\Services\OrderService $orderService
      * @param Illuminate\Http\Request $request
      * @param App\Services\ShippingService $shippingService
      * @return \Illuminate\Http\Response
      */
-    public function getLowestCarrierRate(Order $order, OrderService $orderService, Request $request, ShippingService $shippingService)
+    public function getLowestCarrierRate($orderId, OrderService $orderService, Request $request, ShippingService $shippingService)
     {
-        $totalWeight = $orderService->getTotalWeightItemsInOrder($order);
+        $totalWeight = $orderService->getTotalWeightItemsInOrder($orderId);
         $shippingMethod = $request->shipping_method ?? null;
-        $result = $shippingService->chooseLowestRateFromCarriers($order, $totalWeight, $shippingMethod);
+        $result = $shippingService->chooseLowestRateFromCarriers($orderId, $totalWeight, $shippingMethod);
 
         return response()->json(['carrier' => $result->carrier, 'service' => $result->service, 'rate' => $result->rate], 200);
 

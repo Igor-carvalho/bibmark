@@ -161,11 +161,12 @@ class OrderService
     /**
      * Retrieve total weight items in order
      *
-     * @param App\Models\Order $order
+     * @param integer $orderId
      * @return number
      */
-    public function getTotalWeightItemsInOrder(Order $order)
+    public function getTotalWeightItemsInOrder($orderId)
     {
+        $order = Order::find($orderId);
         $totalWeight = 0;
         foreach ($order->orderItems as $orderItem)
         {

@@ -45,13 +45,14 @@ class ShippingService
     /**
      * get lower shipping rate
      *
-     * @param \App\Models\Order $order
+     * @param integer $orderId
      * @param float $weight
      * @param string $shippingMethod
      * @return object \EasyPost\Rate
      */
-    public function chooseLowestRateFromCarriers(Order $order, $weight, $shippingMethod)
+    public function chooseLowestRateFromCarriers($orderId, $weight, $shippingMethod)
     {
+        $order = Order::find($orderId);
         try {
             $fromAddressParams = $this->convertAddressToEasyPostArray($order->source_id);
             $fromAddress = \EasyPost\Address::create($fromAddressParams);
