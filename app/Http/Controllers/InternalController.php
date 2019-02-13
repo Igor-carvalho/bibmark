@@ -477,17 +477,17 @@ class InternalController extends Controller
     /**
      * Get lowest rate
      *
-     * @param App\Models\Order $orderId
+     * @param App\Models\Order $order
      * @param App\Services\OrderService $orderService
      * @param Illuminate\Http\Request $request
      * @param App\Services\ShippingService $shippingService
      * @return \Illuminate\Http\Response
      */
-    public function getLowestCarrierRate(Order $orderId, OrderService $orderService, Request $request, ShippingService $shippingService)
+    public function getLowestCarrierRate(Order $order, OrderService $orderService, Request $request, ShippingService $shippingService)
     {
-        $totalWeight = $orderService->getTotalWeightItemsInOrder($orderId);
+        $totalWeight = $orderService->getTotalWeightItemsInOrder($order);
         $shippingMethod = $request->shipping_method ?? null;
-        $result = $shippingService->chooseLowestRateFromCarriers($orderId, $totalWeight, $shippingMethod);
+        $result = $shippingService->chooseLowestRateFromCarriers($order, $totalWeight, $shippingMethod);
 
         return response()->json(['carrier' => $result->carrier, 'service' => $result->service, 'rate' => $result->rate], 200);
 
