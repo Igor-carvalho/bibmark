@@ -29,7 +29,7 @@ class ShippingService
     protected $upsServices = [
         'Ground' => 'Ground',
         '2DAY' => '2ndDayAir',
-        'Overnight' => 'NextDayAirSaverSent'
+        'Overnight' => 'NextDayAirSaver'
     ];
 
     /**
