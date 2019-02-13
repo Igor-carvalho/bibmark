@@ -475,6 +475,25 @@ class InternalController extends Controller
     }
 
     /**
+     * Get lowest rate
+     *
+     * @param App\Models\Order $orderId
+     * @param App\Services\OrderService $orderService
+     * @param Illuminate\Http\Request $request
+     * @param App\Services\ShippingService $shippingService
+     * @return \Illuminate\Http\Response
+     */
+    public function getLowestCarrierRate(Order $orderId, OrderService $orderService, Request $request, ShippingService $shippingService)
+    {
+        $totalWeight = $orderService->getTotalWeightItemsInOrder($orderId);
+        $shippingMethod = $request->shipping_method ?? null;
+        $result = $shippingService->chooseLowestRateFromCarriers($orderId, $totalWeight, $shippingMethod);
+
+        return response()->json(['carrier' => $result->carrier, 'service' => $result->service, 'rate' => $result->rate], 200);
+
+    }
+
+    /**
      * Create a billing
      *
      * @param App\Http\Requests\Billing\CreateBillingRequest $request
@@ -580,25 +599,5 @@ class InternalController extends Controller
 
         return response()->json(['url' => $result], 200);
     }
-
-    /**
-     * Get lowest rate
-     *
-     * @param App\Models\Order $order_id
-     * @param App\Services\OrderService $orderService
-     * @param Illuminate\Http\Request $request
-     * @param App\Services\ShippingService $shippingService
-     * @return \Illuminate\Http\Response
-     */
-    public function getLowestCarrierRate(Order $order_id, OrderService $orderService, Request $request, ShippingService $shippingService)
-    {
-        $totalWeight = $orderService->getTotalWeightItemsInOrder($order_id);
-        $shippingMethod = $request->shipping_method ?? null;
-        $result = $shippingService->chooseLowestRateFromCarriers($order_id, $totalWeight, $shippingMethod);
-
-        return response()->json(['carrier' => $result->carrier, 'service' => $result->service, 'rate' => $result->rate], 200);
-
-    }
-
 
 }
