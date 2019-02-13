@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/internal/order/:order_id/shipping_rate', 'InternalController@shippingRate');
+
 
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
     Route::prefix('dashboard')->group(function() {
@@ -90,6 +90,7 @@ Route::prefix('internal')->group(function() {
         Route::post('order/item', 'InternalController@createOrUpdateOrderItem');
         Route::post('order', 'InternalController@updateOrder');
         Route::post('order/place', 'InternalController@placeOrder');
+        Route::get('order/{order_id}/shipping_rate', 'InternalController@getLowestCarrierRate');
 
         // billing
         Route::post('billing', 'InternalController@createBilling');

@@ -5,19 +5,50 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\User\{ LoginRequest, CreateOrUpdateUserUnderAccountRequest, GetAllUsersRequest, CreateOrUpdateUserRequest };
-use App\Http\Requests\Account\{ CreateOrUpdateAccountRequest };
-use App\Http\Requests\Charity\{ CreateOrUpdateCharityRequest };
-use App\Http\Requests\Event\{ CreateOrUpdateEventRequest, RegisterEventRequest };
-use App\Http\Requests\Product\{ CreateOrUpdateProductRequest, AddProductToSizeRequest };
-use App\Http\Requests\Location\{ CreateAddressRequest, CreateOrUpdateLocationRequest };
-use App\Http\Requests\Order\{ CreateOrUpdateOrderItemRequest, UpdateOrderRequest, PlaceOrderRequest };
-use App\Http\Requests\Billing\{ CreateBillingRequest };
-use App\Http\Requests\Design\{CreateOrUpdateDesignRequest, UploadDesignFileRequest };
+use App\Http\Requests\User\{LoginRequest,
+    CreateOrUpdateUserUnderAccountRequest,
+    GetAllUsersRequest,
+    CreateOrUpdateUserRequest};
+use App\Http\Requests\Account\{CreateOrUpdateAccountRequest};
+use App\Http\Requests\Charity\{CreateOrUpdateCharityRequest};
+use App\Http\Requests\Event\{CreateOrUpdateEventRequest, RegisterEventRequest};
+use App\Http\Requests\Product\{CreateOrUpdateProductRequest, AddProductToSizeRequest};
+use App\Http\Requests\Location\{CreateAddressRequest, CreateOrUpdateLocationRequest};
+use App\Http\Requests\Order\{CreateOrUpdateOrderItemRequest, UpdateOrderRequest, PlaceOrderRequest};
+use App\Http\Requests\Billing\{CreateBillingRequest};
+use App\Http\Requests\Design\{CreateOrUpdateDesignRequest, UploadDesignFileRequest};
 use App\Http\Requests\UploadImageRequest;
-use App\Services\{ AccountService, CharityService, EventService, UserService, ProductService, LocationService, AddressService, OrderService, BillingService, DesignService, ExtraService, ShippingService };
-use App\Http\Resources\{ AccountResource, AccountCollection, CharityResource, CharityCollection, EventResource, EventCollection, UserResource, UserCollection, ProductResource, ProductCollection };
-use App\Http\Resources\{ LocationResource, LocationCollection, AddressResource, OrderItemResource, OrderItemCollection, OrderResource, OrderCollection, DesignResource, DesignCollection };
+use App\Services\{AccountService,
+    CharityService,
+    EventService,
+    UserService,
+    ProductService,
+    LocationService,
+    AddressService,
+    OrderService,
+    BillingService,
+    DesignService,
+    ExtraService,
+    ShippingService};
+use App\Http\Resources\{AccountResource,
+    AccountCollection,
+    CharityResource,
+    CharityCollection,
+    EventResource,
+    EventCollection,
+    UserResource,
+    UserCollection,
+    ProductResource,
+    ProductCollection};
+use App\Http\Resources\{LocationResource,
+    LocationCollection,
+    AddressResource,
+    OrderItemResource,
+    OrderItemCollection,
+    OrderResource,
+    OrderCollection,
+    DesignResource,
+    DesignCollection};
 
 class InternalController extends Controller
 {
@@ -582,22 +613,21 @@ class InternalController extends Controller
     }
 
     /**
-     * Get lower rate
+     * Get lowest rate
      *
-     * @param App\Models\Order $order
+     * @param App\Models\Order $order_id
      * @param App\Services\OrderService $orderService
-     * @param App\Http\Requests\UploadImageRequest $request
+     * @param Illuminate\Http\Request $request
      * @param App\Services\ShippingService $shippingService
      * @return \Illuminate\Http\Response
      */
-    public function shippingRate(Order $order_id, OrderService $orderService, Request $request, ShippingService $shippingService)
+    public function getLowestCarrierRate(Order $order_id, OrderService $orderService, Request $request, ShippingService $shippingService)
     {
-       $totalWeight = $orderService->getOrderTotalWeight($order_id);
-       $shippingMethod = $request->shipping_method ?? null;
+        $totalWeight = $orderService->getTotalWeightItemsInOrder($order_id);
+        $shippingMethod = $request->shipping_method ?? null;
+        $result = $shippingService->chooseLowestRateFromCarriers($order_id, $totalWeight, $shippingMethod);
 
-       $result = $shippingService->getLowRateShipping($order_id, $totalWeight, $shippingMethod);
-
-       return response()->json(['result' => $result], 200);
+        return response()->json(['carrier' => $result->carrier, 'service' => $result->service, 'rate' => $result->rate], 200);
 
     }
 

@@ -10,94 +10,100 @@ use Illuminate\Support\Facades\Log;
 
 class ShippingService
 {
-    protected $fedex_services = [
+    /**
+     * The Fedex service levels.
+     *
+     * @var array
+     */
+    protected $fedexServices = [
         'Ground' => 'FEDEX_GROUND',
         '2DAY' => 'FEDEX_2_DAY',
         'Overnight' => 'STANDARD_OVERNIGHT'
     ];
 
-    protected $ups_services = [
+    /**
+     * The UPS service levels.
+     *
+     * @var array
+     */
+    protected $upsServices = [
         'Ground' => 'Ground',
         '2DAY' => '2ndDayAir',
         'Overnight' => 'NextDayAirSaverSent'
     ];
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         \EasyPost\EasyPost::setApiKey(env('EASYPOST_API_KEY'));
-
     }
-
 
     /**
      * get lower shipping rate
      *
-     * @param App\Models\Order $order
+     * @param \App\Models\Order $order
      * @param float $weight
      * @param string $shippingMethod
-     * @return array
+     * @return object \EasyPost\Rate
      */
-    public function getLowRateShipping(Order $order, $weight, $shippingMethod)
+    public function chooseLowestRateFromCarriers(Order $order, $weight, $shippingMethod)
     {
         try {
-            //Create from address
-            $from_address_params = $this->prepareAddressToEasyPostArray($order->source_id);
-            $from_address = \EasyPost\Address::create($from_address_params);
-
-            //Create destination address
-            $from_address_params = $this->prepareAddressToEasyPostArray($order->destination_id);
-            $to_address = \EasyPost\Address::create($from_address_params);
-
-            //Fedex parcel
-            $parcel1 = \EasyPost\Parcel::create(array(
+            $fromAddressParams = $this->convertAddressToEasyPostArray($order->source_id);
+            $fromAddress = \EasyPost\Address::create($fromAddressParams);
+            $toAddressParams = $this->convertAddressToEasyPostArray($order->destination_id);
+            $toAddress = \EasyPost\Address::create($toAddressParams);
+            $parcelFedex = \EasyPost\Parcel::create(array(
                 "predefined_package" => 'FedExEnvelope',
                 "weight" => $weight
             ));
-
-            //UPS parcel
-            $parcel2 = \EasyPost\Parcel::create(array(
+            $shipmentFedex = \EasyPost\Shipment::create(array(
+                "to_address" => $toAddress,
+                "from_address" => $fromAddress,
+                "parcel" => $parcelFedex,
+                "carrier_accounts" => [env('EASYPOST_FEDEX')]
+            ));
+            $parcelUPS = \EasyPost\Parcel::create(array(
                 "predefined_package" => 'Pak',
                 "weight" => $weight
             ));
-
-            //create shipment via Fedex
-            $shipment1 = \EasyPost\Shipment::create(array(
-                "to_address" => $to_address,
-                "from_address" => $from_address,
-                "parcel" => $parcel1,
-                "carrier_accounts" => [env('EASYPOST_FEDEX')]
-            ));
-
-            //create shipment via UPS
-            $shipment2 = \EasyPost\Shipment::create(array(
-                "to_address" => $to_address,
-                "from_address" => $from_address,
-                "parcel" => $parcel2,
+            $shipmentUPS = \EasyPost\Shipment::create(array(
+                "to_address" => $toAddress,
+                "from_address" => $fromAddress,
+                "parcel" => $parcelUPS,
                 "carrier_accounts" => [env('EASYPOST_UPS')]
             ));
-
             if ($shippingMethod) {
-                $fedexService = $this->fedex_services[$shippingMethod];
-                $upsService = $this->ups_services[$shippingMethod];
-
-                $rates1 = $shipment1->lowest_rate(array('Fedex'), array($fedexService));
-                $rates2 = $shipment2->lowest_rate(array('Ups'), array($upsService));
-
-
+                $fedexService = $this->fedexServices[$shippingMethod];
+                $upsService = $this->upsServices[$shippingMethod];
+                $rateFedex = $shipmentFedex->lowest_rate(array('Fedex'), array($fedexService));
+                $rateUPS = $shipmentUPS->lowest_rate(array('Ups'), array($upsService));
             } else {
-                $rates1 = $shipment1->lowest_rate(array('Fedex'));
-                $rates2 = $shipment2->lowest_rate(array('Ups'));
+                $rateFedex = $shipmentFedex->lowest_rate(array('Fedex'));
+                $rateUPS = $shipmentUPS->lowest_rate(array('Ups'));
             }
+            $lowestRate = $rateFedex->rate <= $rateUPS->rate ? $rateFedex : $rateUPS;
+
+            return $lowestRate;
+
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
 
-        $lowestRate = $rates1->rate <= $rates2->rate ? $rates1 : $rates2 ;
-
-        return $lowestRate;
+        return null;
     }
 
-    public function prepareAddressToEasyPostArray($id)
+    /**
+     * Prepare address to Easypost array
+     *
+     * @param integer $id
+     * @return array
+     */
+    public function convertAddressToEasyPostArray($id)
     {
         $address = Address::findOrFail($id);
 
@@ -108,7 +114,7 @@ class ShippingService
             "state" => $address->state,
             "zip" => $address->zip,
             "country" => $address->country,
-            "company" => "EasyPost",
+            "company" => $address->name,
             "phone" => $address->phone
         );
     }
