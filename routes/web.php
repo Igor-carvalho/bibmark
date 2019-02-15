@@ -44,7 +44,7 @@ Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword'
 
 Route::prefix('internal')->group(function() {
     Route::post('login', 'InternalController@login');
-    Route::post('logout', 'InternalController@logout'); 
+    Route::post('logout', 'InternalController@logout')->name('logout');
 
     Route::middleware(['auth'])->group(function() {
         // account

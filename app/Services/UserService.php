@@ -159,10 +159,10 @@ class UserService
             $totalUsers = User::all()->except(Auth::id());
 
             return [
-                'totalAccounts' => json_encode($totalAccounts),
-                'totalCharities' => json_encode($totalCharities),
-                'totalEvents' => json_encode($totalEvents),
-                'totalUsers' => json_encode($totalUsers)
+                'total_accounts' => json_encode($totalAccounts),
+                'total_charities' => json_encode($totalCharities),
+                'total_events' => json_encode($totalEvents),
+                'total_users' => json_encode($totalUsers)
             ];
         }
         $userAccounts = $user->accounts;
@@ -170,9 +170,9 @@ class UserService
         $userEvents = $user->events;
 
         return [
-            'userAccounts' => json_encode($userAccounts),
-            'userCharities' => json_encode($userCharities),
-            'userEvents' => json_encode($userEvents)
+            'user_accounts' => json_encode($userAccounts),
+            'user_charities' => json_encode($userCharities),
+            'user_events' => json_encode($userEvents)
         ];
     }
 }

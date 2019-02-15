@@ -27,9 +27,9 @@ export default {
             axios.get('/internal/user/'+id+'/have')
                 .then(response => {
                     if (!this.isAdmin) {
-                        this.userAccounts = JSON.parse(response.data.userAccounts);
-                        this.userCharities = JSON.parse(response.data.userCharities);
-                        this.userEvents = JSON.parse(response.data.userEvents);
+                        this.userAccounts = JSON.parse(response.data.user_accounts);
+                        this.userCharities = JSON.parse(response.data.user_charities);
+                        this.userEvents = JSON.parse(response.data.user_events);
 
                         if (this.userAccounts.length === 1  && this.userCharities.length === 0 && this.userEvents.length === 0) {
                             window.location.replace('/dashboard/account/' + this.userAccounts[0].id + '/home');
@@ -40,10 +40,10 @@ export default {
                         }
 
                     } else {
-                        this.totalAccounts = JSON.parse(response.data.totalAccounts);
-                        this.totalCharities = JSON.parse(response.data.totalCharities);
-                        this.totalEvents = JSON.parse(response.data.totalEvents);
-                        this.totalUsers = JSON.parse(response.data.totalUsers);
+                        this.totalAccounts = JSON.parse(response.data.total_accounts);
+                        this.totalCharities = JSON.parse(response.data.total_charities);
+                        this.totalEvents = JSON.parse(response.data.total_events);
+                        this.totalUsers = JSON.parse(response.data.total_users);
                     }
 
                 })
