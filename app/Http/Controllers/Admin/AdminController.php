@@ -37,6 +37,9 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        return view('admin.pages.dashboard.dashboard', ['isAdmin' => Auth::user()->isSuperAdmin(), 'userId' => Auth::user()->id]);
+        return view('admin.pages.dashboard.dashboard', [
+            'isAdmin' => Auth::user()->isSuperAdmin(),
+            'userId' => Auth::user()->id
+        ]);
     }
 }
