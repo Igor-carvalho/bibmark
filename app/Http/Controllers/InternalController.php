@@ -268,6 +268,20 @@ class InternalController extends Controller
     }
 
     /**
+     * Get a user relations info (Accounts, Charities, Events)
+     * or all Accounts, Charities, Events, Users if user is admin
+     *
+     * @param integer $userId
+     * @param App\Services\UserService $userService
+     * @return \Illuminate\Http\Response
+     */
+    public function userHave($userId, UserService $userService)
+    {
+        $result = $userService->getUserHaveData($userId);
+        return response()->json($result, 200);
+    }
+
+    /**
      * Get all products
      *
      * @param App\Services\ProductService $productService

@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Auth; 
 use App\Models\User;
-use App\Models\Account;
+use App\Models\{Account, Charity, Event};
 use App\Enums\{ MorphType, UserRole };
 
 class UserService
@@ -140,5 +140,30 @@ class UserService
         }
 
         return false;
+    }
+
+    /**
+     * get user relations data Accounts, Charities, Events
+     * or total Accounts, Charities, Events, Users if user is admin
+     *
+     * @param integer userId
+     * @return array
+     */
+    public function getUserHaveData($userId)
+    {
+        $user = User::find($userId);
+        if ($user->isSuperAdmin()) {
+            $totalAccounts = Account::all();
+            $totalCharities = Charity::all();
+            $totalEvents = Event::all();
+            $totalUsers = User::all()->except(Auth::id());
+
+            return ['totalAccounts' => json_encode($totalAccounts), 'totalCharities' => json_encode($totalCharities), 'totalEvents' => json_encode($totalEvents), 'totalUsers' => json_encode($totalUsers) ];
+        }
+        $userAccounts = $user->accounts;
+        $userCharities = $user->charities;
+        $userEvents = $user->events;
+
+        return ['userAccounts' => json_encode($userAccounts), 'userCharities' => json_encode($userCharities), 'userEvents' => json_encode($userEvents)];
     }
 }

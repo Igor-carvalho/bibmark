@@ -50,6 +50,8 @@ Vue.component('order-list', require('./pages/order/OrderList.vue'));
 Vue.component('design-list', require('./pages/design/DesignList.vue'));
 Vue.component('design-edit', require('./pages/design/DesignEdit.vue'));
 
+Vue.component('dashboard', require('./pages/dashboard/Dasboard.vue'));
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

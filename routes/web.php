@@ -14,7 +14,7 @@
 
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
     Route::prefix('dashboard')->group(function() {
-        Route::get('/', 'AdminController@dashboard');
+        Route::get('/', 'AdminController@dashboard')->name('dashboard');
         // account
         Route::middleware(['superadmin'])->group(function() {
             Route::resource('accounts', 'AccountController')->only(['index', 'show', 'create', 'edit']);
@@ -69,6 +69,7 @@ Route::prefix('internal')->group(function() {
         Route::get('users', 'InternalController@users');
         Route::delete('user/{user_id}', 'InternalController@deleteUser');
         Route::post('user', 'InternalController@createUser');
+        Route::get('/user/{user_id}/have', 'InternalController@userHave');
 
         // product
         Route::get('products', 'InternalController@products');
