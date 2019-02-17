@@ -19,10 +19,10 @@
     <!-- Links -->
     <ul class="sidenav-inner py-1">
         <li class="sidenav-menu">
-            @if (Auth::user()->isSuperAdmin())
                 <li class="sidenav-item{{ strpos($routeName, 'dashboard') !== false ? ' active' : '' }}">
                     <a href="{{ route('dashboard') }}" class="sidenav-link"><i class="sidenav-icon ion ion-md-home"></i><div>Dashboard</div></a>
                 </li>
+            @if (Auth::user()->isSuperAdmin())
                 <li class="sidenav-item{{ strpos($routeName, 'accounts') !== false ? ' active' : '' }}">
                     <a href="{{ route('accounts.index') }}" class="sidenav-link"><i class="sidenav-icon ion ion-md-contact"></i><div>Accounts</div></a>
                 </li>
