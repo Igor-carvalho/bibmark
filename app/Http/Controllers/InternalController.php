@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\User\{LoginRequest, CreateOrUpdateUserUnderAccountRequest, GetAllUsersRequest, CreateOrUpdateUserRequest};
@@ -97,6 +98,20 @@ class InternalController extends Controller
     public function deleteAccount($accountId, AccountService $accountService)
     {
         $result = $accountService->deleteAccount($accountId);
+
+        return response()->json($result, 200);
+    }
+
+    /**
+     * Get account details
+     *
+     * @param integer $accountId
+     * @param App\Services\AccountService $accountService
+     * @return \Illuminate\Http\Response
+     */
+    public function accountDetails($accountId, AccountService $accountService)
+    {
+        $result = new AccountResource($accountService->getAccountById($accountId));
 
         return response()->json($result, 200);
     }

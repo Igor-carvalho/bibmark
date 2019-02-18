@@ -19,6 +19,17 @@ class AccountService
     }
 
     /**
+     * Get account by id
+     *
+     * @param integer $id
+     * @return App\Models\Account
+     */
+    public function getAccountById($id)
+    {
+        return Account::find($id);
+    }
+
+    /**
      * Create or Update an account
      * 
      * @param array $data

@@ -26,6 +26,7 @@ Vue.use(require('vue-moment'));
 Vue.component('account-list', require('./pages/account/AccountList.vue'));
 Vue.component('account-edit', require('./pages/account/AccountEdit.vue'));
 Vue.component('account-show', require('./pages/account/AccountShow.vue'));
+Vue.component('account-detail-page', require('./pages/account/AccountDetailPage.vue'));
 
 Vue.component('charity-list', require('./pages/charity/CharityList.vue'));
 Vue.component('charity-edit', require('./pages/charity/CharityEdit.vue'));

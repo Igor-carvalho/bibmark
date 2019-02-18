@@ -42,4 +42,17 @@ class AdminController extends Controller
             'userId' => Auth::user()->id
         ]);
     }
+
+    /**
+     * Show detailed page account
+     *
+     * @param integer $accountId
+     * @return view
+     */
+    public function dashboardAccount($accountId)
+    {
+        return view('admin.pages.dashboard.account', [
+            'accountId' => $accountId
+        ]);
+    }
 }
