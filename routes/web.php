@@ -69,7 +69,7 @@ Route::prefix('internal')->group(function() {
         Route::get('users', 'InternalController@users');
         Route::delete('user/{user_id}', 'InternalController@deleteUser');
         Route::post('user', 'InternalController@createUser');
-        Route::get('/user/{user_id}/have', 'InternalController@userHave');
+        Route::get('/user/{user_id}/dashboard_achivements', 'InternalController@dashboardAchivements');
 
         // product
         Route::get('products', 'InternalController@products');

@@ -275,9 +275,9 @@ class InternalController extends Controller
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
      */
-    public function userHave($userId, UserService $userService)
+    public function dashboardAchivements($userId, UserService $userService)
     {
-        $result = $userService->getUserHaveData($userId);
+        $result = $userService->getDashboardAchivements($userId);
         return response()->json($result, 200);
     }
 
