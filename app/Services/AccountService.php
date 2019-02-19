@@ -55,6 +55,28 @@ class AccountService
                 $account = Account::create($values);
                 return $account;
             }
+        } else {
+            $values = [
+                'name' => $data['name'],
+                'logo' => $data['logo'],
+                'background_image' => $data['background_image'],
+                'balance' => isset($data['balance']) ? floatval($data['balance']) : 0,
+                'budget' => isset($data['budget']) ? floatval($data['budget']) : 0,
+            ];
+            if (isset($data['id'])) {
+                $account = Account::find($data['id']);
+                if ($user->accounts->contains($account->id)){
+                    if ($account->update($values)) {
+                        return $account;
+                    }
+                }
+                else return $account;
+            } else {
+                $account = Account::create($values);
+                $user->accounts()->attach($account->id);
+
+                return $account;
+            }
         }
 
         return null;

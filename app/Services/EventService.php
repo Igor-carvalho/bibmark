@@ -52,6 +52,26 @@ class EventService
                 $event = Event::create($values);
                 return $event;
             }
+        } else {
+            $values = [
+                'name' => $data['name'],
+                'rev_share' => isset($data['rev_share']) ? floatval($data['rev_share']) : 0,
+                'balance' => isset($data['balance']) ? floatval($data['balance']) : 0,
+            ];
+            if (isset($data['id'])) {
+                $event = Event::find($data['id']);
+                if ($user->events->contains($event->id)){
+                    if ($event->update($values)) {
+                        return $event;
+                    }
+                }
+                else return $event;
+            } else {
+                $event = Event::create($values);
+                $user->events()->attach($event->id);
+
+                return $event;
+            }
         }
 
         return null;

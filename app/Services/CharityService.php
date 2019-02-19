@@ -53,6 +53,27 @@ class CharityService
                 $charity = Charity::create($values);
                 return $charity;
             }
+        } else {
+            $values = [
+                'name' => $data['name'],
+                'logo' => $data['logo'],
+                'background_image' => $data['background_image'],
+                'balance' => isset($data['balance']) ? floatval($data['balance']) : 0,
+            ];
+            if (isset($data['id'])) {
+                $charity = Charity::find($data['id']);
+                if ($user->charities->contains($charity->id)){
+                    if ($charity->update($values)) {
+                        return $charity;
+                    }
+                }
+                else return $charity;
+            } else {
+                $charity = Charity::create($values);
+                $user->charities()->attach($charity->id);
+
+                return $charity;
+            }
         }
 
         return null;

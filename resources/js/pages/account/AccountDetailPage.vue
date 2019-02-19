@@ -1,22 +1,21 @@
 <template>
     <div id="main">
         <header v-if="isLoaded">
-            <figure v-if="background_image" class="profile-banner" :style="'background-image: url(' + background_image+ ')'" @click="browseExistsFileUpdate('image', accountId)">
+            <figure v-if="background_image" class="btn profile-banner" :style="'background-image: url(' + background_image+ ')'" @click="browseExistsFileUpdate('image', accountId)">
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+accountId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
-            <figure v-else class="profile-banner" style="background-image: url('https://unsplash.it/975/300')" @click="browseExistsFileUpdate('image', accountId)">
-                <img src="https://unsplash.it/975/300" alt="Profile banner"  />
+            <figure v-else class="btn profile-banner" style="background-image: url('https://unsplash.it/975/300')" @click="browseExistsFileUpdate('image', accountId)">
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+accountId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
-            <figure v-if="logo" class="profile-picture" @click="browseExistsFileUpdate('logo', accountId)"
+            <figure v-if="logo" class="btn profile-picture" @click="browseExistsFileUpdate('logo', accountId)"
                     :style="'background-image: url(' + logo + ')'">
                 <input type="file" class="btn btn-sm btn-light" name="logo" :id="'logo'+accountId" ref="logo" @change="onExistsFileChanged($event, 'logo')" hidden>
             </figure>
-            <figure v-else class="profile-picture" @click="browseExistsFileUpdate('logo', accountId)"
+            <figure v-else class="btn profile-picture" @click="browseExistsFileUpdate('logo', accountId)"
                     style="background-image: url('http://unsplash.it/150/150')">
                 <input type="file" class="btn btn-sm btn-light" name="logo" :id="'logo'+accountId" ref="logo" @change="onExistsFileChanged($event, 'logo')" hidden>
             </figure>
-            <h1><input v-model="name" disabled > </h1><span class="btn lnr lnr-pencil" @click="allowChangeName()"></span>
+            <h1><input :value="name" disabled > </h1><span class="btn lnr lnr-pencil" data-toggle="modal" data-target="#exampleModalCenter"></span>
         </header>
         <body>
         <ul class="nav nav-tabs">
@@ -29,6 +28,27 @@
         </ul>
         </body>
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Change name</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input v-model="name" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button id="closeBtn" type="button" class="btn btn-secondary" data-dismiss="modal" @click="getAccountDetails(accountId)">Close</button>
+                        <button type="button" class="btn btn-primary" @click="allowChangeName()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end modal-->
     </div>
 </template>
 
@@ -37,8 +57,8 @@
 <style scoped>
     body {
         font-family: Arial, Helvetica, sans-serif;
-        margin-top: 170px;
-        margin-left: 18vw;
+        margin:   150px 25px 50px;
+        width: 100%;
     }
 
     h1 {
@@ -58,7 +78,7 @@
         margin:   25px auto 50px;
         height:   300px;
         position: relative;
-        width:    975px;
+        /*width:    975px;*/
     }
 
     figure.profile-banner {
@@ -69,7 +89,7 @@
         /*overflow: hidden;*/
         left:     0;
         position: absolute;
-        width: 975px;
+        width: 100%;
         z-index:  1;
     }
 
@@ -100,7 +120,7 @@
         text-decoration: none;
         border: hidden;
         background-color:transparent;
-        max-width: 300px;
+        /*max-width: 300px;*/
 
     }
 
@@ -108,7 +128,7 @@
         bottom: -100px;
         color: #354B63;
         font-size: 20px;
-        left: 350px;
+        right: 50px;
         position: absolute;
         z-index: 5;
     }

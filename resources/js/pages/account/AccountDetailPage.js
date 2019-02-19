@@ -8,7 +8,6 @@ export default {
     data: function() {
         return {
             name: '',
-            isNameChange: false,
             logo: '',
             background_image: '',
             image_to_change: '',
@@ -63,17 +62,6 @@ export default {
             console.log(e.target.files[0]);
         },
         updateAwsImage(type) {
-            $('#main').block({
-                message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
-                css: {
-                    backgroundColor: 'transparent',
-                    border: '0'
-                },
-                overlayCSS:  {
-                    backgroundColor: '#fff',
-                    opacity: 0.8
-                }
-            });
             let formData = new FormData();
             formData.append('image', this.image_to_change);
             formData.append('type', 'profile');
@@ -87,7 +75,6 @@ export default {
 
             }).catch((error) => {
                 console.log(error.response);
-                $('#main').unblock();
             });
         },
         updateAccountDetails(type, url) {
@@ -95,12 +82,45 @@ export default {
             formData.append('id', this.accountId);
             formData.append('name', this.name);
             if (type === 'logo'){
+                $('.profile-picture').block({
+                    message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                    css: {
+                        backgroundColor: 'transparent',
+                        border: '0'
+                    },
+                    overlayCSS:  {
+                        backgroundColor: '#fff',
+                        opacity: 0.8
+                    }
+                });
                 formData.append( type , url);
                 formData.append('background_image', this.background_image ? this.background_image : '');
             }else if(type === 'background_image') {
+                $('.profile-banner').block({
+                    message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                    css: {
+                        backgroundColor: 'transparent',
+                        border: '0'
+                    },
+                    overlayCSS:  {
+                        backgroundColor: '#fff',
+                        opacity: 0.8
+                    }
+                });
                 formData.append( type , url);
                 formData.append('logo', this.logo ? this.logo : '');
             }else {
+                $('h1>input').block({
+                    message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                    css: {
+                        backgroundColor: 'transparent',
+                        border: '0'
+                    },
+                    overlayCSS:  {
+                        backgroundColor: '#fff',
+                        opacity: 0.8
+                    }
+                });
                 formData.append('logo', this.logo ? this.logo : '');
                 formData.append('background_image', this.background_image ? this.background_image : '');
             }
@@ -112,25 +132,22 @@ export default {
                     this.errors = [];
                     this.getAccountDetails(this.accountId);
                     $('#main').unblock();
+                    $('.profile-picture').unblock();
+                    $('.profile-banner').unblock();
+                    $('h1>input').unblock();
                 })
                 .catch(error => {
                     this.errors = error.response.data.errors;
                     console.log(error.response);
                     $('#main').unblock();
+                    $('.profile-picture').unblock();
+                    $('.profile-banner').unblock();
+                    $('h1>input').unblock();
                 });
         },
         allowChangeName() {
-            if (!this.isNameChange) {
-                this.isNameChange = true;
-                $("h1>input").removeAttr("disabled");
-                $("h1>input").focus();
-            } else {
-                $("h1>input").prop("disabled", true);
-                this.isNameChange = false;
-                this.updateAccountDetails(null, null);
-
-            }
-
+            this.updateAccountDetails(null, null);
+            $('#closeBtn').click();
         }
 
     }

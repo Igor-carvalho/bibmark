@@ -8,7 +8,6 @@ export default {
     data: function() {
         return {
             name: '',
-            isNameChange: false,
             errors: [],
             isLoaded: false
         };
@@ -64,16 +63,8 @@ export default {
                 });
         },
         allowChangeName() {
-            if (!this.isNameChange) {
-                this.isNameChange = true;
-                $("h1>input").removeAttr("disabled").focus();
-            } else {
-                $("h1>input").prop("disabled", true);
-                this.isNameChange = false;
-                this.updateEventDetails();
-
-            }
-
+            this.updateEventDetails();
+            $('#closeBtn').click();
         }
 
     }
