@@ -157,6 +157,20 @@ class InternalController extends Controller
     }
 
     /**
+     * Get charity details
+     *
+     * @param integer $charityId
+     * @param \App\Services\CharityService $charityService
+     * @return \Illuminate\Http\Response
+     */
+    public function charityDetails($charityId, CharityService $charityService)
+    {
+        $result = new CharityResource($charityService->getCharityById($charityId));
+
+        return response()->json($result, 200);
+    }
+
+    /**
      * Get all events
      *
      * @param App\Services\EventService $eventService

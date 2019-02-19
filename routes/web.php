@@ -26,6 +26,7 @@ Route::namespace('Admin')->middleware(['auth'])->group(function() {
         });
         
         Route::resource('charities', 'CharityController')->only(['index', 'show', 'create', 'edit']);
+        Route::get('/charity/{charity_id}/home', 'AdminController@dashboardCharity');
         Route::resource('events', 'EventController')->only(['index', 'show', 'create', 'edit']);
         Route::resource('users', 'UserController')->only(['index', 'show', 'create', 'edit']);
         Route::resource('products', 'ProductController')->only(['index', 'show', 'create', 'edit']);
@@ -58,6 +59,7 @@ Route::prefix('internal')->group(function() {
 
         // charity
         Route::get('charities', 'InternalController@charities');
+        Route::get('charity/{charity_id}', 'InternalController@charityDetails');
         Route::post('charity', 'InternalController@createOrUpdateCharity');
         Route::delete('charity/{charity_id}', 'InternalController@deleteCharity');
 

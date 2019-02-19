@@ -55,4 +55,17 @@ class AdminController extends Controller
             'accountId' => $accountId
         ]);
     }
+
+    /**
+     * Show detailed page charity
+     *
+     * @param integer $charityId
+     * @return view
+     */
+    public function dashboardCharity($charityId)
+    {
+        return view('admin.pages.dashboard.charity', [
+            'charityId' => $charityId
+        ]);
+    }
 }

@@ -18,6 +18,17 @@ class CharityService
     }
 
     /**
+     * Get charity by id
+     *
+     * @param integer $id
+     * @return App\Models\Charity
+     */
+    public function getCharityById($id)
+    {
+        return Charity::find($id);
+    }
+
+    /**
      * Create or Update a charity
      * 
      * @param array $data

@@ -31,6 +31,7 @@ Vue.component('account-detail-page', require('./pages/account/AccountDetailPage.
 Vue.component('charity-list', require('./pages/charity/CharityList.vue'));
 Vue.component('charity-edit', require('./pages/charity/CharityEdit.vue'));
 Vue.component('charity-show', require('./pages/charity/CharityShow.vue'));
+Vue.component('charity-detail-page', require('./pages/charity/CharityDetailPage.vue'));
 
 Vue.component('event-list', require('./pages/event/EventList.vue'));
 Vue.component('event-edit', require('./pages/event/EventEdit.vue'));
