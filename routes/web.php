@@ -52,7 +52,7 @@ Route::prefix('internal')->group(function() {
         Route::get('accounts', 'InternalController@accounts');
         Route::get('account/{account_id}', 'InternalController@accountDetails');
         Route::get('account/{account_id}/users', 'InternalController@usersWithAccountId');
-        Route::post('account/user', 'InternalController@createUserUnderAccount');
+        Route::post('account/user', 'InternalController@createOrUpdateUserUnderAccount');
         Route::post('account', 'InternalController@createOrUpdateAccount');
         Route::delete('account/{account_id}', 'InternalController@deleteAccount');
 
@@ -70,8 +70,8 @@ Route::prefix('internal')->group(function() {
         // user
         Route::get('users', 'InternalController@users');
         Route::delete('user/{user_id}', 'InternalController@deleteUser');
-        Route::post('user', 'InternalController@createUser');
-        Route::get('/user/{user_id}/dashboard_achivements', 'InternalController@dashboardAchivements');
+        Route::post('user', 'InternalController@createOrUpdateUser');
+        Route::get('/user/{user_id}/dashboard_achievements', 'InternalController@dashboardAchievements');
 
         // product
         Route::get('products', 'InternalController@products');

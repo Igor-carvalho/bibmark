@@ -257,11 +257,11 @@ class InternalController extends Controller
     /**
      * Create a user
      *
-     * @param App\Http\Requests\User\CreateUserUnderAccountRequest $request
+     * @param App\Http\Requests\User\CreateOrUpdateUserRequest $request
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
      */
-    public function createUser(CreateOrUpdateUserRequest $request, UserService $userService)
+    public function createOrUpdateUser(CreateOrUpdateUserRequest $request, UserService $userService)
     {
         $result = new UserResource($userService->createOrUpdateUser($request->all()));
 
@@ -290,9 +290,9 @@ class InternalController extends Controller
      * @param App\Services\UserService $userService
      * @return \Illuminate\Http\Response
      */
-    public function dashboardAchivements($userId, UserService $userService)
+    public function dashboardAchievements($userId, UserService $userService)
     {
-        $result = $userService->getDashboardAchivements($userId);
+        $result = $userService->getDashboardAchievements($userId);
         return response()->json($result, 200);
     }
 

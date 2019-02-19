@@ -5,7 +5,7 @@ namespace App\Http\Requests\User;
 use App\Http\Requests\Request;
 use Waavi\Sanitizer\Laravel\SanitizesInput;
 
-class CreateUserUnderAccountRequest extends Request
+class CreateOrUpdateUserUnderAccountRequest extends Request
 {
     /**
      *  Validation rules to be applied to the input.

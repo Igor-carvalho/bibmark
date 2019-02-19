@@ -24,7 +24,7 @@ export default {
     },
     methods: {
         getUserProps(id) {
-            axios.get('/internal/user/'+id+'/dashboard_achivements')
+            axios.get('/internal/user/'+id+'/dashboard_achievements')
                 .then(response => {
                     if (!this.isAdmin) {
                         this.userAccounts = JSON.parse(response.data.user_accounts);

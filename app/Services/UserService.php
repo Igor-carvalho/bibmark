@@ -149,7 +149,7 @@ class UserService
      * @param integer userId
      * @return array
      */
-    public function getDashboardAchivements($userId)
+    public function getDashboardAchievements($userId)
     {
         $user = User::find($userId);
         if ($user->isSuperAdmin()) {
