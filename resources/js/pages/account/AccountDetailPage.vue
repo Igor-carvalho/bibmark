@@ -1,12 +1,11 @@
 <template>
     <div id="main">
-        <header>
-            <figure v-if="background_image" class="profile-banner">
-                <img :src="background_image" alt="Profile banner" @click="browseExistsFileUpdate('image', accountId)"/>
+        <header v-if="isLoaded">
+            <figure v-if="background_image" class="profile-banner" :style="'background-image: url(' + background_image+ ')'" @click="browseExistsFileUpdate('image', accountId)">
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+accountId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
-            <figure v-else class="profile-banner">
-                <img src="https://unsplash.it/975/300" alt="Profile banner" @click="browseExistsFileUpdate('image', accountId)" />
+            <figure v-else class="profile-banner" style="background-image: url('https://unsplash.it/975/300')" @click="browseExistsFileUpdate('image', accountId)">
+                <img src="https://unsplash.it/975/300" alt="Profile banner"  />
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+accountId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
             <figure v-if="logo" class="profile-picture" @click="browseExistsFileUpdate('logo', accountId)"
@@ -63,10 +62,14 @@
     }
 
     figure.profile-banner {
-        left:     0;
-        overflow: hidden;
-        position: absolute;
+        background-position: center center;
+        background-size: cover;
         top:      0;
+        height: 300px;
+        /*overflow: hidden;*/
+        left:     0;
+        position: absolute;
+        width: 975px;
         z-index:  1;
     }
 

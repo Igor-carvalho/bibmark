@@ -12,7 +12,8 @@ export default {
             logo: '',
             background_image: '',
             image_to_change: '',
-            errors: []
+            errors: [],
+            isLoaded: false
         };
     },
     mounted: function () {
@@ -23,16 +24,30 @@ export default {
     },
     methods: {
         getAccountDetails(id) {
+            $('#main').block({
+                message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                css: {
+                    backgroundColor: 'transparent',
+                    border: '0'
+                },
+                overlayCSS:  {
+                    backgroundColor: '#fff',
+                    opacity: 0.8
+                }
+            });
             axios.get('/internal/account/'+id)
                 .then(response => {
                     console.log(response.data);
                     this.name = response.data.name;
                     this.logo = response.data.logo;
                     this.background_image = response.data.background_image;
-
+                    this.isLoaded = true;
+                    $('#main').unblock();
                 })
                 .catch(error => {
                     console.log(error.response);
+                    this.isLoaded = true;
+                    $('#main').unblock();
                 })
         },
         browseExistsFileUpdate(type, id) {
