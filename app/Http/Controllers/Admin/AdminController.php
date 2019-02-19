@@ -68,4 +68,17 @@ class AdminController extends Controller
             'charityId' => $charityId
         ]);
     }
+
+    /**
+     * Show detailed page event
+     *
+     * @param integer $eventId
+     * @return view
+     */
+    public function dashboardEvent($eventId)
+    {
+        return view('admin.pages.dashboard.event', [
+            'eventId' => $eventId
+        ]);
+    }
 }

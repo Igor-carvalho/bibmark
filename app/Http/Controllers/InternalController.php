@@ -226,6 +226,20 @@ class InternalController extends Controller
     }
 
     /**
+     * Get event details
+     *
+     * @param integer $eventId
+     * @param \App\Services\EventService $eventService
+     * @return \Illuminate\Http\Response
+     */
+    public function eventDetails($eventId, EventService $eventService)
+    {
+        $result = new EventResource($eventService->getEventById($eventId));
+
+        return response()->json($result, 200);
+    }
+
+    /**
      * Get all users belong the account
      *
      * @param integer $accountId

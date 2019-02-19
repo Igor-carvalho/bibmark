@@ -36,6 +36,7 @@ Vue.component('charity-detail-page', require('./pages/charity/CharityDetailPage.
 Vue.component('event-list', require('./pages/event/EventList.vue'));
 Vue.component('event-edit', require('./pages/event/EventEdit.vue'));
 Vue.component('event-show', require('./pages/event/EventShow.vue'));
+Vue.component('event-detail-page', require('./pages/event/EventDetailPage.vue'));
 
 Vue.component('user-list', require('./pages/user/UserList.vue'));
 Vue.component('user-edit', require('./pages/user/UserEdit.vue'));

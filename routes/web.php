@@ -28,6 +28,7 @@ Route::namespace('Admin')->middleware(['auth'])->group(function() {
         Route::resource('charities', 'CharityController')->only(['index', 'show', 'create', 'edit']);
         Route::get('/charity/{charity_id}/home', 'AdminController@dashboardCharity');
         Route::resource('events', 'EventController')->only(['index', 'show', 'create', 'edit']);
+        Route::get('/event/{event_id}/home', 'AdminController@dashboardEvent');
         Route::resource('users', 'UserController')->only(['index', 'show', 'create', 'edit']);
         Route::resource('products', 'ProductController')->only(['index', 'show', 'create', 'edit']);
         Route::resource('locations', 'LocationController')->only(['index', 'show', 'create', 'edit']);
@@ -65,6 +66,7 @@ Route::prefix('internal')->group(function() {
 
         // event
         Route::get('events', 'InternalController@events');
+        Route::get('event/{event_id}', 'InternalController@eventDetails');
         Route::post('event', 'InternalController@createOrUpdateEvent');
         Route::delete('event/{event_id}', 'InternalController@deleteEvent');
         Route::post('event/register', 'InternalController@registerEvent');

@@ -18,6 +18,17 @@ class EventService
     }
 
     /**
+     * Get event by id
+     *
+     * @param integer $id
+     * @return App\Models\Event
+     */
+    public function getEventById($id)
+    {
+        return Event::find($id);
+    }
+
+    /**
      * Create or Update an event
      * 
      * @param array $data
