@@ -1,6 +1,7 @@
 <template>
     <div id="main">
-        <header v-if="isLoaded">
+        <img :src="background_image || 'https://unsplash.it/975/300'" id="dummy" style="display:none;" alt="" />
+        <header >
             <figure v-if="background_image" class="btn profile-banner" :style="'background-image: url(' + background_image+ ')'" @click="browseExistsFileUpdate('image', accountId)">
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+accountId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
@@ -57,8 +58,8 @@
 <style scoped>
     body {
         font-family: Arial, Helvetica, sans-serif;
-        margin:   150px 25px 50px;
-        width: 100%;
+        margin:   150px 0px 50px;
+        width: 120%;
     }
 
     h1 {
@@ -75,7 +76,7 @@
 
     header {
         box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        margin:   25px auto 50px;
+        margin:   0px auto 50px;
         height:   300px;
         position: relative;
         /*width:    975px;*/
@@ -128,7 +129,8 @@
         bottom: -100px;
         color: #354B63;
         font-size: 20px;
-        right: 50px;
+        padding-right: 0px;
+        right: 1vw;
         position: absolute;
         z-index: 5;
     }

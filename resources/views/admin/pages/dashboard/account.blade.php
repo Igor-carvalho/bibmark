@@ -1,4 +1,4 @@
-@extends('admin.layouts.layout-2')
+@extends('admin.layouts.layout-dashboard-detail-page')
 
 @section('styles')
 

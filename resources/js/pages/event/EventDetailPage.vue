@@ -1,6 +1,7 @@
 <template>
     <div id="main">
-        <header v-if="isLoaded">
+        <img :src="'https://unsplash.it/975/300'" id="dummy" style="display:none;" alt="" />
+        <header>
             <figure class="profile-banner" style="background-image: url('https://unsplash.it/975/300')">
             </figure>
             <figure class="profile-picture" style="background-image: url('http://unsplash.it/150/150')">
@@ -47,7 +48,7 @@
 <style scoped>
     body {
         font-family: Arial, Helvetica, sans-serif;
-        margin:   150px 25px 50px;
+        margin:   150px 0px 50px;
         width: 100%;
     }
 
@@ -65,7 +66,7 @@
 
     header {
         box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        margin:   25px auto 50px;
+        margin:   0px auto 50px;
         height:   300px;
         position: relative;
         /*width:    975px;*/
@@ -118,7 +119,8 @@
         bottom: -100px;
         color: #354B63;
         font-size: 20px;
-        right: 50px;
+        padding-right: 0px;
+        right: 1vw;
         position: absolute;
         z-index: 5;
     }

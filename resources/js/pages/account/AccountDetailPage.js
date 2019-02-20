@@ -23,14 +23,26 @@ export default {
     },
     methods: {
         getAccountDetails(id) {
-            $('#main').block({
-                message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+            $('.profile-picture').block({
+                message: '<div style="border-radius: 50px;"><div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div>',
                 css: {
                     backgroundColor: 'transparent',
                     border: '0'
                 },
                 overlayCSS:  {
-                    backgroundColor: '#fff',
+                    backgroundColor: 'black',
+                    opacity: 0.8,
+                    'border-radius': '50%'
+                }
+            });
+            $('.profile-banner').block({
+                message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
+                css: {
+                    backgroundColor: 'transparent',
+                    border: '0'
+                },
+                overlayCSS:  {
+                    backgroundColor: 'black',
                     opacity: 0.8
                 }
             });
@@ -40,14 +52,22 @@ export default {
                     this.name = response.data.name;
                     this.logo = response.data.logo;
                     this.background_image = response.data.background_image;
+
                     this.isLoaded = true;
-                    $('#main').unblock();
+                    $('#dummy').ready(function() {
+                        $('.profile-picture').unblock();
+                        $('.profile-banner').unblock();
+                    });
+                    $('h1>input').unblock();
                 })
                 .catch(error => {
                     console.log(error.response);
                     this.isLoaded = true;
                     $('#main').unblock();
-                })
+                    $('.profile-picture').unblock();
+                    $('.profile-banner').unblock();
+                    $('h1>input').unblock();
+                });
         },
         browseExistsFileUpdate(type, id) {
             $("#"+type+id).click();
@@ -82,28 +102,29 @@ export default {
             formData.append('id', this.accountId);
             formData.append('name', this.name);
             if (type === 'logo'){
-                $('.profile-picture').block({
-                    message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                $('figure.profile-picture').block({
+                    message: '<div style="border-radius: 50px;"><div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div>',
                     css: {
                         backgroundColor: 'transparent',
                         border: '0'
                     },
                     overlayCSS:  {
-                        backgroundColor: '#fff',
-                        opacity: 0.8
+                        backgroundColor: 'black',
+                        opacity: 0.8,
+                        'border-radius': '50%'
                     }
                 });
                 formData.append( type , url);
                 formData.append('background_image', this.background_image ? this.background_image : '');
             }else if(type === 'background_image') {
                 $('.profile-banner').block({
-                    message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                    message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
                     css: {
                         backgroundColor: 'transparent',
                         border: '0'
                     },
                     overlayCSS:  {
-                        backgroundColor: '#fff',
+                        backgroundColor: 'black',
                         opacity: 0.8
                     }
                 });
@@ -111,13 +132,13 @@ export default {
                 formData.append('logo', this.logo ? this.logo : '');
             }else {
                 $('h1>input').block({
-                    message: '<div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>',
+                    message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
                     css: {
                         backgroundColor: 'transparent',
                         border: '0'
                     },
                     overlayCSS:  {
-                        backgroundColor: '#fff',
+                        backgroundColor: 'black',
                         opacity: 0.8
                     }
                 });
@@ -131,10 +152,7 @@ export default {
                     this.image_to_change = '';
                     this.errors = [];
                     this.getAccountDetails(this.accountId);
-                    $('#main').unblock();
-                    $('.profile-picture').unblock();
-                    $('.profile-banner').unblock();
-                    $('h1>input').unblock();
+
                 })
                 .catch(error => {
                     this.errors = error.response.data.errors;
