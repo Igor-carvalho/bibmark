@@ -2,17 +2,17 @@
     <div id="main">
         <img :src="background_image || 'https://unsplash.it/975/300'" id="dummy" style="display:none;" alt="" />
         <header >
-            <figure v-if="background_image" class="btn profile-banner" :style="'background-image: url(' + background_image+ ')'" @click="browseExistsFileUpdate('image', charityId)">
+            <figure v-if="background_image" class="cursor-pointer profile-banner" :style="'background-image: url(' + background_image+ ')'" @click="browseExistsFileUpdate('image', charityId)">
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+charityId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
-            <figure v-else class="btn profile-banner" style="background-image: url('https://unsplash.it/975/300')" @click="browseExistsFileUpdate('image', charityId)">
+            <figure v-else class="cursor-pointer profile-banner" style="background-image: url('https://unsplash.it/975/300')" @click="browseExistsFileUpdate('image', charityId)">
                 <input type="file" class="btn btn-sm btn-light" name="image" :id="'image'+charityId" ref="background_image" @change="onExistsFileChanged($event, 'background_image')" hidden>
             </figure>
-            <figure v-if="logo" class="btn profile-picture" @click="browseExistsFileUpdate('logo', charityId)"
+            <figure v-if="logo" class="cursor-pointer profile-picture" @click="browseExistsFileUpdate('logo', charityId)"
                     :style="'background-image: url(' + logo + ')'">
                 <input type="file" class="btn btn-sm btn-light" name="logo" :id="'logo'+charityId" ref="logo" @change="onExistsFileChanged($event, 'logo')" hidden>
             </figure>
-            <figure v-else class="btn profile-picture" @click="browseExistsFileUpdate('logo', charityId)"
+            <figure v-else class="cursor-pointer profile-picture" @click="browseExistsFileUpdate('logo', charityId)"
                     style="background-image: url('http://unsplash.it/150/150')">
                 <input type="file" class="btn btn-sm btn-light" name="logo" :id="'logo'+charityId" ref="logo" @change="onExistsFileChanged($event, 'logo')" hidden>
             </figure>
@@ -75,7 +75,7 @@
     }
 
     header {
-        box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        /*box-shadow: 1px 1px 4px rgba(0,0,0,0.5);*/
         margin:   0px auto 50px;
         height:   300px;
         position: relative;

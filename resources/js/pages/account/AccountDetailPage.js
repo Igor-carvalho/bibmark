@@ -74,6 +74,32 @@ export default {
         },
         onExistsFileChanged(e, type) {
             if (e.target.files[0].type.match('image.*')){
+                if (type === 'logo'){
+                    $('figure.profile-picture').block({
+                        message: '<div style="border-radius: 50px;"><div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div>',
+                        css: {
+                            backgroundColor: 'transparent',
+                            border: '0'
+                        },
+                        overlayCSS:  {
+                            backgroundColor: 'black',
+                            opacity: 0.8,
+                            'border-radius': '50%'
+                        }
+                    });
+                }else if (type === 'background_image') {
+                    $('.profile-banner').block({
+                        message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
+                        css: {
+                            backgroundColor: 'transparent',
+                            border: '0'
+                        },
+                        overlayCSS:  {
+                            backgroundColor: 'black',
+                            opacity: 0.8
+                        }
+                    });
+                }
                 this.image_to_change = '';
                 this.image_to_change = e.target.files[0];
                 this.updateAwsImage(type);
@@ -102,46 +128,12 @@ export default {
             formData.append('id', this.accountId);
             formData.append('name', this.name);
             if (type === 'logo'){
-                $('figure.profile-picture').block({
-                    message: '<div style="border-radius: 50px;"><div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div>',
-                    css: {
-                        backgroundColor: 'transparent',
-                        border: '0'
-                    },
-                    overlayCSS:  {
-                        backgroundColor: 'black',
-                        opacity: 0.8,
-                        'border-radius': '50%'
-                    }
-                });
                 formData.append( type , url);
                 formData.append('background_image', this.background_image ? this.background_image : '');
             }else if(type === 'background_image') {
-                $('.profile-banner').block({
-                    message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
-                    css: {
-                        backgroundColor: 'transparent',
-                        border: '0'
-                    },
-                    overlayCSS:  {
-                        backgroundColor: 'black',
-                        opacity: 0.8
-                    }
-                });
                 formData.append( type , url);
                 formData.append('logo', this.logo ? this.logo : '');
             }else {
-                $('h1>input').block({
-                    message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
-                    css: {
-                        backgroundColor: 'transparent',
-                        border: '0'
-                    },
-                    overlayCSS:  {
-                        backgroundColor: 'black',
-                        opacity: 0.8
-                    }
-                });
                 formData.append('logo', this.logo ? this.logo : '');
                 formData.append('background_image', this.background_image ? this.background_image : '');
             }

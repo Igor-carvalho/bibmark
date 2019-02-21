@@ -65,7 +65,7 @@
     }
 
     header {
-        box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        /*box-shadow: 1px 1px 4px rgba(0,0,0,0.5);*/
         margin:   0px auto 50px;
         height:   300px;
         position: relative;
