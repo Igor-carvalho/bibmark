@@ -42,6 +42,10 @@ Route::middleware(['guest'])->group(function() {
         Route::get('login', 'Admin\AdminController@login')->name('login');
     });
 });
+//homepage
+Route::get('/home', function () {
+   return view('admin.pages.home-page');
+});
 
 Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword');
 
