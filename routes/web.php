@@ -43,7 +43,7 @@ Route::middleware(['guest'])->group(function() {
     });
 });
 //homepage
-Route::get('/home', function () {
+Route::get('/', function () {
    return view('admin.pages.home-page');
 });
 

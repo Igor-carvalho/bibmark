@@ -129,10 +129,8 @@
                 <div class="Get-the-latest-on-ne">
                     Get&nbsp;the&nbsp;latest&nbsp;on&nbsp;news,&nbsp;events&nbsp;and&nbsp;races&nbsp;from&nbsp;Bibmark.
                 </div>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="Rectangle-4" type="search" placeholder="    E-mail" aria-label="Search">
+                    <input class="Rectangle-4 form-control" type="search" placeholder="E-mail" aria-label="Search">
                     <button class="btn Rectangle-3-Copy" type="submit"><span class="Search">Search</span></button>
-                </form>
             </div>
             <div class="Rectangle-35"></div>
             <div class="bibmark-footer-logo">
@@ -165,82 +163,82 @@
                 </a>
             </div>
 
-            <div class="Company"><a href="javascript:void(0)">Company</a></div>
+            <div class="Company"><a href="javascript:void(0)" class="white">Company</a></div>
             <div class="Story-Contact-Press">
                 <ul style="list-style-type:none; padding-inline-start: 0px;">
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Story
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Contact
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Press
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Blog
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Terms and Privacy
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="Help"><a href="javascript:void(0)">Help</a></div>
+            <div class="Help"><a href="javascript:void(0)" class="white">Help</a></div>
             <div class="Sizing-Group-Orders">
                 <ul style="list-style-type:none; padding-inline-start: 0px;">
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Sizing
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Group Orders
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Shipping & Delivery
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Contact
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <div class="Collaborate"><a href="javascript:void(0)">Collaborate</a></div>
+            <div class="Collaborate"><a href="javascript:void(0)" class="white">Collaborate</a></div>
             <div class="Sponsors-Partnership">
                 <ul style="list-style-type:none; padding-inline-start: 0px;">
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Sponsors
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Partnerships
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Charity
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="javascript:void(0)" class="grey">
                             Social Responsibility
                         </a>
                     </li>
@@ -269,6 +267,8 @@
 <style scoped>
 
     .Home {
+        margin: 0 auto;
+        background-color: white;
         width: 1920px;
         height: 4465px;
     }
@@ -614,7 +614,7 @@
     /*footer*/
     .Rectangle-footer {
         position: relative;
-        top: 147px;
+        top: 377px;
         width: 1920px;
         height: 360px;
         background-color: #000000;
@@ -638,13 +638,14 @@
     }
 
     .Rectangle-4 {
+        padding-left: 20px;
         position: absolute;
         left: 994px;
         top: 8px;
         width: 446.6px;
         height: 40px;
         border-radius: 3px;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);
+        /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);*/
         background-color: #ffffff;
     }
 
@@ -849,8 +850,11 @@
         letter-spacing: normal;
         color: #ffffff;
  }
-    a {
+    a.white {
         color: white;
+    }
+    a.grey {
+        color: grey;
     }
 
     a:hover {
