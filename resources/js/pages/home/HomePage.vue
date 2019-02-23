@@ -3,40 +3,21 @@
         <!--navbar-->
 
         <div class="Rectangle">
-            <a href="#">
-                <!-- svg -->
-                <img src="img/bibmark-logo.svg"
-                     class="bibmark-logo">
-            </a>
-            <a href="#">
-                <div class="The-Tech">THE TECH</div>
-            </a>
-            <a href="#">
-                <div class="Apparel">APPAREL</div>
-            </a>
-            <a href="#">
-                <div class="DESIGN">DESIGN</div>
-            </a>
-            <a href="#">
-                <div class="SPONSORS">SPONSORS</div>
-            </a>
-            <a href="#">
-                <div class="RACES">RACES</div>
-            </a>
-            <a href="#">
-                <div class="Charity">CHARITY</div>
-            </a>
-            <a href="#">
-                <div class="Join">JOIN</div>
-            </a>
-            <a href="#">
-                <div class="Log-In">LOG&nbsp;IN</div>
-            </a>
-            <a href="#">
-                <!-- svg -->
-                <img src="img/shopping-cart-icon.svg"
-                     class="shopping-cart-icon">
-            </a>
+            <div class="bibmark-logo">
+                <a href="#"><img src="img/bibmark-logo.svg"></a>
+            </div>
+            <div class="The-Tech"><a href="#" class="black">THE TECH</a></div>
+            <div class="Apparel"><a href="#" class="black">APPAREL</a></div>
+            <div class="DESIGN"><a href="#" class="black">DESIGN</a></div>
+            <div class="SPONSORS"><a href="#" class="black">SPONSORS</a></div>
+            <div class="RACES"><a href="#" class="black">RACES</a></div>
+            <div class="Charity"><a href="#" class="black">CHARITY</a></div>
+            <div class="Join"><a href="#" class="black">JOIN</a></div>
+            <div class="Log-In"><a href="#" class="black">LOG&nbsp;IN</a></div>
+            <div class="shopping-cart-icon">
+                <a href="#"><img src="img/shopping-cart-icon.svg"></a>
+            </div>
+
         </div>
 
         <!--end navbar-->
@@ -82,56 +63,39 @@
             </div>
         </div>
 
-
-            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000" style="position: relative; margin-top: 238px">
-                <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                    <div class="carousel-item col-md-3 active">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400/000/fff?text=1" alt="slide 1">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=2" alt="slide 2">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=7" alt="slide 7">
-                    </div>
-                    <div class="carousel-item col-md-3">
-                        <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                    <i class="fa fa-chevron-left fa-lg text-muted"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-                    <i class="fa fa-chevron-right fa-lg text-muted"></i>
-                    <span class="sr-only">Next</span>
-                </a>
+        <div style="position: relative; top: 300px">
+        <slick
+                ref="slick"
+                :options="slickOptions"
+                >
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png" alt=""></a>
+        </slick>
+            <div class="btn prev" @click="prev()">
+                <i class="fa fa-angle-left"></i>
             </div>
-
+            <div class="btn next" @click="next()">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
         <!-- end section 4 carousel-->
 
         <!-- footer -->
 
         <div class="Rectangle-footer">
-            <div>
+
                 <div class="Get-the-latest-on-ne">
                     Get&nbsp;the&nbsp;latest&nbsp;on&nbsp;news,&nbsp;events&nbsp;and&nbsp;races&nbsp;from&nbsp;Bibmark.
                 </div>
                     <input class="Rectangle-4 form-control" type="search" placeholder="E-mail" aria-label="Search">
                     <button class="btn Rectangle-3-Copy" type="submit"><span class="Search">Search</span></button>
-            </div>
+
             <div class="Rectangle-35"></div>
             <div class="bibmark-footer-logo">
                 <img src="img/bibmark-footer-logo.svg">
@@ -255,10 +219,75 @@
 </template>
 
 <script>
+    import Slick from 'vue-slick';
     export default {
         name: "HomePage",
-        mounted() {
+        components: { Slick },
 
+        data() {
+            return {
+                slickOptions: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    centerMode: true,
+                    focusOnSelect: true,
+                    // Any other options that can be got from plugin documentation
+                },
+            };
+        },
+
+        // All slick methods can be used too, example here
+        methods: {
+            next() {
+                this.$refs.slick.next();
+            },
+
+            prev() {
+                this.$refs.slick.prev();
+            },
+
+            reInit() {
+                // Helpful if you have to deal with v-for to update dynamic lists
+                this.$nextTick(() => {
+                    this.$refs.slick.reSlick();
+                });
+            },
+
+            // Events listeners
+            handleAfterChange(event, slick, currentSlide) {
+                console.log('handleAfterChange', event, slick, currentSlide);
+            },
+            handleBeforeChange(event, slick, currentSlide, nextSlide) {
+                console.log('handleBeforeChange', event, slick, currentSlide, nextSlide);
+            },
+            handleBreakpoint(event, slick, breakpoint) {
+                console.log('handleBreakpoint', event, slick, breakpoint);
+            },
+            handleDestroy(event, slick) {
+                console.log('handleDestroy', event, slick);
+            },
+            handleEdge(event, slick, direction) {
+                console.log('handleEdge', event, slick, direction);
+            },
+            handleInit(event, slick) {
+                console.log('handleInit', event, slick);
+            },
+            handleReInit(event, slick) {
+                console.log('handleReInit', event, slick);
+            },
+            handleSetPosition(event, slick) {
+                console.log('handleSetPosition', event, slick);
+            },
+            handleSwipe(event, slick, direction) {
+                console.log('handleSwipe', event, slick, direction);
+            },
+            handleLazyLoaded(event, slick, image, imageSource) {
+                console.log('handleLazyLoaded', event, slick, image, imageSource);
+            },
+            handleLazeLoadError(event, slick, image, imageSource) {
+                console.log('handleLazeLoadError', event, slick, image, imageSource);
+            },
         },
 
     }
@@ -281,10 +310,11 @@
     }
 
     .bibmark-logo {
+        position: relative;
         width: 225px;
         height: 32px;
-        margin-left: 111px;
-        margin-top: 44px;
+        left: 111px;
+        top: 44px;
         object-fit: contain;
     }
 
@@ -295,7 +325,7 @@
         width: 122px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -312,7 +342,7 @@
         width: 87px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -329,7 +359,7 @@
         width: 74px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -346,7 +376,7 @@
         width: 108px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -363,7 +393,7 @@
         width: 65px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -380,7 +410,7 @@
         width: 101px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -397,7 +427,7 @@
         width: 57px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -414,7 +444,7 @@
         width: 63px;
         height: 19px;
         opacity: 0.9;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 16px;
         font-weight: 500;
         font-style: normal;
@@ -442,7 +472,7 @@
         margin-bottom: 187px;
         width: 786px;
         height: 59px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 42px;
         font-weight: bold;
         font-style: normal;
@@ -492,7 +522,7 @@
         left: 783px;
         width: 960px;
         height: 210px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 59px;
         font-weight: 300;
         font-style: normal;
@@ -515,7 +545,7 @@
         top: 111px;
         width: 786px;
         height: 59px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 42px;
         font-weight: bold;
         font-style: normal;
@@ -532,7 +562,7 @@
         left: 51px;
         width: 735px;
         height: 21px;
-        font-family: SFProText;
+        font-family: "SFProText", "San Francisco", sans-serif;
         font-size: 18px;
         font-weight: normal;
         font-style: normal;
@@ -543,73 +573,34 @@
         color: #000000;
     }
 
-    @media (min-width: 768px) {
-
-        /* show 3 items */
-        .carousel-inner .active,
-        .carousel-inner .active + .carousel-item,
-        .carousel-inner .active + .carousel-item + .carousel-item,
-        .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
-            display: block;
-        }
-
-        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
-        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
-            transition: none;
-        }
-
-        .carousel-inner .carousel-item-next,
-        .carousel-inner .carousel-item-prev {
-            position: relative;
-            transform: translate3d(0, 0, 0);
-        }
-
-        .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-            position: absolute;
-            top: 0;
-            right: -25%;
-            z-index: -1;
-            display: block;
-            visibility: visible;
-        }
-
-        /* left or forward direction */
-        .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-        .carousel-item-next.carousel-item-left + .carousel-item,
-        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-            position: relative;
-            transform: translate3d(-100%, 0, 0);
-            visibility: visible;
-        }
-
-        /* farthest right hidden item must be abso position for animations */
-        .carousel-inner .carousel-item-prev.carousel-item-right {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            display: block;
-            visibility: visible;
-        }
-
-        /* right or prev direction */
-        .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-        .carousel-item-prev.carousel-item-right + .carousel-item,
-        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-            position: relative;
-            transform: translate3d(100%, 0, 0);
-            /*visibility: visible;*/
-            display: block;
-            visibility: visible;
-        }
-
+    /*carousel*/
+    .prev {
+        position: absolute;
+        font-size: 72px;
+        font-weight: lighter;
+        left: 0px;
+        top: 185px;
+        text-align: center;
+        width: 134px;
+        height: 149px;
+        color: #717171;
+        z-index: 9;
     }
+
+    .next {
+        position: absolute;
+        top: 185px;
+        font-size: 72px;
+        font-weight: unset;
+        text-align: center;
+        right: 0px;
+        width: 134px;
+        height: 149px;
+        color: #717171;
+        z-index: 9;
+    }
+
+
 
     /*footer*/
     .Rectangle-footer {
@@ -626,8 +617,9 @@
         top: 18px;
         width: 675px;
         height: 31px;
-        font-family: "San Francisco", sans-serif;
-        font-size: 26px;
+        padding-top: 5px;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
+        font-size: 23px;
         font-weight: 400;
         font-style: normal;
         font-stretch: normal;
@@ -662,7 +654,7 @@
     .Search {
         width: 60.5px;
         height: 20px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 17px;
         font-weight: bold;
         font-style: normal;
@@ -742,7 +734,7 @@
         width: 92px;
         height: 16px;
         /*background-color: #ffffff;*/
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;;
         font-size: 14px;
         font-weight: bold;
         font-style: normal;
@@ -758,7 +750,7 @@
         top: 144px;
         width: 153px;
         height: 156px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 14px;
         font-weight: 300;
         font-style: normal;
@@ -775,7 +767,7 @@
         width: 92px;
         height: 16px;
         /*background-color: #ffffff;*/
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 14px;
         font-weight: bold;
         font-style: normal;
@@ -791,7 +783,7 @@
         top: 144px;
         width: 153px;
         height: 104px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 14px;
         font-weight: 300;
         font-style: normal;
@@ -808,7 +800,7 @@
         width: 92px;
         height: 16px;
         /*background-color: #ffffff;*/
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 14px;
         font-weight: bold;
         font-style: normal;
@@ -824,7 +816,7 @@
         top: 144px;
         width: 153px;
         height: 104px;
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 14px;
         font-weight: 300;
         font-style: normal;
@@ -841,7 +833,7 @@
         width: 271px;
         height: 16px;
         /*background-color: #ffffff;*/
-        font-family: "San Francisco", sans-serif;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 14px;
         font-weight: normal;
         font-style: normal;
@@ -853,6 +845,11 @@
     a.white {
         color: white;
     }
+
+    a.black {
+        color: black;
+    }
+
     a.grey {
         color: grey;
     }
