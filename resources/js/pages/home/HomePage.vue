@@ -1,100 +1,88 @@
 <template>
     <div class="Home">
         <!--navbar-->
-
-        <div class="Rectangle">
-            <div class="bibmark-logo">
-                <a href="#"><img src="img/bibmark-logo.svg"></a>
-            </div>
-            <div class="The-Tech"><a href="#" class="black">THE TECH</a></div>
-            <div class="Apparel"><a href="#" class="black">APPAREL</a></div>
-            <div class="DESIGN"><a href="#" class="black">DESIGN</a></div>
-            <div class="SPONSORS"><a href="#" class="black">SPONSORS</a></div>
-            <div class="RACES"><a href="#" class="black">RACES</a></div>
-            <div class="Charity"><a href="#" class="black">CHARITY</a></div>
-            <div class="Join"><a href="#" class="black">JOIN</a></div>
-            <div class="Log-In"><a href="#" class="black">LOG&nbsp;IN</a></div>
-            <div class="shopping-cart-icon">
-                <a href="#"><img src="img/shopping-cart-icon.svg"></a>
-            </div>
-
+        <div style="width: 100vw">
+            <navbar></navbar>
         </div>
-
         <!--end navbar-->
 
         <!-- start section 1 slider -->
+        <div style="width: 100vw">
+            <slider></slider>
+        </div>
 
-        <slider></slider>
 
         <!-- end section 1 slider -->
 
         <!-- section 2 placeholder -->
         <!-- png -->
         <!--<div >-->
-            <div class="Technology-x-Design">Technology x Design x Sponsorship</div>
+        <div class="Technology-x-Design textStyle">Technology x Design x Sponsorship</div>
         <!--</div>-->
         <div class="place-holder-image">
-            <img src="img/place-holder-image.jpg">
+            <img src="img/place-holder-image.jpg" class="w-100">
             <!--<div class="chicagofire">-->
-                <!--&lt;!&ndash; place to background image &ndash;&gt;-->
+            <!--&lt;!&ndash; place to background image &ndash;&gt;-->
             <!--</div>-->
             <!--<div class="BostonMarathonBib">-->
-                <!--&lt;!&ndash; place to label image &ndash;&gt;-->
+            <!--&lt;!&ndash; place to label image &ndash;&gt;-->
             <!--</div>-->
         </div>
-
 
         <!--end section 2 placeholder -->
 
         <!-- section 3 banner-->
         <div class="bibmark-kaley">
             <!-- png -->
-            <img src="img/bibmark-kaley.png" srcset="img/bibmark-kaley@2x.png 2x" alt="banner" >
-            <div class="Design-cus"><span class="text-style-1">Let’s go:&nbsp;</span>Design custom performance gear, get sponsored & never have to wear a race bib again.</div>
+            <div class="image-banner" ></div>
+            <div class="Design-cus textStyle"><span class="text-style-1">Let’s go:&nbsp;</span>Design custom performance gear, get sponsored & never have to wear a race bib again.</div>
         </div>
 
         <!-- end section 3 banner-->
 
         <!-- section 4 carousel-->
-        <div class="Start-Designing">
-            Start Designing
-            <div class="Choose-your-product">
+        <div class="textStyle" style="padding-top: 5%">
+            <div class="Start-Designing pt-1">
+                Start Designing
+                <div class="Choose-your-product">
                 Choose your product and start designing your very own Bibmark today!
+            </div>
+            </div>
+            <div style="position: relative; padding-top: 5%; width: 100vw">
+                <slick
+                        ref="slick"
+                        :options="slickOptions"
+                >
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png" class="w-100" alt=""></a>
+                    <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png" class="w-100" alt=""></a>
+                </slick>
+                <div class="btn prev" @click="prev()">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="btn next" @click="next()">
+                    <i class="fa fa-angle-right"></i>
+                </div>
             </div>
         </div>
 
-        <div style="position: relative; top: 300px">
-        <slick
-                ref="slick"
-                :options="slickOptions"
-                >
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png" alt=""></a>
-            <a href="javascript:void(0)"><img src="https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png" alt=""></a>
-        </slick>
-            <div class="btn prev" @click="prev()">
-                <i class="fa fa-angle-left"></i>
-            </div>
-            <div class="btn next" @click="next()">
-                <i class="fa fa-angle-right"></i>
-            </div>
-        </div>
+
         <!-- end section 4 carousel-->
 
         <!-- footer -->
 
         <div class="Rectangle-footer">
 
-                <div class="Get-the-latest-on-ne">
-                    Get&nbsp;the&nbsp;latest&nbsp;on&nbsp;news,&nbsp;events&nbsp;and&nbsp;races&nbsp;from&nbsp;Bibmark.
-                </div>
-                    <input class="Rectangle-4 form-control" type="search" placeholder="E-mail" aria-label="Search">
-                    <button class="btn Rectangle-3-Copy" type="submit"><span class="Search">Search</span></button>
+            <div class="Get-the-latest-on-ne textStyle">
+                Get&nbsp;the&nbsp;latest&nbsp;on&nbsp;news,&nbsp;events&nbsp;and&nbsp;races&nbsp;from&nbsp;Bibmark.
+            </div>
+            <input class="Rectangle-4 form-control" type="search" placeholder="E-mail" aria-label="Search">
+            <button class="btn Rectangle-3-Copy" type="submit"><span class="Search">Search</span></button>
 
             <div class="Rectangle-35"></div>
             <div class="bibmark-footer-logo">
@@ -233,6 +221,30 @@
                     centerMode: true,
                     focusOnSelect: true,
                     // Any other options that can be got from plugin documentation
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 1
+                            }
+                        },
+
+                        {
+                            breakpoint: 767,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 639,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                    ],
                 },
             };
         },
@@ -298,187 +310,19 @@
     .Home {
         margin: 0 auto;
         background-color: white;
-        width: 1920px;
-        height: 4465px;
+        width: 100vw;
+        height: 232.55vw;
     }
-
-    /* navbar */
-    .Rectangle {
-        width: 1918px;
-        height: 113px;
-        background-color: #ffffff;
-    }
-
-    .bibmark-logo {
-        position: relative;
-        width: 225px;
-        height: 32px;
-        left: 111px;
-        top: 44px;
-        object-fit: contain;
-    }
-
-    .The-Tech {
-        position: absolute;
-        left: 444px;
-        top: 51px;
-        width: 122px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .Apparel {
-        position: absolute;
-        left: 613px;
-        top: 51px;
-        width: 87px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .DESIGN {
-        position: absolute;
-        left: 776px;
-        top: 51px;
-        width: 74px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .SPONSORS {
-        position: absolute;
-        left: 931px;
-        top: 51px;
-        width: 108px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .RACES {
-        position: absolute;
-        left: 1118px;
-        top: 51px;
-        width: 65px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .Charity {
-        position: absolute;
-        left: 1259px;
-        top: 51px;
-        width: 101px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .Join {
-        position: absolute;
-        left: 1668px;
-        top: 51px;
-        width: 57px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .Log-In {
-        position: absolute;
-        left: 1731px;
-        top: 51px;
-        width: 63px;
-        height: 19px;
-        opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: 2px;
-        color: #000000;
-    }
-
-    .shopping-cart-icon {
-        position: absolute;
-        left: 1797px;
-        top: 28px;
-        width: 64px;
-        height: 64px;
-        object-fit: contain;
-    }
-
 
     /* section 2 placeholder */
     .Technology-x-Design {
         position: relative;
-        left: 567px;
-        top: 171px;
-        margin-bottom: 187px;
-        width: 786px;
-        height: 59px;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 42px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
+        left: 29.53vw;
+        top: 1.7%;
+        margin-bottom: 1.8%;
+        width: 42.93vw;
+        height: auto;
+        font-size: calc(12px + 1.55vw);/*42px*/
         text-align: center;
         color: #444444;
         /*z-index: 0;*/
@@ -486,89 +330,91 @@
 
     .place-holder-image {
         position: relative;
-        margin-bottom: 97px;
-        top: 97px;
-        width: 1920px;
-        height: 935px;
+        margin-bottom: 2.17%;
+        top: 1.17%;
+        width: 100vw;
+        height: auto;
         object-fit: contain;
     }
 
     .chicagofire {
-        left: 283.8px;
-        top: 90.9px;
-        width: 576.6px;
-        height: 734.5px;
+        position: absolute;
+        left: 14.78vw;
+        top: 8.03%;
+        width: 30.03vw;
+        height: auto;
     }
 
     .BostonMarathonBib {
-        left: 433px;
-        top: 323px;
-        width: 193px;
-        height: 173px;
+        position: absolute;
+        left: 22.55vw;
+        top: 32%;
+        width: 10.05vw;
+        height: auto;
     }
 
     /*section 3 banner*/
     .bibmark-kaley {
         position: relative;
-        top: 1px;
-        width: 1920px;
-        height: 766px;
+        padding-top: 1px;
+        width: 100vw;
+        height: auto;
         object-fit: contain;
     }
 
+    .image-banner {
+        background-image: url('https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/DCBBCBC8-6341-4DB8-861B-45A66241117D.png');
+        background-position: center center;
+        background-size: cover;
+        z-index: 3;
+        height: 50vw;
+    }
     .Design-cus {
         position: absolute;
-        top: 240px;
-        left: 783px;
-        width: 960px;
-        height: 210px;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 59px;
+        top: 27%;
+        left: 40.78vw;
+        width: 50vw;
+        height: 4.7%;
+        font-size: calc(8px + 2.44vw);
         font-weight: 300;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
         color: #ffffff;
         z-index: 1;
     }
 
     .Design-cus .text-style-1 {
-        font-size: 63px;
+        font-size: calc(10px + 2.65vw);
         font-weight: 900;
     }
 
-    /*section 4*/
-    .Start-Designing {
-        position: relative;
-        left: 559px;
-        top: 111px;
-        width: 786px;
-        height: 59px;
+    /*fontstyle*/
+    .textStyle {
         font-family: "SFProDisplay", "San Francisco", sans-serif;
-        font-size: 42px;
-        font-weight: bold;
         font-style: normal;
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
+    }
+    /*section 4*/
+    .Start-Designing {
+        margin-left: 29.11vw;
+        padding-top: 2.1%;
+        width: 40.93vw;
+        font-size: calc(12px + 1.56vw);
+        font-weight: bold;
         text-align: center;
         color: #444444;
     }
 
     .Choose-your-product {
         position: relative;
-        top: 15px;
-        left: 51px;
-        width: 735px;
-        height: 21px;
+        background-color: white;
+        padding-top: 2%;
+        padding-left: 2.65vw;
+        width: 38.28vw;
+        height: auto;
         font-family: "SFProText", "San Francisco", sans-serif;
-        font-size: 18px;
+        font-size: calc(8px + 0.52vw);
         font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
         text-align: center;
         color: #000000;
     }
@@ -579,7 +425,7 @@
         font-size: 72px;
         font-weight: lighter;
         left: 0px;
-        top: 185px;
+        top: 25%;
         text-align: center;
         width: 134px;
         height: 149px;
@@ -589,7 +435,7 @@
 
     .next {
         position: absolute;
-        top: 185px;
+        top: 25%;
         font-size: 72px;
         font-weight: unset;
         text-align: center;
@@ -606,8 +452,8 @@
     .Rectangle-footer {
         position: relative;
         top: 377px;
-        width: 1920px;
-        height: 360px;
+        width: 100vw;
+        height: 12%;
         background-color: #000000;
     }
 
@@ -618,13 +464,9 @@
         width: 675px;
         height: 31px;
         padding-top: 5px;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-size: 23px;
         font-weight: 400;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 0.54;
-        letter-spacing: normal;
         color: #ffffff;
         z-index: 1;
     }
@@ -841,7 +683,7 @@
         line-height: normal;
         letter-spacing: normal;
         color: #ffffff;
- }
+    }
     a.white {
         color: white;
     }

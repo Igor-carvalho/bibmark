@@ -1847,18 +1847,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1872,8 +1860,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 slidesToScroll: 1,
                 arrows: false,
                 centerMode: true,
-                focusOnSelect: true
+                focusOnSelect: true,
                 // Any other options that can be got from plugin documentation
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                }, {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }, {
+                    breakpoint: 639,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
             }
         };
     },
@@ -1933,6 +1940,63 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/pages/home/Navbar.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "Navbar"
 });
 
 /***/ }),
@@ -4503,7 +4567,22 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* section 1 slider */\n.slider-image-1[data-v-2efc38d8] {\nposition: relative;\nwidth: 1920px;\nheight: 968px;\n-o-object-fit: contain;\n   object-fit: contain;\n}\n.carousel-indicators[data-v-2efc38d8] {\ntop: 687px;\nleft: 1872px;\nwidth: 14px;\nheight: 238px;\ndisplay: block;\nmargin: 10px;\nbackground: transparent;\n-webkit-box-orient: horizontal;\n-webkit-box-direction: normal;\n    -ms-flex-direction: row;\n        flex-direction: row;\nopacity: 0.9;\n}\n.carousel-indicators li[data-v-2efc38d8] {\nwidth: 14px;\nheight: 14px;\nborder: 3px solid white;\nmargin: 0 0 14px 0;\nbackground: transparent;\nopacity: 0.5;\n}\n.carousel-indicators .active[data-v-2efc38d8] {\nbackground: white;\nopacity: 0.9;\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* section 1 slider */\n.slider-image-1[data-v-2efc38d8] {\n    position: relative;\n    width: 100%;\n    max-width: 1920px;\n    height: 968px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.carousel-indicators[data-v-2efc38d8] {\n    top: 32.78vw;\n    left: 95.5vw;\n    width: 0.72vw;\n    height: 12.39vw;\n    display: block;\n    margin: 10px;\n    background: transparent;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    opacity: 0.9;\n}\n.carousel-indicators li[data-v-2efc38d8] {\n    width: 0.72vw;\n    height: 0.72vw;\n    border: 0.15vw solid white;\n    margin: 0 0 0.72vw 0;\n    background: transparent;\n    opacity: 0.5;\n}\n.carousel-indicators .active[data-v-2efc38d8] {\n    background: white;\n    opacity: 0.9;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f28a6f2\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/home/Navbar.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* navbar */\n.Rectangle[data-v-3f28a6f2] {\n    max-width: 100%;\n    min-height: 113px;\n    background-color: #ffffff;\n    padding: 0 4vw;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.nav-link[data-v-3f28a6f2] {\n    /*padding: 1.625rem 0.5vw;*/\n    position: relative;\n    opacity: 0.9;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(8px + 0.41vw);\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: calc(1px + 0.05vw);\n    color: #000000;\n}\n.nav-item[data-v-3f28a6f2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.default-space[data-v-3f28a6f2] {\n    padding-left: 4%;\n}\n.logo[data-v-3f28a6f2] {\n    width: 15vw;\n}\n@media (max-width: 767px) {\n.logo[data-v-3f28a6f2] {\n        width: 100%;\n}\n.Rectangle[data-v-3f28a6f2] {\n        min-height: auto;\n}\n}\n@media (max-width: 1150px) {\n.default-space[data-v-3f28a6f2] {\n        padding-left: 0;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -4563,7 +4642,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.Home[data-v-f08cac76] {\n       margin: 0 auto;\n       background-color: white;\n       width: 1920px;\n       height: 4465px;\n}\n\n   /* navbar */\n.Rectangle[data-v-f08cac76] {\n       width: 1918px;\n       height: 113px;\n       background-color: #ffffff;\n}\n.bibmark-logo[data-v-f08cac76] {\n       position: relative;\n       width: 225px;\n       height: 32px;\n       left: 111px;\n       top: 44px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.The-Tech[data-v-f08cac76] {\n       position: absolute;\n       left: 444px;\n       top: 51px;\n       width: 122px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.Apparel[data-v-f08cac76] {\n       position: absolute;\n       left: 613px;\n       top: 51px;\n       width: 87px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.DESIGN[data-v-f08cac76] {\n       position: absolute;\n       left: 776px;\n       top: 51px;\n       width: 74px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.SPONSORS[data-v-f08cac76] {\n       position: absolute;\n       left: 931px;\n       top: 51px;\n       width: 108px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.RACES[data-v-f08cac76] {\n       position: absolute;\n       left: 1118px;\n       top: 51px;\n       width: 65px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.Charity[data-v-f08cac76] {\n       position: absolute;\n       left: 1259px;\n       top: 51px;\n       width: 101px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.Join[data-v-f08cac76] {\n       position: absolute;\n       left: 1668px;\n       top: 51px;\n       width: 57px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.Log-In[data-v-f08cac76] {\n       position: absolute;\n       left: 1731px;\n       top: 51px;\n       width: 63px;\n       height: 19px;\n       opacity: 0.9;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 16px;\n       font-weight: 500;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: 2px;\n       color: #000000;\n}\n.shopping-cart-icon[data-v-f08cac76] {\n       position: absolute;\n       left: 1797px;\n       top: 28px;\n       width: 64px;\n       height: 64px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n\n\n   /* section 2 placeholder */\n.Technology-x-Design[data-v-f08cac76] {\n       position: relative;\n       left: 567px;\n       top: 171px;\n       margin-bottom: 187px;\n       width: 786px;\n       height: 59px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 42px;\n       font-weight: bold;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       text-align: center;\n       color: #444444;\n       /*z-index: 0;*/\n}\n.place-holder-image[data-v-f08cac76] {\n       position: relative;\n       margin-bottom: 97px;\n       top: 97px;\n       width: 1920px;\n       height: 935px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.chicagofire[data-v-f08cac76] {\n       left: 283.8px;\n       top: 90.9px;\n       width: 576.6px;\n       height: 734.5px;\n}\n.BostonMarathonBib[data-v-f08cac76] {\n       left: 433px;\n       top: 323px;\n       width: 193px;\n       height: 173px;\n}\n\n   /*section 3 banner*/\n.bibmark-kaley[data-v-f08cac76] {\n       position: relative;\n       top: 1px;\n       width: 1920px;\n       height: 766px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.Design-cus[data-v-f08cac76] {\n       position: absolute;\n       top: 240px;\n       left: 783px;\n       width: 960px;\n       height: 210px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 59px;\n       font-weight: 300;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       color: #ffffff;\n       z-index: 1;\n}\n.Design-cus .text-style-1[data-v-f08cac76] {\n       font-size: 63px;\n       font-weight: 900;\n}\n\n   /*section 4*/\n.Start-Designing[data-v-f08cac76] {\n       position: relative;\n       left: 559px;\n       top: 111px;\n       width: 786px;\n       height: 59px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 42px;\n       font-weight: bold;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       text-align: center;\n       color: #444444;\n}\n.Choose-your-product[data-v-f08cac76] {\n       position: relative;\n       top: 15px;\n       left: 51px;\n       width: 735px;\n       height: 21px;\n       font-family: \"SFProText\", \"San Francisco\", sans-serif;\n       font-size: 18px;\n       font-weight: normal;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       text-align: center;\n       color: #000000;\n}\n\n   /*carousel*/\n.prev[data-v-f08cac76] {\n       position: absolute;\n       font-size: 72px;\n       font-weight: lighter;\n       left: 0px;\n       top: 185px;\n       text-align: center;\n       width: 134px;\n       height: 149px;\n       color: #717171;\n       z-index: 9;\n}\n.next[data-v-f08cac76] {\n       position: absolute;\n       top: 185px;\n       font-size: 72px;\n       font-weight: unset;\n       text-align: center;\n       right: 0px;\n       width: 134px;\n       height: 149px;\n       color: #717171;\n       z-index: 9;\n}\n\n\n\n   /*footer*/\n.Rectangle-footer[data-v-f08cac76] {\n       position: relative;\n       top: 377px;\n       width: 1920px;\n       height: 360px;\n       background-color: #000000;\n}\n.Get-the-latest-on-ne[data-v-f08cac76] {\n       position: absolute;\n       left: 331px;\n       top: 18px;\n       width: 675px;\n       height: 31px;\n       padding-top: 5px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 23px;\n       font-weight: 400;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: 0.54;\n       letter-spacing: normal;\n       color: #ffffff;\n       z-index: 1;\n}\n.Rectangle-4[data-v-f08cac76] {\n       padding-left: 20px;\n       position: absolute;\n       left: 994px;\n       top: 8px;\n       width: 446.6px;\n       height: 40px;\n       border-radius: 3px;\n       /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);*/\n       background-color: #ffffff;\n}\n.Rectangle-3-Copy[data-v-f08cac76] {\n       position: absolute;;\n       left: 1455.6px;\n       top: 8px;\n       width: 127px;\n       height: 40px;\n       border-radius: 5px;\n       background-color: #ffe100;\n}\n.Search[data-v-f08cac76] {\n       width: 60.5px;\n       height: 20px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 17px;\n       font-weight: bold;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       color: #000000;\n}\n.Rectangle-35[data-v-f08cac76] {\n       position: absolute;;\n       top: 59px;\n       width: 1920px;\n       height: 3px;\n       background-color: #fff300;\n       z-index: 1;\n}\n.bibmark-footer-logo[data-v-f08cac76] {\n       position: absolute;\n       left: 335px;\n       top: 110px;\n       width: 149px;\n       height: 21px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.instagram-icon[data-v-f08cac76] {\n       position: absolute;\n       left: 335px;\n       top: 148px;\n       width: 25px;\n       height: 25px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.fb-icon[data-v-f08cac76] {\n       position: absolute;\n       left: 366px;\n       top: 148px;\n       width: 24px;\n       height: 25px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.twitter-icon[data-v-f08cac76] {\n       position: absolute;\n       left: 398px;\n       top: 148px;\n       width: 24px;\n       height: 25px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.youtube-icon[data-v-f08cac76] {\n       position: absolute;\n       left: 429px;\n       top: 148px;\n       width: 24px;\n       height: 25px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.snapchat-icon[data-v-f08cac76] {\n       position: absolute;\n       left: 459px;\n       top: 148px;\n       width: 25px;\n       height: 25px;\n       -o-object-fit: contain;\n          object-fit: contain;\n}\n.Company[data-v-f08cac76] {\n       position: absolute;\n       left: 653px;\n       top: 115px;\n       width: 92px;\n       height: 16px;\n       /*background-color: #ffffff;*/\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;;\n       font-size: 14px;\n       font-weight: bold;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       color: #ffffff;\n}\n.Story-Contact-Press[data-v-f08cac76] {\n       position: absolute;\n       left: 653px;\n       top: 144px;\n       width: 153px;\n       height: 156px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 14px;\n       font-weight: 300;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: 1.86;\n       letter-spacing: normal;\n       color: #999999;\n}\n.Help[data-v-f08cac76] {\n       position: absolute;\n       left: 883px;\n       top: 115px;\n       width: 92px;\n       height: 16px;\n       /*background-color: #ffffff;*/\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 14px;\n       font-weight: bold;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       color: #ffffff;\n}\n.Sizing-Group-Orders[data-v-f08cac76] {\n       position: absolute;\n       left: 883px;\n       top: 144px;\n       width: 153px;\n       height: 104px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 14px;\n       font-weight: 300;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: 1.86;\n       letter-spacing: normal;\n       color: #999999;\n}\n.Collaborate[data-v-f08cac76] {\n       position: absolute;\n       left: 1113px;\n       top: 115px;\n       width: 92px;\n       height: 16px;\n       /*background-color: #ffffff;*/\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 14px;\n       font-weight: bold;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       color: #ffffff;\n}\n.Sponsors-Partnership[data-v-f08cac76] {\n       position: absolute;\n       left: 1113px;\n       top: 144px;\n       width: 153px;\n       height: 104px;\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 14px;\n       font-weight: 300;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: 1.86;\n       letter-spacing: normal;\n       color: #999999;\n}\n.Bibmark-Inc[data-v-f08cac76] {\n       position: absolute;\n       left: 331px;\n       top: 331px;\n       width: 271px;\n       height: 16px;\n       /*background-color: #ffffff;*/\n       font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n       font-size: 14px;\n       font-weight: normal;\n       font-style: normal;\n       font-stretch: normal;\n       line-height: normal;\n       letter-spacing: normal;\n       color: #ffffff;\n}\na.white[data-v-f08cac76] {\n       color: white;\n}\na.black[data-v-f08cac76] {\n       color: black;\n}\na.grey[data-v-f08cac76] {\n       color: grey;\n}\na[data-v-f08cac76]:hover {\n       color: lightblue;\n}\n\n", ""]);
+exports.push([module.i, "\n.Home[data-v-f08cac76] {\n    margin: 0 auto;\n    background-color: white;\n    width: 100vw;\n    height: 232.55vw;\n}\n\n/* section 2 placeholder */\n.Technology-x-Design[data-v-f08cac76] {\n    position: relative;\n    left: 29.53vw;\n    top: 1.7%;\n    margin-bottom: 1.8%;\n    width: 42.93vw;\n    height: auto;\n    font-size: calc(12px + 1.55vw);/*42px*/\n    text-align: center;\n    color: #444444;\n    /*z-index: 0;*/\n}\n.place-holder-image[data-v-f08cac76] {\n    position: relative;\n    margin-bottom: 2.17%;\n    top: 1.17%;\n    width: 100vw;\n    height: auto;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.chicagofire[data-v-f08cac76] {\n    position: absolute;\n    left: 14.78vw;\n    top: 8.03%;\n    width: 30.03vw;\n    height: auto;\n}\n.BostonMarathonBib[data-v-f08cac76] {\n    position: absolute;\n    left: 22.55vw;\n    top: 32%;\n    width: 10.05vw;\n    height: auto;\n}\n\n/*section 3 banner*/\n.bibmark-kaley[data-v-f08cac76] {\n    position: relative;\n    padding-top: 1px;\n    width: 100vw;\n    height: auto;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.image-banner[data-v-f08cac76] {\n    background-image: url('https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/DCBBCBC8-6341-4DB8-861B-45A66241117D.png');\n    background-position: center center;\n    background-size: cover;\n    z-index: 3;\n    height: 50vw;\n}\n.Design-cus[data-v-f08cac76] {\n    position: absolute;\n    top: 27%;\n    left: 40.78vw;\n    width: 50vw;\n    height: 4.7%;\n    font-size: calc(8px + 2.44vw);\n    font-weight: 300;\n    color: #ffffff;\n    z-index: 1;\n}\n.Design-cus .text-style-1[data-v-f08cac76] {\n    font-size: calc(10px + 2.65vw);\n    font-weight: 900;\n}\n\n/*fontstyle*/\n.textStyle[data-v-f08cac76] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n}\n/*section 4*/\n.Start-Designing[data-v-f08cac76] {\n    margin-left: 29.11vw;\n    padding-top: 2.1%;\n    width: 40.93vw;\n    font-size: calc(12px + 1.56vw);\n    font-weight: bold;\n    text-align: center;\n    color: #444444;\n}\n.Choose-your-product[data-v-f08cac76] {\n    position: relative;\n    background-color: white;\n    padding-top: 2%;\n    padding-left: 2.65vw;\n    width: 38.28vw;\n    height: auto;\n    font-family: \"SFProText\", \"San Francisco\", sans-serif;\n    font-size: calc(8px + 0.52vw);\n    font-weight: normal;\n    text-align: center;\n    color: #000000;\n}\n\n/*carousel*/\n.prev[data-v-f08cac76] {\n    position: absolute;\n    font-size: 72px;\n    font-weight: lighter;\n    left: 0px;\n    top: 25%;\n    text-align: center;\n    width: 134px;\n    height: 149px;\n    color: #717171;\n    z-index: 9;\n}\n.next[data-v-f08cac76] {\n    position: absolute;\n    top: 25%;\n    font-size: 72px;\n    font-weight: unset;\n    text-align: center;\n    right: 0px;\n    width: 134px;\n    height: 149px;\n    color: #717171;\n    z-index: 9;\n}\n\n\n\n/*footer*/\n.Rectangle-footer[data-v-f08cac76] {\n    position: relative;\n    top: 377px;\n    width: 100vw;\n    height: 12%;\n    background-color: #000000;\n}\n.Get-the-latest-on-ne[data-v-f08cac76] {\n    position: absolute;\n    left: 331px;\n    top: 18px;\n    width: 675px;\n    height: 31px;\n    padding-top: 5px;\n    font-size: 23px;\n    font-weight: 400;\n    line-height: 0.54;\n    color: #ffffff;\n    z-index: 1;\n}\n.Rectangle-4[data-v-f08cac76] {\n    padding-left: 20px;\n    position: absolute;\n    left: 994px;\n    top: 8px;\n    width: 446.6px;\n    height: 40px;\n    border-radius: 3px;\n    /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);*/\n    background-color: #ffffff;\n}\n.Rectangle-3-Copy[data-v-f08cac76] {\n    position: absolute;;\n    left: 1455.6px;\n    top: 8px;\n    width: 127px;\n    height: 40px;\n    border-radius: 5px;\n    background-color: #ffe100;\n}\n.Search[data-v-f08cac76] {\n    width: 60.5px;\n    height: 20px;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 17px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000;\n}\n.Rectangle-35[data-v-f08cac76] {\n    position: absolute;;\n    top: 59px;\n    width: 1920px;\n    height: 3px;\n    background-color: #fff300;\n    z-index: 1;\n}\n.bibmark-footer-logo[data-v-f08cac76] {\n    position: absolute;\n    left: 335px;\n    top: 110px;\n    width: 149px;\n    height: 21px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.instagram-icon[data-v-f08cac76] {\n    position: absolute;\n    left: 335px;\n    top: 148px;\n    width: 25px;\n    height: 25px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.fb-icon[data-v-f08cac76] {\n    position: absolute;\n    left: 366px;\n    top: 148px;\n    width: 24px;\n    height: 25px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.twitter-icon[data-v-f08cac76] {\n    position: absolute;\n    left: 398px;\n    top: 148px;\n    width: 24px;\n    height: 25px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.youtube-icon[data-v-f08cac76] {\n    position: absolute;\n    left: 429px;\n    top: 148px;\n    width: 24px;\n    height: 25px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.snapchat-icon[data-v-f08cac76] {\n    position: absolute;\n    left: 459px;\n    top: 148px;\n    width: 25px;\n    height: 25px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.Company[data-v-f08cac76] {\n    position: absolute;\n    left: 653px;\n    top: 115px;\n    width: 92px;\n    height: 16px;\n    /*background-color: #ffffff;*/\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;;\n    font-size: 14px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Story-Contact-Press[data-v-f08cac76] {\n    position: absolute;\n    left: 653px;\n    top: 144px;\n    width: 153px;\n    height: 156px;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 14px;\n    font-weight: 300;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.86;\n    letter-spacing: normal;\n    color: #999999;\n}\n.Help[data-v-f08cac76] {\n    position: absolute;\n    left: 883px;\n    top: 115px;\n    width: 92px;\n    height: 16px;\n    /*background-color: #ffffff;*/\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 14px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Sizing-Group-Orders[data-v-f08cac76] {\n    position: absolute;\n    left: 883px;\n    top: 144px;\n    width: 153px;\n    height: 104px;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 14px;\n    font-weight: 300;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.86;\n    letter-spacing: normal;\n    color: #999999;\n}\n.Collaborate[data-v-f08cac76] {\n    position: absolute;\n    left: 1113px;\n    top: 115px;\n    width: 92px;\n    height: 16px;\n    /*background-color: #ffffff;*/\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 14px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Sponsors-Partnership[data-v-f08cac76] {\n    position: absolute;\n    left: 1113px;\n    top: 144px;\n    width: 153px;\n    height: 104px;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 14px;\n    font-weight: 300;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.86;\n    letter-spacing: normal;\n    color: #999999;\n}\n.Bibmark-Inc[data-v-f08cac76] {\n    position: absolute;\n    left: 331px;\n    top: 331px;\n    width: 271px;\n    height: 16px;\n    /*background-color: #ffffff;*/\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 14px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\na.white[data-v-f08cac76] {\n    color: white;\n}\na.black[data-v-f08cac76] {\n    color: black;\n}\na.grey[data-v-f08cac76] {\n    color: grey;\n}\na[data-v-f08cac76]:hover {\n    color: lightblue;\n}\n\n", ""]);
 
 // exports
 
@@ -16951,7 +17030,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "carousel-inner" }, [
           _c("div", { staticClass: "carousel-item active" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -16962,7 +17041,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -16973,7 +17052,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -16984,7 +17063,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -16995,7 +17074,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -17006,7 +17085,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -17017,7 +17096,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -17028,7 +17107,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -17039,7 +17118,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "carousel-item" }, [
             _c("img", {
-              staticClass: "d-block",
+              staticClass: "d-block w-100",
               attrs: {
                 src:
                   "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/1C243B7C-AE45-46C6-8843-3CEC9F217F0F.png",
@@ -17367,6 +17446,159 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-38c38818", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3f28a6f2\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/home/Navbar.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-md Rectangle w-100" },
+      [
+        _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+          _c("img", {
+            staticClass: "logo",
+            attrs: { src: "img/bibmark-logo.svg" }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "navbar-toggler",
+            attrs: {
+              type: "button",
+              "data-toggle": "collapse",
+              "data-target": "#collapsibleNavbar"
+            }
+          },
+          [
+            _c("span", { staticClass: "navbar-toggler-icon" }, [
+              _c("i", {
+                staticClass: "fa fa-bars",
+                attrs: { "aria-hidden": "true" }
+              })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse align-self-center",
+            attrs: { id: "collapsibleNavbar" }
+          },
+          [
+            _c("div", { staticClass: "d-flex justify-content-between w-100" }, [
+              _c("ul", { staticClass: "navbar-nav" }, [
+                _c("li", { staticClass: "nav-item default-space" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("THE TECH")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item default-space" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("APPAREL")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item default-space" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("DESIGN")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item default-space" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("SPONSORS")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item default-space" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("RACES")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item default-space" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("CHARITY")]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "navbar-nav ml-2" }, [
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("JOIN")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link black", attrs: { href: "#" } },
+                    [_vm._v("LOG IN")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link shopping-cart-icon pt-2",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: "img/shopping-cart-icon.svg" }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3f28a6f2", module.exports)
   }
 }
 
@@ -19069,217 +19301,173 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "Home" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("slider"),
-      _vm._v(" "),
-      _c("div", { staticClass: "Technology-x-Design" }, [
-        _vm._v("Technology x Design x Sponsorship")
-      ]),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _vm._m(3),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticStyle: { position: "relative", top: "300px" } },
-        [
-          _c("slick", { ref: "slick", attrs: { options: _vm.slickOptions } }, [
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png",
-                  alt: ""
-                }
-              })
-            ]),
+  return _c("div", { staticClass: "Home" }, [
+    _c("div", { staticStyle: { width: "100vw" } }, [_c("navbar")], 1),
+    _vm._v(" "),
+    _c("div", { staticStyle: { width: "100vw" } }, [_c("slider")], 1),
+    _vm._v(" "),
+    _c("div", { staticClass: "Technology-x-Design textStyle" }, [
+      _vm._v("Technology x Design x Sponsorship")
+    ]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "textStyle", staticStyle: { "padding-top": "5%" } },
+      [
+        _vm._m(2),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticStyle: {
+              position: "relative",
+              "padding-top": "5%",
+              width: "100vw"
+            }
+          },
+          [
+            _c(
+              "slick",
+              { ref: "slick", attrs: { options: _vm.slickOptions } },
+              [
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png",
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: {
+                      src:
+                        "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png",
+                      alt: ""
+                    }
+                  })
+                ])
+              ]
+            ),
             _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png",
-                  alt: ""
+            _c(
+              "div",
+              {
+                staticClass: "btn prev",
+                on: {
+                  click: function($event) {
+                    _vm.prev()
+                  }
                 }
-              })
-            ]),
+              },
+              [_c("i", { staticClass: "fa fa-angle-left" })]
+            ),
             _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png",
-                  alt: ""
+            _c(
+              "div",
+              {
+                staticClass: "btn next",
+                on: {
+                  click: function($event) {
+                    _vm.next()
+                  }
                 }
-              })
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png",
-                  alt: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/2EA0180A-AD65-4917-B33D-515A98A6C317.png",
-                  alt: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/4D841575-F952-4E1D-AFE1-B6DDF0B7D071.png",
-                  alt: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/3D89C00B-0323-46A1-A829-6B4C03D0AC8C.png",
-                  alt: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "javascript:void(0)" } }, [
-              _c("img", {
-                attrs: {
-                  src:
-                    "https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/42BC15C9-D51F-4A8A-BB26-BA6ABF12957C.png",
-                  alt: ""
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "btn prev",
-              on: {
-                click: function($event) {
-                  _vm.prev()
-                }
-              }
-            },
-            [_c("i", { staticClass: "fa fa-angle-left" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "btn next",
-              on: {
-                click: function($event) {
-                  _vm.next()
-                }
-              }
-            },
-            [_c("i", { staticClass: "fa fa-angle-right" })]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _vm._m(4)
-    ],
-    1
-  )
+              },
+              [_c("i", { staticClass: "fa fa-angle-right" })]
+            )
+          ],
+          1
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(3)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "Rectangle" }, [
-      _c("div", { staticClass: "bibmark-logo" }, [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", { attrs: { src: "img/bibmark-logo.svg" } })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "The-Tech" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("THE TECH")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "Apparel" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("APPAREL")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "DESIGN" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("DESIGN")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "SPONSORS" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("SPONSORS")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "RACES" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("RACES")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "Charity" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("CHARITY")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "Join" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("JOIN")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "Log-In" }, [
-        _c("a", { staticClass: "black", attrs: { href: "#" } }, [
-          _vm._v("LOG IN")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "shopping-cart-icon" }, [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", { attrs: { src: "img/shopping-cart-icon.svg" } })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "place-holder-image" }, [
-      _c("img", { attrs: { src: "img/place-holder-image.jpg" } })
+      _c("img", {
+        staticClass: "w-100",
+        attrs: { src: "img/place-holder-image.jpg" }
+      })
     ])
   },
   function() {
@@ -19287,15 +19475,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "bibmark-kaley" }, [
-      _c("img", {
-        attrs: {
-          src: "img/bibmark-kaley.png",
-          srcset: "img/bibmark-kaley@2x.png" + " 2x",
-          alt: "banner"
-        }
-      }),
+      _c("div", { staticClass: "image-banner" }),
       _vm._v(" "),
-      _c("div", { staticClass: "Design-cus" }, [
+      _c("div", { staticClass: "Design-cus textStyle" }, [
         _c("span", { staticClass: "text-style-1" }, [_vm._v("Let’s go: ")]),
         _vm._v(
           "Design custom performance gear, get sponsored & never have to wear a race bib again."
@@ -19307,8 +19489,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "Start-Designing" }, [
-      _vm._v("\n        Start Designing\n        "),
+    return _c("div", { staticClass: "Start-Designing pt-1" }, [
+      _vm._v("\n            Start Designing\n            "),
       _c("div", { staticClass: "Choose-your-product" }, [
         _vm._v(
           "\n            Choose your product and start designing your very own Bibmark today!\n        "
@@ -19321,9 +19503,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "Rectangle-footer" }, [
-      _c("div", { staticClass: "Get-the-latest-on-ne" }, [
+      _c("div", { staticClass: "Get-the-latest-on-ne textStyle" }, [
         _vm._v(
-          "\n                Get the latest on news, events and races from Bibmark.\n            "
+          "\n            Get the latest on news, events and races from Bibmark.\n        "
         )
       ]),
       _vm._v(" "),
@@ -27601,6 +27783,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2efc38d8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Slider.vue", function() {
      var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2efc38d8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Slider.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f28a6f2\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/home/Navbar.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f28a6f2\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/home/Navbar.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("172684c8", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f28a6f2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f28a6f2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -39039,6 +39248,7 @@ Vue.component('dashboard', __webpack_require__("./resources/js/pages/dashboard/D
 
 Vue.component('home-page', __webpack_require__("./resources/js/pages/home/HomePage.vue"));
 Vue.component('slider', __webpack_require__("./resources/js/pages/home/Slider.vue"));
+Vue.component('navbar', __webpack_require__("./resources/js/pages/home/Navbar.vue"));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -39908,6 +40118,58 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-f08cac76", Component.options)
   } else {
     hotAPI.reload("data-v-f08cac76", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/home/Navbar.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f28a6f2\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/home/Navbar.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/pages/home/Navbar.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3f28a6f2\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/home/Navbar.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3f28a6f2"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/pages/home/Navbar.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3f28a6f2", Component.options)
+  } else {
+    hotAPI.reload("data-v-3f28a6f2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
