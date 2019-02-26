@@ -3,13 +3,13 @@
         <footer class="page-footer font-small" style="background-color: black">
             <div class="container pl-3 pr-3">
                 <div class="row pt-1">
-                    <div class="col-md-6 mb-2 m-0 text-sm-center text-md-left text-lg-right pt-3 text-white subscribe-text">
+                    <div class="col-md-6 mb-2  m-0 mt-1 text-sm-center text-md-left text-lg-right pt-3 text-white subscribe-text">
                         Get&nbsp;the&nbsp;latest&nbsp;on&nbsp;news,&nbsp;events&nbsp;and&nbsp;races&nbsp;from&nbsp;Bibmark.
                     </div>
-                    <div class="col-md-6 pl-1 pl-sm-2 pr-sm-2 pl-xl-5">
-                        <div class="row p-sm-0 email-form m-0">
-                            <input class="form-control col-md-5 col-sm-auto input-email align-content-sm-center" type="search" placeholder="E-mail" aria-label="Search">
-                            <button class="btn  col-md-3 ml-2 mr-2 search-btn align-content-sm-center" type="submit"><span class="search-btn-text">Search</span></button>
+                    <div class="col-md-6 pl-1 pl-sm-2 pr-sm-2">
+                        <div class="row p-sm-0 email-form m-0 mt-1">
+                            <input class="form-control col-md-7 col-sm-auto input-email align-content-sm-center" type="search" placeholder="E-mail" aria-label="Search">
+                            <button class="btn btn-sm  ml-2 mr-2 search-btn align-content-sm-center" type="submit"><span class="search-btn-text">Search</span></button>
                         </div>
                     </div>
                 </div>
@@ -202,14 +202,19 @@
     }
 
     .input-email {
-        width: calc(230px + 12.84vw);
+        width: 446px;
         border-radius: 3px;
+        margin-left: 6vw;
         background-color: #ffffff;
     }
 
     .search-btn {
         border-radius: 5px;
         background-color: #ffe100;
+    }
+
+    .email-form {
+        width: 115%;
     }
 
     .search-btn-text {
@@ -252,33 +257,14 @@
         color: lightblue;
     }
 
-    @media only screen and  (max-width: 768px) {
+    @media only screen and (min-width: 1200px) {
         .input-email {
-            width: 98%;
-            border-radius: 3px;
-            background-color: #ffffff;
-        }
-
-        .search-btn {
-            width: 95%;
-            height: 50%;
-            border-radius: 5px;
-            background-color: #ffe100;
-        }
-
-        .email-form {
-            padding-left: 3%;
-        }
-    }
-
-    @media only screen and (min-width: 992px) {
-        .input-email {
-            margin-left: 4vw;
+            margin-left: 6vw;
             width: 446px;
         }
 
         .email-form {
-            width: 588px;
+            width: 120%;
         }
 
         .search-btn {
@@ -286,6 +272,43 @@
             display: block;
             border-radius: 5px;
             background-color: #ffe100;
+        }
+    }
+
+    @media only screen and (max-width: 1119px) {
+        .input-email {
+            margin-left: 4vw;
+            width: 446px;
+        }
+
+        .email-form {
+            width: 100%;
+        }
+
+        .search-btn {
+            width: 90px;
+            display: block;
+            border-radius: 5px;
+            background-color: #ffe100;
+        }
+    }
+
+    @media only screen and  (max-width: 767px) {
+        .input-email {
+            width: 350px;
+            border-radius: 3px;
+            background-color: #ffffff;
+        }
+
+        .search-btn {
+            width: 127px;
+            border-radius: 5px;
+            background-color: #ffe100;
+        }
+
+        .email-form {
+            padding-left: 5vw;
+            width: 110%;
         }
     }
 
@@ -303,6 +326,7 @@
 
         .input-email {
             width: 100%;
+            margin-left: 0px;
         }
 
         .email-form {
@@ -313,6 +337,14 @@
             width: 100%;
             border-radius: 5px;
             background-color: #ffe100;
+        }
+
+        .subscribe-text {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 0.54;
+            color: #ffffff;
+            z-index: 1;
         }
     }
 </style>

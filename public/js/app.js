@@ -4652,7 +4652,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* navbar */\n.Rectangle[data-v-3f28a6f2] {\n    max-width: 100%;\n    min-height: 113px;\n    background-color: #ffffff;\n    padding: 0 4vw;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.nav-link[data-v-3f28a6f2] {\n    /*padding: 1.625rem 0.5vw;*/\n    position: relative;\n    opacity: 0.9;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(8px + 0.41vw);\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: calc(1px + 0.05vw);\n    color: #000000;\n}\n.nav-item[data-v-3f28a6f2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.default-space[data-v-3f28a6f2] {\n    padding-left: 4%;\n}\n.logo[data-v-3f28a6f2] {\n    width: 15vw;\n}\n@media (max-width: 767px) {\n.logo[data-v-3f28a6f2] {\n        width: 100%;\n}\n.Rectangle[data-v-3f28a6f2] {\n        min-height: auto;\n}\n}\n@media (max-width: 1150px) {\n.default-space[data-v-3f28a6f2] {\n        padding-left: 0;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* navbar */\n.Rectangle[data-v-3f28a6f2] {\n    max-width: 100%;\n    min-height: 113px;\n    background-color: #ffffff;\n    padding: 0 4vw;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.nav-link[data-v-3f28a6f2] {\n    /*padding: 1.625rem 0.5vw;*/\n    position: relative;\n    opacity: 0.9;\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(8px + 0.41vw);\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: calc(1px + 0.05vw);\n    color: #000000;\n}\n.nav-item[data-v-3f28a6f2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.default-space[data-v-3f28a6f2] {\n    padding-left: 4%;\n}\n.logo[data-v-3f28a6f2] {\n    width: 15vw;\n}\n@media (max-width: 767px) {\n.logo[data-v-3f28a6f2] {\n        width: 97%;\n}\n.Rectangle[data-v-3f28a6f2] {\n        min-height: auto;\n}\n}\n@media (max-width: 1150px) {\n.default-space[data-v-3f28a6f2] {\n        padding-left: 0;\n}\n.shopping-cart-icon>img[data-v-3f28a6f2] {\n        width: 5vw;\n        margin-left: -16px;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -4667,7 +4667,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*footer*/\n.subscribe-text[data-v-41b98892] {\n    font-size: calc(8px + 0.78vw);\n    font-weight: 400;\n    line-height: 0.54;\n    color: #ffffff;\n    z-index: 1;\n}\n.input-email[data-v-41b98892] {\n    width: calc(230px + 12.84vw);\n    border-radius: 3px;\n    background-color: #ffffff;\n}\n.search-btn[data-v-41b98892] {\n    border-radius: 5px;\n    background-color: #ffe100;\n}\n.search-btn-text[data-v-41b98892] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(10px + 0.46vw);\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000;\n}\n.yellow-line[data-v-41b98892] {\n    width: 100%;\n    height: 3px;\n    background-color: #fff300;\n    z-index: 9;\n}\n.font-columns-style[data-v-41b98892] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;;\n    font-size: 14px;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Bibmark-Inc[data-v-41b98892] {\n    padding-left: 15vw;\n}\na.grey[data-v-41b98892] {\n    color: grey;\n}\na[data-v-41b98892]:hover {\n    color: lightblue;\n}\n@media only screen and  (max-width: 768px) {\n.input-email[data-v-41b98892] {\n        width: 98%;\n        border-radius: 3px;\n        background-color: #ffffff;\n}\n.search-btn[data-v-41b98892] {\n        width: 95%;\n        height: 50%;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.email-form[data-v-41b98892] {\n        padding-left: 3%;\n}\n}\n@media only screen and (min-width: 992px) {\n.input-email[data-v-41b98892] {\n        margin-left: 4vw;\n        width: 446px;\n}\n.email-form[data-v-41b98892] {\n        width: 588px;\n}\n.search-btn[data-v-41b98892] {\n        width: 127px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and  (max-width: 576px) {\n.subscribe-text[data-v-41b98892] {\n        padding-bottom: 2%;\n        font-size: calc(8px + 0.78vw);\n        text-align: center;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n.input-email[data-v-41b98892] {\n        width: 100%;\n}\n.email-form[data-v-41b98892] {\n        width: 100%;\n}\n.search-btn[data-v-41b98892] {\n        width: 100%;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*footer*/\n.subscribe-text[data-v-41b98892] {\n    font-size: calc(8px + 0.78vw);\n    font-weight: 400;\n    line-height: 0.54;\n    color: #ffffff;\n    z-index: 1;\n}\n.input-email[data-v-41b98892] {\n    width: 446px;\n    border-radius: 3px;\n    margin-left: 6vw;\n    background-color: #ffffff;\n}\n.search-btn[data-v-41b98892] {\n    border-radius: 5px;\n    background-color: #ffe100;\n}\n.email-form[data-v-41b98892] {\n    width: 115%;\n}\n.search-btn-text[data-v-41b98892] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(10px + 0.46vw);\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000;\n}\n.yellow-line[data-v-41b98892] {\n    width: 100%;\n    height: 3px;\n    background-color: #fff300;\n    z-index: 9;\n}\n.font-columns-style[data-v-41b98892] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;;\n    font-size: 14px;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Bibmark-Inc[data-v-41b98892] {\n    padding-left: 15vw;\n}\na.grey[data-v-41b98892] {\n    color: grey;\n}\na[data-v-41b98892]:hover {\n    color: lightblue;\n}\n@media only screen and (min-width: 1200px) {\n.input-email[data-v-41b98892] {\n        margin-left: 6vw;\n        width: 446px;\n}\n.email-form[data-v-41b98892] {\n        width: 120%;\n}\n.search-btn[data-v-41b98892] {\n        width: 127px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and (max-width: 1119px) {\n.input-email[data-v-41b98892] {\n        margin-left: 4vw;\n        width: 446px;\n}\n.email-form[data-v-41b98892] {\n        width: 100%;\n}\n.search-btn[data-v-41b98892] {\n        width: 90px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and  (max-width: 767px) {\n.input-email[data-v-41b98892] {\n        width: 350px;\n        border-radius: 3px;\n        background-color: #ffffff;\n}\n.search-btn[data-v-41b98892] {\n        width: 127px;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.email-form[data-v-41b98892] {\n        padding-left: 5vw;\n        width: 110%;\n}\n}\n@media only screen and  (max-width: 576px) {\n.subscribe-text[data-v-41b98892] {\n        padding-bottom: 2%;\n        font-size: calc(8px + 0.78vw);\n        text-align: center;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n.input-email[data-v-41b98892] {\n        width: 100%;\n        margin-left: 0px;\n}\n.email-form[data-v-41b98892] {\n        width: 100%;\n}\n.search-btn[data-v-41b98892] {\n        width: 100%;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.subscribe-text[data-v-41b98892] {\n        font-size: 12px;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n}\n", ""]);
 
 // exports
 
@@ -17722,7 +17722,7 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass:
-                    "col-md-6 mb-2 m-0 text-sm-center text-md-left text-lg-right pt-3 text-white subscribe-text"
+                    "col-md-6 mb-2  m-0 mt-1 text-sm-center text-md-left text-lg-right pt-3 text-white subscribe-text"
                 },
                 [
                   _vm._v(
@@ -17731,37 +17731,33 @@ var staticRenderFns = [
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-md-6 pl-1 pl-sm-2 pr-sm-2 pl-xl-5" },
-                [
-                  _c("div", { staticClass: "row p-sm-0 email-form m-0" }, [
-                    _c("input", {
+              _c("div", { staticClass: "col-md-6 pl-1 pl-sm-2 pr-sm-2" }, [
+                _c("div", { staticClass: "row p-sm-0 email-form m-0 mt-1" }, [
+                  _c("input", {
+                    staticClass:
+                      "form-control col-md-7 col-sm-auto input-email align-content-sm-center",
+                    attrs: {
+                      type: "search",
+                      placeholder: "E-mail",
+                      "aria-label": "Search"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
                       staticClass:
-                        "form-control col-md-5 col-sm-auto input-email align-content-sm-center",
-                      attrs: {
-                        type: "search",
-                        placeholder: "E-mail",
-                        "aria-label": "Search"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn  col-md-3 ml-2 mr-2 search-btn align-content-sm-center",
-                        attrs: { type: "submit" }
-                      },
-                      [
-                        _c("span", { staticClass: "search-btn-text" }, [
-                          _vm._v("Search")
-                        ])
-                      ]
-                    )
-                  ])
-                ]
-              )
+                        "btn btn-sm  ml-2 mr-2 search-btn align-content-sm-center",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _c("span", { staticClass: "search-btn-text" }, [
+                        _vm._v("Search")
+                      ])
+                    ]
+                  )
+                ])
+              ])
             ])
           ]),
           _vm._v(" "),
