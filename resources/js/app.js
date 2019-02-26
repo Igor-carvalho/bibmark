@@ -58,6 +58,7 @@ Vue.component('dashboard', require('./pages/dashboard/Dasboard.vue'));
 Vue.component('home-page', require('./pages/home/HomePage.vue'));
 Vue.component('slider', require('./pages/home/Slider.vue'));
 Vue.component('navbar', require('./pages/home/Navbar.vue'));
+Vue.component('home-footer', require('./pages/home/Footer.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
