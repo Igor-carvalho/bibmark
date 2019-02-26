@@ -60,6 +60,10 @@ Vue.component('slider', require('./pages/home/Slider.vue'));
 Vue.component('navbar', require('./pages/home/Navbar.vue'));
 Vue.component('home-footer', require('./pages/home/Footer.vue'));
 
+// Profile component
+Vue.component('footer', require('./pages/layouts/Footer.vue'));
+Vue.component('profile', require('./pages/profile/index.vue'));
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

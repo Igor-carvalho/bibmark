@@ -46,6 +46,8 @@ Route::middleware(['guest'])->group(function() {
 Route::get('/', function () {
    return view('admin.pages.home-page');
 });
+// profile route
+Route::get('profile', 'ProfileController@index')->name('profile');
 
 Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword');
 
@@ -118,5 +120,8 @@ Route::prefix('internal')->group(function() {
         Route::post('image/upload', 'InternalController@uploadImage');
         Route::post('password/create', 'PasswordResetController@create');
         Route::post('password/reset', 'PasswordResetController@reset');
+
+        // profile
+        Route::get('profile', 'ProfileController@index')->name('profile');
     });
 });
