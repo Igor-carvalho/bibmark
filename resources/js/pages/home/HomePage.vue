@@ -42,7 +42,7 @@
                 Choose your product and start designing your very own Bibmark today!
             </div>
             </div>
-            <div style="position: relative; padding-top: 5%; width: 100vw">
+            <div class="gradient-carousel" style="position: relative; padding-top: 5%; width: 100vw">
                 <slick
                         ref="slick"
                         :options="slickOptions"
@@ -84,8 +84,10 @@
         data() {
             return {
                 slickOptions: {
-                    slidesToShow: 4,
+                    infinite: true,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
+                    centerPadding   : '20%',
                     arrows: false,
                     centerMode: true,
                     focusOnSelect: true,
@@ -94,7 +96,8 @@
                         {
                             breakpoint: 1024,
                             settings: {
-                                slidesToShow: 3,
+                                slidesToShow: 2,
+                                centerPadding   : '160px',
                                 slidesToScroll: 1
                             }
                         },
@@ -313,5 +316,32 @@
         color: #717171;
         z-index: 9;
     }
+
+    .gradient-carousel {
+        position: relative;
+        display: inline-block;
+    }
+
+    .gradient-carousel:before {
+        content: "";
+
+        z-index: 3;
+        position: absolute;
+        height: 85%;
+        width: 100%;
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 1) 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(49%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 1) 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 1) 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 1) 100%);
+        /* IE10+ */
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+        /* W3C */
+    }
+
 
 </style>

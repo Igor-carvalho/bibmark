@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-md Rectangle w-100" style="">
         <a class="navbar-brand" href="#"><img src="img/bibmark-logo.svg"  class="logo" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            <span class="navbar-toggler-icon"><i class="fa fa-bars" style="font-size:24px; margin-top: -5px; margin-left: -3px;" aria-hidden="true"></i></span>
         </button>
         <div class="collapse navbar-collapse align-self-center" id="collapsibleNavbar">
             <div class="d-flex justify-content-between w-100">
