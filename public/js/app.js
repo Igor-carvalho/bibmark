@@ -4664,7 +4664,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\nbody[data-v-f5e22f5a] {\n  background: #ffffff !important;\n}\n\n/* Profile container */\n.profile-usertitle-name[data-v-f5e22f5a] {\n  font-size: 16px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 2px;\n  text-align: center;\n  color: #000000;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a]:hover {\n  background-color: #fafcfd;\n  color: #ffc600;\n}\n.nav-item .active[data-v-f5e22f5a] {\n  border-bottom: solid 2px #ffc600 !important;\n}\n\n/* Profile Content */\n.profile-content[data-v-f5e22f5a] {\n  padding: 20px;\n  background: #fff;\n  min-height: 460px;\n}\n.vertical-divider[data-v-f5e22f5a] {\n  position: absolute;\n  z-index: 10;\n  top: 3%;\n  left: 30%;\n  margin: 0;\n  padding: 0;\n  width: auto;\n  height: 100%;\n  line-height: 1;\n}\n.vertical-divider[data-v-f5e22f5a]:before,\n.vertical-divider[data-v-f5e22f5a]:after {\n  position: absolute;\n  left: 50%;\n  content: '';\n  z-index: 9;\n  border-left: 1px solid #cccccc;\n  border-right: 1px solid #cccccc;\n  width: 0;\n  height: calc(100% - 1rem);\n}\n.welcome[data-v-f5e22f5a] {\n  font-size: 42px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.dashboard-lik[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #4a90e2;\n}\nhr[data-v-f5e22f5a] {\n  width: 70%;\n  margin-top: 2rem;\n  margin-bottom: 1rem;\n  border-top: 1px solid #cccccc;\n  border-bottom: 1px solid #cccccc;\n}\n", ""]);
+exports.push([module.i, "\n.profile-usertitle-name[data-v-f5e22f5a] {\n  font-size: 16px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 2px;\n  text-align: center;\n  color: #000000;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a]:hover {\n  background-color: #fafcfd;\n  color: #ffc600;\n}\n.nav-item .active[data-v-f5e22f5a] {\n  border-bottom: solid 2px #ffc600 !important;\n}\n\n/* Profile Content */\n.profile-content[data-v-f5e22f5a] {\n  padding: 20px;\n  background: #fff;\n  min-height: 460px;\n}\n.vertical-divider[data-v-f5e22f5a] {\n  position: absolute;\n  z-index: 10;\n  top: 3%;\n  left: 30%;\n  margin: 0;\n  padding: 0;\n  width: auto;\n  height: 100%;\n  line-height: 1;\n}\n.vertical-divider[data-v-f5e22f5a]:before,\n.vertical-divider[data-v-f5e22f5a]:after {\n  position: absolute;\n  left: 50%;\n  content: '';\n  z-index: 9;\n  border-left: 1px solid #cccccc;\n  border-right: 1px solid #cccccc;\n  width: 0;\n  height: calc(100% - 1rem);\n}\n.welcome[data-v-f5e22f5a] {\n  font-size: 42px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.dashboard-lik[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #4a90e2;\n}\nhr.sidebar-divider[data-v-f5e22f5a] {\n  width: 70%;\n  margin-top: 2rem;\n  margin-bottom: 1rem;\n  border-top: 1px solid #cccccc;\n  border-bottom: 1px solid #cccccc;\n}\nhr.content-divider[data-v-f5e22f5a] {\n  border: 1px solid #cccccc;\n}\n.content[data-v-f5e22f5a] {\n  padding-bottom: 35px;\n}\n", ""]);
 
 // exports
 
@@ -19846,7 +19846,7 @@ var staticRenderFns = [
                 )
               ]),
               _vm._v(" "),
-              _c("hr"),
+              _c("hr", { staticClass: "sidebar-divider" }),
               _vm._v(" "),
               _c("div", { staticClass: "profile-usermenu" }, [
                 _c("ul", { staticClass: "nav flex-column px-4" }, [
@@ -19889,7 +19889,7 @@ var staticRenderFns = [
                   ])
                 ]),
                 _vm._v(" "),
-                _c("hr"),
+                _c("hr", { staticClass: "sidebar-divider" }),
                 _vm._v(" "),
                 _c("div", [
                   _c("h3", { staticClass: "pt-2 float-right" }, [
@@ -19912,11 +19912,13 @@ var staticRenderFns = [
                 _vm._v("Welcome to Bibmark")
               ]),
               _vm._v(" "),
-              _c("h5", [
+              _c("h5", { staticClass: "content" }, [
                 _vm._v(
                   "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia."
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _c("hr", { staticClass: "content-divider" })
             ])
           ])
         ])

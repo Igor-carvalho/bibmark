@@ -16,7 +16,7 @@
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR MENU -->
-                <hr/>
+                <hr class="sidebar-divider">
 				<div class="profile-usermenu">
 					<ul class="nav flex-column px-4">
                         <li class="nav-item">
@@ -38,7 +38,7 @@
                             <a class="nav-link" href="#">Logout</a>
                         </li>
                     </ul>
-                    <hr/>
+                    <hr class="sidebar-divider">
                     <div>
                         <h3 class="pt-2 float-right">
                             <a href="#" class="dashboard-lik"> Business Dashboard</a>
@@ -52,7 +52,8 @@
 		<div class="col-md-9">
             <div class="profile-content">
 			    <h2 class="welcome">Welcome to Bibmark</h2>
-                <h5 >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia.</h5>
+                <h5 class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia.</h5>
+                <hr class="content-divider">
             </div>
 		</div>
 	</div>
@@ -62,16 +63,6 @@
 <script src="./Profile.js"></script>
 
 <style lang="scss" scoped>
-
-body {
-    background: #ffffff !important;
-}
-
-/* Profile container */
-// .profile {
-//   margin: 20px 0;
-// }
-
 
 .profile-usertitle-name {
     font-size: 16px;
@@ -94,10 +85,9 @@ body {
     color: #444444;
 }
 
-
 .profile-usermenu ul li a:hover {
-  background-color: #fafcfd;
-  color: #ffc600;
+    background-color: #fafcfd;
+    color: #ffc600;
 }
 
 .nav-item .active {
@@ -133,9 +123,6 @@ body {
     border-right: 1px solid #cccccc;
     width: 0;
     height: calc(100% - 1rem);
-    // width: 2px;
-    // height: 815px;
-    // border: solid 2px #cccccc;
 }
 
 .welcome{
@@ -157,13 +144,19 @@ body {
     letter-spacing: normal;
     color: #4a90e2;
 }
-hr {
+hr.sidebar-divider {
     width: 70%;
     margin-top: 2rem;
     margin-bottom: 1rem;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
-    // border: solid 0.1em #cccccc;
+}
+
+hr.content-divider{
+	border: 1px solid #cccccc;
+}
+.content{
+    padding-bottom: 35px;
 }
 
 </style>
