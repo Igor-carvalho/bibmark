@@ -1,12 +1,4 @@
-@extends('admin.layouts.layout-blank')
-
-@section('styles')
-
-@endsection
-
-@section('scripts')
-
-@endsection
+@extends('front.layout.app')
 
 @section('content')
 

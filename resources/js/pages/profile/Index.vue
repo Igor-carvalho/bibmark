@@ -1,5 +1,11 @@
 <template>
-    <div class="container" style="background: #ffffff">
+<div class="profile">
+    <!--navbar-->
+        <div>
+            <navbar></navbar>
+        </div>
+        <!--end navbar-->
+    <div class="container-fluid" style="background: #ffffff">
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
@@ -40,7 +46,7 @@
                     </ul>
                     <hr class="sidebar-divider">
                     <div>
-                        <h3 class="pt-2 float-right">
+                        <h3 class="pt-2 text-center">
                             <a href="#" class="dashboard-lik"> Business Dashboard</a>
                         </h3>
                     </div>
@@ -48,7 +54,7 @@
 				<!-- END MENU -->
 			</div>
 		</div>
-        <div class="vertical-divider d-none d-sm-block"></div>
+        <!-- <div class="vertical-divider d-none d-sm-block"></div> -->
 		<div class="col-md-9">
             <div class="profile-content">
 			    <h2 class="welcome">Welcome to Bibmark</h2>
@@ -58,12 +64,17 @@
 		</div>
 	</div>
 </div>
+
+</div>
 </template>
 
 <script src="./Profile.js"></script>
 
 <style lang="scss" scoped>
-
+.profile-sidebar{
+    height: 100%;
+    border-right: solid 2px #cccccc;
+}
 .profile-usertitle-name {
     font-size: 16px;
     font-weight: 500;
@@ -91,7 +102,7 @@
 }
 
 .nav-item .active {
-    border-bottom: solid 2px #ffc600 !important;
+    // border-bottom: solid 2px #ffc600 !important;
 }
 
 /* Profile Content */
@@ -99,30 +110,6 @@
     padding: 20px;
     background: #fff;
     min-height: 460px;
-}
-
-.vertical-divider {
-    position: absolute;
-    z-index: 10;
-    top: 3%;
-    left: 30%;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: 100%;
-    line-height: 1;
-}
-
-.vertical-divider:before, 
-.vertical-divider:after {
-    position: absolute;
-    left: 50%;
-    content: '';
-    z-index: 9;
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-    width: 0;
-    height: calc(100% - 1rem);
 }
 
 .welcome{
