@@ -4611,21 +4611,6 @@ exports.push([module.i, "\nbody[data-v-7a0237c8] {\n    font-family: Arial, Helv
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-811a6dac\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/layouts/Footer.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* Footer */\nsection[data-v-811a6dac] {\r\n    padding: 60px 0;\n}\nsection .section-title[data-v-811a6dac] {\r\n    text-align: center;\r\n    color: #007b5e;\r\n    margin-bottom: 50px;\r\n    text-transform: uppercase;\n}\n#footer[data-v-811a6dac] {\r\n    background: #007b5e !important;\n}\n#footer h5[data-v-811a6dac]{\r\n\tpadding-left: 10px;\r\n    border-left: 3px solid #eeeeee;\r\n    padding-bottom: 6px;\r\n    margin-bottom: 20px;\r\n    color:#ffffff;\n}\n#footer a[data-v-811a6dac] {\r\n    color: #ffffff;\r\n    text-decoration: none !important;\r\n    background-color: transparent;\r\n    -webkit-text-decoration-skip: objects;\n}\n#footer ul.social li[data-v-811a6dac]{\r\n\tpadding: 3px 0;\n}\n#footer ul.social li a i[data-v-811a6dac] {\r\n    margin-right: 5px;\r\n\tfont-size:25px;\r\n\t-webkit-transition: .5s all ease;\r\n\ttransition: .5s all ease;\n}\n#footer ul.social li:hover a i[data-v-811a6dac] {\r\n\tfont-size:30px;\r\n\tmargin-top:-10px;\n}\n#footer ul.social li a[data-v-811a6dac],\r\n#footer ul.quick-links li a[data-v-811a6dac]{\r\n\tcolor:#ffffff;\n}\n#footer ul.social li a[data-v-811a6dac]:hover{\r\n\tcolor:#eeeeee;\n}\n#footer ul.quick-links li[data-v-811a6dac]{\r\n\tpadding: 3px 0;\r\n\t-webkit-transition: .5s all ease;\r\n\ttransition: .5s all ease;\n}\n#footer ul.quick-links li[data-v-811a6dac]:hover{\r\n\tpadding: 3px 0;\r\n\tmargin-left:5px;\r\n\tfont-weight:700;\n}\n#footer ul.quick-links li a i[data-v-811a6dac]{\r\n\tmargin-right: 5px;\n}\n#footer ul.quick-links li:hover a i[data-v-811a6dac] {\r\n    font-weight: 700;\n}\n@media (max-width:767px){\n#footer h5[data-v-811a6dac] {\r\n    padding-left: 0;\r\n    border-left: transparent;\r\n    padding-bottom: 0px;\r\n    margin-bottom: 10px;\n}\n}\r\n\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b59791e8\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/event/EventDetailPage.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18438,264 +18423,6 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-811a6dac\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/layouts/Footer.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { attrs: { id: "footer" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "row text-center text-xs-center text-sm-left text-md-left"
-          },
-          [
-            _c("div", { staticClass: "col-xs-12 col-sm-4 col-md-4" }, [
-              _c("h5", [_vm._v("Quick links")]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "list-unstyled quick-links" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Home")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("About")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("FAQ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Get Started")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Videos")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xs-12 col-sm-4 col-md-4" }, [
-              _c("h5", [_vm._v("Quick links")]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "list-unstyled quick-links" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Home")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("About")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("FAQ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Get Started")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Videos")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xs-12 col-sm-4 col-md-4" }, [
-              _c("h5", [_vm._v("Quick links")]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "list-unstyled quick-links" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Home")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("About")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("FAQ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "javascript:void();" } }, [
-                    _c("i", { staticClass: "fa fa-angle-double-right" }),
-                    _vm._v("Get Started")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "https://wwwe.sunlimetech.com",
-                        title: "Design and developed by"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-angle-double-right" }),
-                      _vm._v("Imprint")
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5" },
-            [
-              _c(
-                "ul",
-                { staticClass: "list-unstyled list-inline social text-center" },
-                [
-                  _c("li", { staticClass: "list-inline-item" }, [
-                    _c("a", { attrs: { href: "javascript:void();" } }, [
-                      _c("i", { staticClass: "fa fa-facebook" })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "list-inline-item" }, [
-                    _c("a", { attrs: { href: "javascript:void();" } }, [
-                      _c("i", { staticClass: "fa fa-twitter" })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "list-inline-item" }, [
-                    _c("a", { attrs: { href: "javascript:void();" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "list-inline-item" }, [
-                    _c("a", { attrs: { href: "javascript:void();" } }, [
-                      _c("i", { staticClass: "fa fa-google-plus" })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "list-inline-item" }, [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "javascript:void();", target: "_blank" }
-                      },
-                      [_c("i", { staticClass: "fa fa-envelope" })]
-                    )
-                  ])
-                ]
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white"
-            },
-            [
-              _c("p", [
-                _c("u", [
-                  _c(
-                    "a",
-                    { attrs: { href: "https://www.nationaltransaction.com/" } },
-                    [_vm._v("National Transaction Corporation")]
-                  )
-                ]),
-                _vm._v(
-                  " is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "h6" }, [
-                _vm._v("© All right Reversed."),
-                _c(
-                  "a",
-                  {
-                    staticClass: "text-green ml-2",
-                    attrs: {
-                      href: "https://www.sunlimetech.com",
-                      target: "_blank"
-                    }
-                  },
-                  [_vm._v("Sunlimetech")]
-                )
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-811a6dac", module.exports)
-  }
-}
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-82b697ee\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/event/EventShow.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28264,33 +27991,6 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7a0237c8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CharityDetailPage.vue", function() {
      var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7a0237c8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CharityDetailPage.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-811a6dac\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/layouts/Footer.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-811a6dac\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/layouts/Footer.vue");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("5ca7e57b", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-811a6dac\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-811a6dac\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -40721,22 +40421,17 @@ module.exports = Component.exports
 /***/ "./resources/js/pages/layouts/Footer.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-811a6dac\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/layouts/Footer.vue")
-}
 var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-811a6dac\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/layouts/Footer.vue")
+var __vue_template__ = null
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-811a6dac"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -40748,22 +40443,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/js/pages/layouts/Footer.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-811a6dac", Component.options)
-  } else {
-    hotAPI.reload("data-v-811a6dac", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
 
 module.exports = Component.exports
 
