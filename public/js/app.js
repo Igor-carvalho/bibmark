@@ -2165,8 +2165,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             logo: '',
             background_image: '',
             image_to_change: '',
-            errors: [],
-            isLoaded: false
+            errors: []
         };
     },
     mounted: function mounted() {
@@ -2178,7 +2177,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             $('.profile-picture').block({
-                message: '<div style="border-radius: 50px;"><div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div>',
+                message: '<div style="border-radius: 50px;"><div class="sk-fading-circle">' + '<div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div>' + '<div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div>' + '<div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div>' + '<div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div>' + '<div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div>' + '<div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div>' + '</div></div>',
                 css: {
                     backgroundColor: 'transparent',
                     border: '0'
@@ -2190,7 +2189,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             });
             $('.profile-banner').block({
-                message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
+                message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div>' + '<div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div>' + '<div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div>' + '<div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div>' + '<div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div>' + '<div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div>' + '<div class="sk-circle12 sk-circle"></div></div>',
                 css: {
                     backgroundColor: 'transparent',
                     border: '0'
@@ -2205,16 +2204,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.name = response.data.name;
                 _this.logo = response.data.logo;
                 _this.background_image = response.data.background_image;
-
-                _this.isLoaded = true;
                 $('#dummy').ready(function () {
                     $('.profile-picture').unblock();
                     $('.profile-banner').unblock();
                 });
                 $('h1>input').unblock();
             }).catch(function (error) {
-                console.log(error.response);
-                _this.isLoaded = true;
+                // console.log(error.response);
                 $('#main').unblock();
                 $('.profile-picture').unblock();
                 $('.profile-banner').unblock();
@@ -2228,7 +2224,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (e.target.files[0].type.match('image.*')) {
                 if (type === 'logo') {
                     $('figure.profile-picture').block({
-                        message: '<div style="border-radius: 50px;"><div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div>',
+                        message: '<div style="border-radius: 50px;"><div class="sk-fading-circle">' + '<div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div>' + '<div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div>' + '<div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div>' + '<div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div>' + '<div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div>' + '<div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div>' + '</div></div>',
                         css: {
                             backgroundColor: 'transparent',
                             border: '0'
@@ -2241,7 +2237,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     });
                 } else if (type === 'background_image') {
                     $('.profile-banner').block({
-                        message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div>',
+                        message: '<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div>' + '<div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div>' + '<div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div>' + '<div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div>' + '<div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div>' + '<div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div>' + '<div class="sk-circle12 sk-circle"></div></div>',
                         css: {
                             backgroundColor: 'transparent',
                             border: '0'
@@ -2256,8 +2252,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.image_to_change = e.target.files[0];
                 this.updateAwsImage(type);
             }
-
-            console.log(e.target.files[0]);
+            // console.log(e.target.files[0]);
         },
         updateAwsImage: function updateAwsImage(type) {
             var _this2 = this;
@@ -2270,11 +2265,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     'Content-Type': 'multipart/form-data'
                 }
             }).then(function (response) {
-                console.log(response.data.url);
                 _this2.updateAccountDetails(type, response.data.url);
-            }).catch(function (error) {
-                console.log(error.response);
-            });
+            }).catch(function (error) {});
         },
         updateAccountDetails: function updateAccountDetails(type, url) {
             var _this3 = this;
@@ -2294,13 +2286,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
 
             window.axios.post('/internal/account', formData).then(function (response) {
-                console.log(response.data);
                 _this3.image_to_change = '';
                 _this3.errors = [];
                 _this3.getAccountDetails(_this3.accountId);
             }).catch(function (error) {
                 _this3.errors = error.response.data.errors;
-                console.log(error.response);
                 $('#main').unblock();
                 $('.profile-picture').unblock();
                 $('.profile-banner').unblock();
@@ -4622,7 +4612,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\nbody[data-v-232bda72] {\n    font-family: Arial, Helvetica, sans-serif;\n    margin:   150px 0px 50px;\n    width: 120%;\n}\nh1[data-v-232bda72] {\n    display: block;\n    font-size: 50px;\n    margin: 25px auto 0;\n    width: 975px;\n}\nh1>small[data-v-232bda72] {\n    color: #aaaaaa;\n    font-size: .5em;\n}\nheader[data-v-232bda72] {\n    /*box-shadow: 1px 1px 4px rgba(0,0,0,0.5);*/\n    margin:   0px auto 50px;\n    height:   300px;\n    position: relative;\n    /*width:    975px;*/\n}\nfigure.profile-banner[data-v-232bda72] {\n    background-position: center center;\n    background-size: cover;\n    top:      0;\n    height: 300px;\n    /*overflow: hidden;*/\n    left:     0;\n    position: absolute;\n    width: 100%;\n    z-index:  1;\n}\nfigure.profile-picture[data-v-232bda72] {\n    background-position: center center;\n    background-size: cover;\n    border: 5px #efefef solid;\n    border-radius: 50%;\n    bottom: -75px;\n    -webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 1px 1px 4px rgba(0,0,0,0.3);\n            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 1px 1px 4px rgba(0,0,0,0.3);\n    height: 148px;\n    left: 50px;\n    position: absolute;\n    width: 148px;\n    z-index: 3;\n}\nheader>h1[data-v-232bda72] {\n    bottom: -120px;\n    color: #354B63;\n    font-size: 40px;\n    left: 50px;\n    position: absolute;\n    z-index: 5;\n}\nheader>h1>input[data-v-232bda72] {\n    text-decoration: none;\n    border: hidden;\n    background-color:transparent;\n    /*max-width: 300px;*/\n}\nheader>span[data-v-232bda72] {\n    bottom: -100px;\n    color: #354B63;\n    font-size: 20px;\n    padding-right: 0px;\n    right: 1vw;\n    position: absolute;\n    z-index: 5;\n}\n", ""]);
+exports.push([module.i, "\nbody[data-v-232bda72] {\n    font-family: Arial, Helvetica, sans-serif;\n    margin: 150px 0 50px;\n    width: 120%;\n}\nh1[data-v-232bda72] {\n    display: block;\n    font-size: 50px;\n    margin: 25px auto 0;\n    width: 975px;\n}\nh1 > small[data-v-232bda72] {\n    color: #aaaaaa;\n    font-size: .5em;\n}\nheader[data-v-232bda72] {\n    margin: 0 auto 50px;\n    height: 300px;\n    position: relative;\n}\nfigure.profile-banner[data-v-232bda72] {\n    background-position: center center;\n    background-size: cover;\n    top: 0;\n    height: 300px;\n    left: 0;\n    position: absolute;\n    width: 100%;\n    z-index: 1;\n}\nfigure.profile-picture[data-v-232bda72] {\n    background-position: center center;\n    background-size: cover;\n    border: 5px #efefef solid;\n    border-radius: 50%;\n    bottom: -75px;\n    -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 4px rgba(0, 0, 0, 0.3);\n            box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 4px rgba(0, 0, 0, 0.3);\n    height: 148px;\n    left: 50px;\n    position: absolute;\n    width: 148px;\n    z-index: 3;\n}\nheader > h1[data-v-232bda72] {\n    bottom: -120px;\n    color: #354B63;\n    font-size: 40px;\n    left: 50px;\n    position: absolute;\n    z-index: 5;\n}\nheader > h1 > input[data-v-232bda72] {\n    text-decoration: none;\n    border: hidden;\n    background-color: transparent;\n}\nheader > span[data-v-232bda72] {\n    bottom: -100px;\n    color: #354B63;\n    font-size: 20px;\n    padding-right: 0;\n    right: 1vw;\n    position: absolute;\n    z-index: 5;\n}\n", ""]);
 
 // exports
 
@@ -16413,8 +16403,8 @@ var render = function() {
                 staticClass: "btn btn-sm btn-light",
                 attrs: {
                   type: "file",
-                  name: "image",
                   id: "image" + _vm.accountId,
+                  name: "image",
                   hidden: ""
                 },
                 on: {
@@ -16522,9 +16512,13 @@ var render = function() {
       _c("h1", [
         _c("input", { attrs: { disabled: "" }, domProps: { value: _vm.name } })
       ]),
+      _vm._v(" "),
       _c("span", {
         staticClass: "btn lnr lnr-pencil",
-        attrs: { "data-toggle": "modal", "data-target": "#exampleModalCenter" }
+        attrs: {
+          "data-toggle": "modal",
+          "data-target": "#changeNameAccountModal"
+        }
       })
     ]),
     _vm._v(" "),
@@ -16535,10 +16529,10 @@ var render = function() {
       {
         staticClass: "modal fade",
         attrs: {
-          id: "exampleModalCenter",
+          id: "changeNameAccountModal",
           tabindex: "-1",
           role: "dialog",
-          "aria-labelledby": "exampleModalCenterTitle",
+          "aria-labelledby": "changeNameAccountModalTitle",
           "aria-hidden": "true"
         }
       },
@@ -16592,7 +16586,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Close")]
+                  [_vm._v("Close\n                    ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -16646,7 +16640,7 @@ var staticRenderFns = [
         "h5",
         {
           staticClass: "modal-title",
-          attrs: { id: "exampleModalCenterTitle" }
+          attrs: { id: "changeNameAccountModalTitle" }
         },
         [_vm._v("Change name")]
       ),
