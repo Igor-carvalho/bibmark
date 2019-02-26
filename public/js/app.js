@@ -1923,8 +1923,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             slickOptions: {
-                slidesToShow: 4,
+                infinite: true,
+                slidesToShow: 2,
                 slidesToScroll: 1,
+                centerPadding: '20%',
                 arrows: false,
                 centerMode: true,
                 focusOnSelect: true,
@@ -1932,7 +1934,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 responsive: [{
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 2,
+                        centerPadding: '160px',
                         slidesToScroll: 1
                     }
                 }, {
@@ -4731,7 +4734,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.Home[data-v-f08cac76] {\n    margin: 0 auto;\n    background-color: white;\n    width: 100vw;\n}\n\n/* section 2 placeholder */\n.Technology-x-Design[data-v-f08cac76] {\n    position: relative;\n    left: 29.53vw;\n    margin-top: 5.7%;\n    margin-bottom: 1.8%;\n    width: 42.93vw;\n    height: auto;\n    font-size: calc(12px + 1.55vw);/*42px*/\n    text-align: center;\n    color: #444444;\n    /*z-index: 0;*/\n}\n.place-holder-image[data-v-f08cac76] {\n    position: relative;\n    margin-bottom: 2.17%;\n    top: 1.17%;\n    width: 100vw;\n    height: auto;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.chicagofire[data-v-f08cac76] {\n    position: absolute;\n    left: 14.78vw;\n    top: 8.03%;\n    width: 30.03vw;\n    height: auto;\n}\n.BostonMarathonBib[data-v-f08cac76] {\n    position: absolute;\n    left: 22.55vw;\n    top: 32%;\n    width: 10.05vw;\n    height: auto;\n}\n\n/*section 3 banner*/\n.bibmark-kaley[data-v-f08cac76] {\n    position: relative;\n    padding-top: 1px;\n    width: 100vw;\n    height: auto;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.image-banner[data-v-f08cac76] {\n    background-image: url('https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/DCBBCBC8-6341-4DB8-861B-45A66241117D.png');\n    background-position: center center;\n    background-size: cover;\n    z-index: 3;\n    height: 50vw;\n}\n.Design-cus[data-v-f08cac76] {\n    position: absolute;\n    top: 27%;\n    left: 40.78vw;\n    width: 50vw;\n    height: 4.7%;\n    font-size: calc(8px + 2.44vw);\n    font-weight: 300;\n    color: #ffffff;\n    z-index: 1;\n}\n.Design-cus .text-style-1[data-v-f08cac76] {\n    font-size: calc(10px + 2.65vw);\n    font-weight: 900;\n}\n\n/*fontstyle*/\n.textStyle[data-v-f08cac76] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n}\n/*section 4*/\n.Start-Designing[data-v-f08cac76] {\n    margin-left: 29.11vw;\n    padding-top: 2.1%;\n    width: 40.93vw;\n    font-size: calc(12px + 1.56vw);\n    font-weight: bold;\n    text-align: center;\n    color: #444444;\n}\n.Choose-your-product[data-v-f08cac76] {\n    position: relative;\n    background-color: white;\n    padding-top: 2%;\n    padding-left: 2.65vw;\n    width: 38.28vw;\n    height: auto;\n    font-family: \"SFProText\", \"San Francisco\", sans-serif;\n    font-size: calc(8px + 0.52vw);\n    font-weight: normal;\n    text-align: center;\n    color: #000000;\n}\n\n/*carousel*/\n.prev[data-v-f08cac76] {\n    position: absolute;\n    font-size: 72px;\n    font-weight: lighter;\n    left: 0px;\n    top: 25%;\n    text-align: center;\n    width: 134px;\n    height: 149px;\n    color: #717171;\n    z-index: 9;\n}\n.next[data-v-f08cac76] {\n    position: absolute;\n    top: 25%;\n    font-size: 72px;\n    font-weight: unset;\n    text-align: center;\n    right: 0px;\n    width: 134px;\n    height: 149px;\n    color: #717171;\n    z-index: 9;\n}\n\n", ""]);
+exports.push([module.i, "\n.Home[data-v-f08cac76] {\n    margin: 0 auto;\n    background-color: white;\n    width: 100vw;\n}\n\n/* section 2 placeholder */\n.Technology-x-Design[data-v-f08cac76] {\n    position: relative;\n    left: 29.53vw;\n    margin-top: 5.7%;\n    margin-bottom: 1.8%;\n    width: 42.93vw;\n    height: auto;\n    font-size: calc(12px + 1.55vw);/*42px*/\n    text-align: center;\n    color: #444444;\n    /*z-index: 0;*/\n}\n.place-holder-image[data-v-f08cac76] {\n    position: relative;\n    margin-bottom: 2.17%;\n    top: 1.17%;\n    width: 100vw;\n    height: auto;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.chicagofire[data-v-f08cac76] {\n    position: absolute;\n    left: 14.78vw;\n    top: 8.03%;\n    width: 30.03vw;\n    height: auto;\n}\n.BostonMarathonBib[data-v-f08cac76] {\n    position: absolute;\n    left: 22.55vw;\n    top: 32%;\n    width: 10.05vw;\n    height: auto;\n}\n\n/*section 3 banner*/\n.bibmark-kaley[data-v-f08cac76] {\n    position: relative;\n    padding-top: 1px;\n    width: 100vw;\n    height: auto;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.image-banner[data-v-f08cac76] {\n    background-image: url('https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/DCBBCBC8-6341-4DB8-861B-45A66241117D.png');\n    background-position: center center;\n    background-size: cover;\n    z-index: 3;\n    height: 50vw;\n}\n.Design-cus[data-v-f08cac76] {\n    position: absolute;\n    top: 27%;\n    left: 40.78vw;\n    width: 50vw;\n    height: 4.7%;\n    font-size: calc(8px + 2.44vw);\n    font-weight: 300;\n    color: #ffffff;\n    z-index: 1;\n}\n.Design-cus .text-style-1[data-v-f08cac76] {\n    font-size: calc(10px + 2.65vw);\n    font-weight: 900;\n}\n\n/*fontstyle*/\n.textStyle[data-v-f08cac76] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n}\n/*section 4*/\n.Start-Designing[data-v-f08cac76] {\n    margin-left: 29.11vw;\n    padding-top: 2.1%;\n    width: 40.93vw;\n    font-size: calc(12px + 1.56vw);\n    font-weight: bold;\n    text-align: center;\n    color: #444444;\n}\n.Choose-your-product[data-v-f08cac76] {\n    position: relative;\n    background-color: white;\n    padding-top: 2%;\n    padding-left: 2.65vw;\n    width: 38.28vw;\n    height: auto;\n    font-family: \"SFProText\", \"San Francisco\", sans-serif;\n    font-size: calc(8px + 0.52vw);\n    font-weight: normal;\n    text-align: center;\n    color: #000000;\n}\n\n/*carousel*/\n.prev[data-v-f08cac76] {\n    position: absolute;\n    font-size: 72px;\n    font-weight: lighter;\n    left: 0px;\n    top: 25%;\n    text-align: center;\n    width: 134px;\n    height: 149px;\n    color: #717171;\n    z-index: 9;\n}\n.next[data-v-f08cac76] {\n    position: absolute;\n    top: 25%;\n    font-size: 72px;\n    font-weight: unset;\n    text-align: center;\n    right: 0px;\n    width: 134px;\n    height: 149px;\n    color: #717171;\n    z-index: 9;\n}\n.gradient-carousel[data-v-f08cac76] {\n    position: relative;\n    display: inline-block;\n}\n.gradient-carousel[data-v-f08cac76]:before {\n    content: \"\";\n\n    z-index: 3;\n    position: absolute;\n    height: 85%;\n    width: 100%;\n    /* FF3.6+ */\n    /* Chrome,Safari4+ */\n    /* Chrome10+,Safari5.1+ */\n    /* Opera 11.10+ */\n    /* IE10+ */\n    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(20%, rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1)));\n    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);\n    /* W3C */\n}\n\n\n", ""]);
 
 // exports
 
@@ -17594,6 +17597,11 @@ var staticRenderFns = [
             _c("span", { staticClass: "navbar-toggler-icon" }, [
               _c("i", {
                 staticClass: "fa fa-bars",
+                staticStyle: {
+                  "font-size": "24px",
+                  "margin-top": "-5px",
+                  "margin-left": "-3px"
+                },
                 attrs: { "aria-hidden": "true" }
               })
             ])
@@ -19806,6 +19814,7 @@ var render = function() {
         _c(
           "div",
           {
+            staticClass: "gradient-carousel",
             staticStyle: {
               position: "relative",
               "padding-top": "5%",
