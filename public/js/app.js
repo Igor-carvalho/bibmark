@@ -4739,7 +4739,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n@media (min-width: 992px) {\n.profile-sidebar[data-v-f5e22f5a] {\n    height: 100%;\n    border-right: solid 2px #cccccc;\n}\n}\n.profile-usertitle-name[data-v-f5e22f5a] {\n  font-size: 16px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 2px;\n  text-align: center;\n  color: #000000;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a]:hover {\n  background-color: #fafcfd;\n  color: #ffc600;\n}\n\n/* Profile Content */\n.profile-content[data-v-f5e22f5a] {\n  padding: 20px;\n  background: #fff;\n  min-height: 460px;\n}\n.welcome[data-v-f5e22f5a] {\n  font-size: 42px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.dashboard-lik[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #4a90e2;\n}\nhr.sidebar-divider[data-v-f5e22f5a] {\n  width: 70%;\n  margin-top: 2rem;\n  margin-bottom: 1rem;\n  border-top: 1px solid #cccccc;\n  border-bottom: 1px solid #cccccc;\n}\nhr.content-divider[data-v-f5e22f5a] {\n  border: 1px solid #cccccc;\n}\n.content[data-v-f5e22f5a] {\n  padding-bottom: 35px;\n}\n", ""]);
+exports.push([module.i, "\n#sidebar-wrapper[data-v-f5e22f5a] {\n  min-height: 100vh;\n  margin-left: -15rem;\n  -webkit-transition: margin .25s ease-out;\n  transition: margin .25s ease-out;\n}\n#sidebar-wrapper .sidebar-heading[data-v-f5e22f5a] {\n  padding: 0.875rem 1.25rem;\n  font-size: 1.2rem;\n}\n#sidebar-wrapper .list-group[data-v-f5e22f5a] {\n  width: 15rem;\n}\n#page-content-wrapper[data-v-f5e22f5a] {\n  min-width: 100vw;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-f5e22f5a] {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n#sidebar-wrapper[data-v-f5e22f5a] {\n    margin-left: 0;\n}\n#page-content-wrapper[data-v-f5e22f5a] {\n    min-width: 0;\n    width: 100%;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-f5e22f5a] {\n    margin-left: -15rem;\n}\n}\n@media (min-width: 992px) {\n#menu-toggle[data-v-f5e22f5a] {\n    display: none;\n}\n}\n#menu-toggle[data-v-f5e22f5a] {\n  margin-left: 25px;\n  margin-top: 5px;\n}\n.profile-sidebar[data-v-f5e22f5a] {\n  height: 100%;\n  border-right: solid 2px #cccccc;\n}\n.profile-usertitle-name[data-v-f5e22f5a] {\n  font-size: 16px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 2px;\n  text-align: center;\n  color: #000000;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.profile-usermenu ul li a[data-v-f5e22f5a]:hover {\n  background-color: #fafcfd;\n  color: #ffc600;\n}\n\n/* Profile Content */\n.profile-content[data-v-f5e22f5a] {\n  padding: 20px;\n  background: #fff;\n  min-height: 460px;\n}\n.welcome[data-v-f5e22f5a] {\n  font-size: 42px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.dashboard-lik[data-v-f5e22f5a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #4a90e2;\n}\nhr.sidebar-divider[data-v-f5e22f5a] {\n  width: 70%;\n  margin-top: 2rem;\n  margin-bottom: 1rem;\n  border-top: 1px solid #cccccc;\n  border-bottom: 1px solid #cccccc;\n}\nhr.content-divider[data-v-f5e22f5a] {\n  border: 1px solid #cccccc;\n}\n.content[data-v-f5e22f5a] {\n  padding-bottom: 35px;\n}\n", ""]);
 
 // exports
 
@@ -19999,11 +19999,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "profile" }, [
-    _c("div", [_c("navbar")], 1),
-    _vm._v(" "),
-    _vm._m(0)
-  ])
+  return _c(
+    "div",
+    { staticClass: "profile" },
+    [
+      _c("div", [_c("navbar")], 1),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("home-footer")
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -20017,8 +20024,8 @@ var staticRenderFns = [
         staticStyle: { background: "#ffffff" }
       },
       [
-        _c("div", { staticClass: "row profile" }, [
-          _c("div", { staticClass: "col-md-3" }, [
+        _c("div", { staticClass: "d-flex", attrs: { id: "wrapper" } }, [
+          _c("div", { attrs: { id: "sidebar-wrapper" } }, [
             _c("div", { staticClass: "profile-sidebar" }, [
               _c("div", { staticClass: "text-center" }, [
                 _c("img", {
@@ -20093,19 +20100,38 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-9" }, [
-            _c("div", { staticClass: "profile-content" }, [
-              _c("h2", { staticClass: "welcome" }, [
-                _vm._v("Welcome to Bibmark")
-              ]),
-              _vm._v(" "),
-              _c("h5", { staticClass: "content" }, [
-                _vm._v(
-                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia."
-                )
-              ]),
-              _vm._v(" "),
-              _c("hr", { staticClass: "content-divider" })
+          _c("div", { attrs: { id: "page-content-wrapper" } }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-warning btn-sm",
+                attrs: { type: "button", id: "menu-toggle" }
+              },
+              [
+                _c("span", { staticClass: "navbar-toggler-icon" }, [
+                  _c("i", {
+                    staticClass: "fa fa-bars",
+                    staticStyle: { "font-size": "15px" },
+                    attrs: { "aria-hidden": "true" }
+                  })
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "profile-content" }, [
+                _c("h2", { staticClass: "welcome" }, [
+                  _vm._v("Welcome to Bibmark")
+                ]),
+                _vm._v(" "),
+                _c("h5", { staticClass: "content" }, [
+                  _vm._v(
+                    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "content-divider" })
+              ])
             ])
           ])
         ])
@@ -28166,7 +28192,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("33402a62", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("6a542a22", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
