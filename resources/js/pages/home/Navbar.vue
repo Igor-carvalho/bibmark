@@ -89,7 +89,7 @@
 
     @media (max-width: 767px) {
         .logo {
-            width: 100%;
+            width: 97%;
         }
         .Rectangle {
             min-height: auto;
@@ -99,6 +99,10 @@
     @media (max-width: 1150px) {
         .default-space {
             padding-left: 0;
+        }
+        .shopping-cart-icon>img {
+            width: 5vw;
+            margin-left: -16px;
         }
     }
 
