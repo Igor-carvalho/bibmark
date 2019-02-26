@@ -71,10 +71,15 @@
 <script src="./Profile.js"></script>
 
 <style lang="scss" scoped>
-.profile-sidebar{
+
+
+@media (min-width: 992px) { 
+    .profile-sidebar{
     height: 100%;
     border-right: solid 2px #cccccc;
+    }
 }
+
 .profile-usertitle-name {
     font-size: 16px;
     font-weight: 500;
