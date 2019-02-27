@@ -35,9 +35,9 @@
 
 
                         <div class="button d-flex align-items-center" @click="submit">
-                            <i class="icon fa fa-4x fa-plus-circle"></i>
+                            <i class="icon fa fa-4x fa-arrow-circle-right"></i>
                             <div class="button-title">
-                                <span>Let's?</span>
+                                <span>Let's go?</span>
                                 <p>Submit</p>
                             </div>
                         </div>
