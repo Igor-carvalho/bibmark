@@ -209,102 +209,102 @@
 <style scoped>
 
     .main-field {
+        width: 100vw;
         margin: 0 auto;
         background-color: white;
-        width: 100vw;
     }
 
     /* section 2 placeholder */
     .placeholder-text {
-        margin-top: 5.7%;
-        font-size: calc(12px + 1.55vw);/*42px*/
-        text-align: center;
         color: #444444;
+        margin-top: 5.7%;
+        text-align: center;
+        font-size: calc(12px + 1.55vw);/*42px*/
     }
 
     .chicagofire {
-        position: absolute;
-        left: 14.78vw;
         top: 8.03%;
-        width: 30.03vw;
         height: auto;
+        left: 14.78vw;
+        width: 30.03vw;
+        position: absolute;
     }
 
     .boston-marathon-bib {
-        position: absolute;
-        left: 22.55vw;
         top: 32%;
-        width: 10.05vw;
         height: auto;
+        left: 22.55vw;
+        width: 10.05vw;
+        position: absolute;
     }
 
     /*section 3 banner*/
     .bibmark-banner {
-        position: relative;
         width: 100vw;
+        position: relative;
     }
 
     .bibmark-banner .image-banner {
-        background-image: url('https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/DCBBCBC8-6341-4DB8-861B-45A66241117D.png');
-        background-position: center center;
-        background-size: cover;
         z-index: 3;
         height: 50vw;
+        background-size: cover;
+        background-position: center center;
+        background-image: url('https://cdn.zeplin.io/5c6d748d4074579a2d70d638/assets/DCBBCBC8-6341-4DB8-861B-45A66241117D.png');
     }
 
     .bibmark-banner .banner-text {
-        position: absolute;
         top: 27%;
-        left: 40.78vw;
+        z-index: 1;
         width: 50vw;
         height: 4.7%;
-        font-size: calc(8px + 2.44vw);
-        font-weight: 300;
+        left: 40.78vw;
         color: #ffffff;
-        z-index: 1;
+        font-weight: 300;
+        position: absolute;
+        font-size: calc(8px + 2.44vw);
     }
 
     .banner-text .banner-text-bold {
-        font-size: calc(10px + 2.65vw);
         font-weight: 900;
+        font-size: calc(10px + 2.65vw);
     }
 
     /*fontstyle*/
     .default-text-style {
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
         font-style: normal;
-        font-stretch: normal;
         line-height: normal;
+        font-stretch: normal;
         letter-spacing: normal;
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
     }
     /*section 4*/
     .section-carousel-main-text {
-        font-size: calc(12px + 1.56vw);
+        color: #444444;
         font-weight: bold;
         text-align: center;
-        color: #444444;
+        font-size: calc(12px + 1.56vw);
     }
 
     .section-carousel-subtext {
-        background-color: white;
-        font-family: "SFProText", "San Francisco", sans-serif;
-        font-size: calc(8px + 0.52vw);
-        font-weight: normal;
-        text-align: center;
         color: #000000;
+        text-align: center;
+        font-weight: normal;
+        background-color: white;
+        font-size: calc(8px + 0.52vw);
+        font-family: "SFProText", "San Francisco", sans-serif;
     }
 
     /*carousel*/
     .carousel-buttons {
-        position: absolute;
         top: 25%;
+        z-index: 9;
         width: 134px;
         height: 149px;
+        color: #717171;
         font-size: 72px;
+        position: absolute;
         font-weight: lighter;
         text-align: center;
-        color: #717171;
-        z-index: 9;
     }
 
     .carousel-buttons + .prev-slide {
@@ -321,24 +321,23 @@
     }
 
     .gradient-carousel:before {
-        content: "";
         z-index: 3;
-        position: absolute;
         height: 85%;
         width: 100%;
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+        /* W3C */
         background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
         /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(20%, rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
-        /* Chrome,Safari4+ */
         background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
         /* Chrome10+,Safari5.1+ */
         background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
         /* Opera 11.10+ */
         background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
         /* IE10+ */
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
-        /* W3C */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(20%, rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+        /* Chrome,Safari4+ */
     }
-
 
 </style>

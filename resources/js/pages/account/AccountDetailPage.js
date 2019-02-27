@@ -58,7 +58,7 @@ export default {
             });
             axios.get('/internal/account/' + id)
                 .then(response => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.name = response.data.name;
                     this.logo = response.data.logo;
                     this.background_image = response.data.background_image;
