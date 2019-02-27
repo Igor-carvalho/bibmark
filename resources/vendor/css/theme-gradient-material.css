@@ -961,18 +961,18 @@ li.ui-timepicker-selected,
 .plyr--video .plyr__controls button.tab-focus:focus,
 .plyr--video .plyr__controls button:hover {
   background: #775cdc !important;
-  color: !important;
+  /*color: !important;*/
 }
 
 .plyr--audio .plyr__controls button.tab-focus:focus,
 .plyr--audio .plyr__controls button:hover {
   background: #775cdc !important;
-  color: !important;
+  /*color: !important;*/
 }
 
 .plyr__play-large {
   background: #775cdc !important;
-  color: !important;
+  /*color: !important;*/
 }
 
 .plyr__progress--played,
