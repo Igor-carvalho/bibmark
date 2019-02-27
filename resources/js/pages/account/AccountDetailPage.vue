@@ -69,78 +69,79 @@
 
 <script src="./AccountDetailPage.js"></script>
 
-<style scoped>
+<style lang="scss" scoped>
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 150px 0 50px;
         width: 120%;
+        margin: 150px 0 50px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     h1 {
+        width: 975px;
         display: block;
         font-size: 50px;
         margin: 25px auto 0;
-        width: 975px;
-    }
 
-    h1 > small {
-        color: #aaaaaa;
-        font-size: .5em;
+        & > small {
+            color: #aaaaaa;
+            font-size: .5em;
+        }
     }
 
     header {
-        margin: 0 auto 50px;
         height: 300px;
         position: relative;
+        margin: 0 auto 50px;
+
+        & > span {
+            right: 1vw;
+            bottom: -100px;
+            color: #354B63;
+            font-size: 20px;
+            padding-right: 0;
+            position: absolute;
+            z-index: 5;
+        }
+
+        & > h1 {
+            left: 50px;
+            z-index: 5;
+            bottom: -120px;
+            color: #354B63;
+            font-size: 40px;
+            position: absolute;
+
+            & > input {
+                border: hidden;
+                text-decoration: none;
+                background-color: transparent;
+            }
+        }
     }
 
-    figure.profile-banner {
-        background-position: center center;
-        background-size: cover;
+    .profile-banner {
         top: 0;
-        height: 300px;
         left: 0;
-        position: absolute;
-        width: 100%;
         z-index: 1;
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
     }
 
-    figure.profile-picture {
-        background-position: center center;
+    .profile-picture {
+        left: 50px;
+        z-index: 3;
+        width: 148px;
+        bottom: -75px;
+        height: 148px;
+        position: absolute;
+        border-radius: 50%;
         background-size: cover;
         border: 5px #efefef solid;
-        border-radius: 50%;
-        bottom: -75px;
+        background-position: center center;
         box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 4px rgba(0, 0, 0, 0.3);
-        height: 148px;
-        left: 50px;
-        position: absolute;
-        width: 148px;
-        z-index: 3;
     }
 
-    header > h1 {
-        bottom: -120px;
-        color: #354B63;
-        font-size: 40px;
-        left: 50px;
-        position: absolute;
-        z-index: 5;
-    }
-
-    header > h1 > input {
-        text-decoration: none;
-        border: hidden;
-        background-color: transparent;
-    }
-
-    header > span {
-        bottom: -100px;
-        color: #354B63;
-        font-size: 20px;
-        padding-right: 0;
-        right: 1vw;
-        position: absolute;
-        z-index: 5;
-    }
 </style>
