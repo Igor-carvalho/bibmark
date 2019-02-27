@@ -24,7 +24,7 @@ Route::namespace('Admin')->middleware(['auth'])->group(function() {
                 Route::get('{user_id}', 'AccountController@editUser')->name('accounts.user.edit');
             });
         });
-        
+
         Route::resource('charities', 'CharityController')->only(['index', 'show', 'create', 'edit']);
         Route::get('/charity/{charity_id}/home', 'AdminController@dashboardCharity');
         Route::resource('events', 'EventController')->only(['index', 'show', 'create', 'edit']);
@@ -48,6 +48,10 @@ Route::get('/', function () {
 });
 // profile route
 Route::get('profile', 'ProfileController@index')->name('profile');
+// join page route
+Route::get('join', function () {
+   return view('admin.pages.join-page');
+});
 
 Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword');
 

@@ -28,7 +28,7 @@
                 </ul>
                 <ul class="navbar-nav ml-2">
                     <li class="nav-item">
-                        <a class="nav-link black" href="#">JOIN</a>
+                        <a class="nav-link black" href="join">JOIN</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link black" href="#">LOG&nbsp;IN</a>
@@ -58,6 +58,7 @@
         padding: 0 4vw;
         align-items: center;
         display: flex;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
     }
 
     .nav-link {
