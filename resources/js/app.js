@@ -26,6 +26,18 @@ Vue.use(VueMoment)
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
+//frontend
+Vue.component('app-home', require('./pages/home/Home.vue'))
+Vue.component('home-slider', require('./pages/home/Slider.vue'))
+Vue.component('common-header', require('./pages/common/Header.vue'))
+Vue.component('common-footer', require('./pages/common/Footer.vue'))
+
+Vue.component('auth-login', require('./pages/auth/Login'))
+Vue.component('auth-join', require('./pages/auth/Join'))
+
+Vue.component('profile', require('./pages/profile/index.vue'))
+
+// backend
 Vue.component('account-list', require('./pages/account/AccountList.vue'))
 Vue.component('account-edit', require('./pages/account/AccountEdit.vue'))
 Vue.component('account-show', require('./pages/account/AccountShow.vue'))
@@ -57,18 +69,6 @@ Vue.component('design-list', require('./pages/design/DesignList.vue'))
 Vue.component('design-edit', require('./pages/design/DesignEdit.vue'))
 
 Vue.component('dashboard', require('./pages/dashboard/Dasboard.vue'))
-
-Vue.component('home-page', require('./pages/home/HomePage.vue'))
-Vue.component('slider', require('./pages/home/Slider.vue'))
-Vue.component('navbar', require('./pages/home/Navbar.vue'))
-Vue.component('home-footer', require('./pages/home/Footer.vue'))
-
-// Profile component
-// Vue.component('footer', require('./pages/layouts/Footer.vue'));
-Vue.component('profile', require('./pages/profile/index.vue'))
-
-// Join page component
-Vue.component('join-page', require('./pages/auth/JoinPage'))
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

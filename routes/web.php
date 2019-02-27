@@ -12,9 +12,11 @@
 */
 
 // frontend
-Route::get('/', function () { return view('front.home'); });
-Route::get('profile', function () { return view('front.profile'); });
-Route::get('join', function () { return view('front.auth.join'); });
+Route::get('/', 'WebController@profilePage');
+Route::get('/profile', 'WebController@profilePage');
+Route::get('/join', 'WebController@joinPage');
+Route::get('/login', 'WebController@loginPage');
+Route::get('/forgot-password', 'WebController@forgotPasswordPage');
 
 // backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {

@@ -1,4 +1,4 @@
-@extends('admin.layouts.layout-blank')
+@extends('front.layouts.header-footer-layout')
 
 @section('styles')
 
@@ -9,7 +9,5 @@
 @endsection
 
 @section('content')
-
-        <join-page></home-page>
-
+<auth-join></auth-join>
 @endsection

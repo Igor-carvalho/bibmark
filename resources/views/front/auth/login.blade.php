@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-<app-home></app-home>
+<auth-login></auth-login>
 @endsection
