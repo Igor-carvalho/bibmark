@@ -1695,6 +1695,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'JoinPage',
@@ -17259,7 +17260,9 @@ var render = function() {
                     on: { click: _vm.login }
                   },
                   [
-                    _c("i", { staticClass: "icon fa fa-4x fa-plus-circle" }),
+                    _c("i", {
+                      staticClass: "icon fa fa-4x fa-arrow-circle-right"
+                    }),
                     _vm._v(" "),
                     _vm._m(0)
                   ]
@@ -17303,7 +17306,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "button-title" }, [
-      _c("span", [_vm._v("Let's?")]),
+      _c("span", [_vm._v("Let's go?")]),
       _vm._v(" "),
       _c("p", [_vm._v("Submit")])
     ])
