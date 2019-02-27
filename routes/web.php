@@ -11,7 +11,12 @@
 |
 */
 
+// frontend
+Route::get('/', function () { return view('front.home'); });
+Route::get('profile', function () { return view('front.profile'); });
+Route::get('join', function () { return view('front.auth.join'); });
 
+// backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
     Route::prefix('dashboard')->group(function() {
         Route::get('/', 'AdminController@dashboard')->name('dashboard');
@@ -41,16 +46,6 @@ Route::middleware(['guest'])->group(function() {
     Route::prefix('admin')->group(function() {
         Route::get('login', 'Admin\AdminController@login')->name('login');
     });
-});
-//homepage
-Route::get('/', function () {
-   return view('admin.pages.home-page');
-});
-// profile route
-Route::get('profile', 'ProfileController@index')->name('profile');
-// join page route
-Route::get('join', function () {
-   return view('admin.pages.join-page');
 });
 
 Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword');
