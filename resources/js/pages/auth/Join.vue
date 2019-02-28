@@ -1,42 +1,62 @@
 <template>
-    <div class="container-fluid" style="background: #ffffff">
-        <div class="d-flex justify-content-sm-center" id="wrapper">
-            <form class="join-form">
-                <h2 class="text-sm-center">Join Bibmark</h2>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input v-model="name" type="text" class="form-control inputElement" id="name">
+    <div class="auth-join">
+        <div class="container auth-join-container">
+            <form class="auth-join-form">
+                <div class="form-title text-center mb-5">
+                    Join Bibmark
                 </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input v-model="email" type="email" class="form-control inputElement" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input v-model="password" type="password" class="form-control inputElement" id="password">
-                </div>
-
-                <div class="d-flex justify-content-between">
-                    <div class="button d-flex align-items-center" @click="login">
-                        <i class="icon fa fa-4x fa-plus-circle"></i>
-                        <div class="button-title">
-                            <span>Already have an account?</span>
-                            <p>Login Now</p>
-                        </div>
+                <div class="form-group mb-5">
+                    <label for="join-name" class="mb-3">Name</label>
+                    <input v-model="name" type="text" class="form-control" id="join-name" name="name"
+                           v-validate="'required'"
+                           :class="{ 'is-invalid': errors.has('name') }">
+                    <div class="error">
+                        <div v-if="errors.has('name')" class="invalid-feedback">{{ errors.first('name') }}</div>
                     </div>
+                </div>
+                <div class="form-group mb-5">
+                    <label for="join-email" class="mb-3">Email</label>
+                    <input v-model="email" type="email" name="email" class="form-control" id="join-email"
+                           v-validate="'required|email'" :class="{ 'is-invalid': errors.has('email') }">
+                    <div class="error">
+                        <div v-if="errors.has('email')" class="invalid-feedback">{{ errors.first('email') }}</div>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="join-password" class="mb-3">Password</label>
+                    <input v-model="password" type="password" class="form-control" id="join-password" name="password"
+                           v-validate="{ required: true, min: 6 }"
+                           :class="{ 'is-invalid':  errors.has('password') }">
+                    <div class="error">
+                        <div v-if="errors.has('password')" class="invalid-feedback">{{ errors.first('password') }}</div>
+                    </div>
+                </div>
 
+                <p style="color: red; height: 25px;">{{ errorMSG }}</p>
 
-                    <div class="button d-flex align-items-center" @click="submit">
-                        <i class="icon fa fa-4x fa-arrow-circle-right"></i>
-                        <div class="button-title">
-                            <span>Let's go?</span>
-                            <p>Submit</p>
-                        </div>
+                <div class="form-row d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <a href="login" class="join-cta-element d-flex">
+                            <img src="img/auth/add.png" style="width: 64px; height: 64px;"/>
+                            <div class="join-cta-labels d-flex flex-column ml-4">
+                                <div class="join-cta-label-desc">Already have an account?</div>
+                                <div class="join-cta-label">Login Now</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <a class="join-cta-element d-flex justify-content-md-end" @click="submit">
+                            <img src="img/auth/next.png" style="width: 64px; height: 64px;"/>
+                            <div class="join-cta-labels d-flex flex-column ml-4">
+                                <div class="join-cta-label-desc">Let’s go</div>
+                                <div class="join-cta-label">Submit</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </form>
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -45,64 +65,112 @@ export default {
     data: () => ({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        errorMSG: ''
     }),
     methods: {
-        login () {
-            console.log('login')
-        },
-        submit () {
-            console.log('submit')
+        submit() {
+            const that = this
+            const data = {
+                name: this.name,
+                email: this.email,
+                password: this.password
+            }
+            this.$validator.validate().then(valid => {
+                if (valid) {
+                    axios.post('/api/register', data).then(response => {
+                        if (response.data.success === 0) {
+                            window.location = 'login';
+                        }
+                    }).catch(error => {
+                        if (error.response.status === 422) {
+                            that.errorMSG = error.response.data.errors.email[0]
+                        }
+                    });
+                }
+            });
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.join-form {
-    width: 768px;
-    color: #444444;
-    padding: 3.5rem 0;
+.auth-join {
+    background: white;
+    padding: 94px 0;
+    min-height: 1000px;
+}
+
+.auth-join-container {
+    max-width: 768px;
+}
+
+.auth-join-form {
+    .form-title {
+        font-family: "SFProDisplay", "San Francisco", sans-serif;
+        font-size: 42px;
+        font-weight: bold;
+        color: #444444;
+    }
 
     .form-group {
-        margin-bottom: 3rem;
-    }
-
-    .inputElement {
-        border: 0;
-        border-bottom: 1px solid rgba(24, 28, 33, 0.1);
-        border-radius: 0;
-
-        &:focus {
-            border-color: #26B4FF !important;
-        }
-    }
-
-    .button {
-        cursor: pointer;
-
-        .icon {
-            margin-right: 24px;
+        label {
+            color: #444444;
+            font-family: HelveticaNeue;
+            font-size: 18px;
+            font-weight: bold;
         }
 
-        .button-title {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            overflow: hidden;
-            line-height: 1.2;
-            white-space: nowrap;
-            color: #000000;
-            font-weight: 500;
+        input {
+            border: 0 none;
+            border-bottom: solid 2px #cccccc;
+            border-radius: 0;
+            font-family: HelveticaNeue;
+            font-size: 18px;
+            margin-top: 0.5rem;
 
-            span {
-                font-size: 16px;
-                opacity: 0.6;
+            &:focus {
+                border-color: #26B4FF !important;
+                box-shadow: none !important;
             }
 
-            p {
+            &.is-invalid {
+                border-color: #d9534f !important;
+            }
+        }
+
+        .error {
+            height: 25px;
+            margin-top: 0.25rem;
+
+            .invalid-feedback {
+                display: block;
+                margin: 0;
+            }
+        }
+    }
+
+    .join-cta-element {
+        cursor: pointer;
+
+        i {
+            margin-right: 1rem;
+        }
+
+        .join-cta-labels {
+            .join-cta-label-desc {
+                font-family: "SFProDisplay", "San Francisco", sans-serif;
+                opacity: 0.6;
+                font-size: 16px;
+                font-weight: 500;
+                color: #000000;
+            }
+
+            .join-cta-label {
+                font-family: "SFProDisplay", "San Francisco", sans-serif;
                 font-size: 24px;
-                margin: 4px 0 0 0;
+                font-weight: 500;
+                color: #000000;
             }
         }
     }

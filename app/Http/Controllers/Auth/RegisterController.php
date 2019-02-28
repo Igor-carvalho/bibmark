@@ -44,7 +44,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -59,7 +59,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Http\Response
      */
     protected function create(RegisterRequest $request)
@@ -67,15 +67,16 @@ class RegisterController extends Controller
         $data = $request->all();
         $newUser = User::create([
             'name' => $data['name'],
-            'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+
         if ($newUser) {
             $result['user_id'] = $newUser->id;
-            $result['token'] = $newUser->createToken('BibMark')->accessToken;
-            return $this->sendSuccess($result);
+//            $result['token'] =  $newUser->createToken('BibMark')-> accessToken;
+            return response()->json(['success' => 0, 'data' => $result]);
+
         } else {
             return $this->sendError('Unable to register a user.');
         }

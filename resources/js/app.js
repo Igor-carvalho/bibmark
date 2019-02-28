@@ -10,10 +10,12 @@ let token = document.head.querySelector('meta[name="csrf-token"]')
 import Vue from 'vue'
 import Axios from 'axios'
 import VueMoment from 'vue-moment'
+import VeeValidate from 'vee-validate'
 
 window.Vue = Vue
 window.axios = Axios
 Vue.use(VueMoment)
+Vue.use(VeeValidate)
 
 /**
  * The following block of code may be used to automatically register your
