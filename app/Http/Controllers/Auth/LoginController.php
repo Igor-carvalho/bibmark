@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth; 
 use App\Http\Requests\User\LoginRequest;
@@ -50,7 +51,7 @@ class LoginController extends Controller
         $data = $request->all();
         $authenticated = Auth::attempt([
             'email' => $data['email'],
-            'password' => $data['password']
+            'password' => Hash::make($data['password'])
         ]);
         if ($authenticated) {
             $user = Auth::user();

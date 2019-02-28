@@ -73,6 +73,8 @@ export default {
             const that = this
             const data = {
                 name: this.name,
+                firstname: 'firstname',
+                lastname: 'lastname',
                 email: this.email,
                 password: this.password
             }

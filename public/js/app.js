@@ -1761,6 +1761,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var that = this;
             var data = {
                 name: this.name,
+                firstname: 'firstname',
+                lastname: 'lastname',
                 email: this.email,
                 password: this.password
             };
@@ -1839,13 +1841,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'AuthLogin',
     data: function data() {
-        return {};
+        return {
+            email: '',
+            password: '',
+            errorMSG: ''
+        };
     },
-    methods: {}
+    methods: {
+        submit: function submit() {
+            var that = this;
+            var data = {
+                email: this.email,
+                password: this.password
+            };
+            this.$validator.validate().then(function (valid) {
+                if (valid) {
+                    axios.post('/api/login', data).then(function (response) {
+                        if (response.data.success === 0) {
+                            window.location = 'login';
+                        }
+                    }).catch(function (error) {
+                        that.errorMSG = error.response.data.error;
+                    });
+                }
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -4929,7 +4967,7 @@ exports.push([module.i, "\n.auth-join[data-v-3b0025b8] {\n  background: white;\n
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue":
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
@@ -4937,7 +4975,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.auth-login {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-login-container {\n  max-width: 768px;\n}\n.auth-login-form .form-title {\n  font-family: SFProDisplay;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-login-form .reset-password-cta {\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n  color: #4a90e2;\n}\n.auth-login-form .form-group label {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-login-form .form-group input[type=email], .auth-login-form .form-group input[type=password] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-login-form .login-cta-element i {\n  margin-right: 1rem;\n}\n.auth-login-form .login-cta-element .login-cta-labels .login-cta-label-desc {\n  font-family: SFProDisplay;\n  opacity: 0.6;\n  font-size: 16px;\n  font-weight: 500;\n  color: #000000;\n}\n.auth-login-form .login-cta-element .login-cta-labels .login-cta-label {\n  font-family: SFProDisplay;\n  font-size: 24px;\n  font-weight: 500;\n  color: #000000;\n}\n", ""]);
+exports.push([module.i, "\n.auth-login[data-v-42c42d6a] {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-login-container[data-v-42c42d6a] {\n  max-width: 768px;\n}\n.auth-login-form .form-title[data-v-42c42d6a] {\n  font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-login-form .reset-password-cta[data-v-42c42d6a] {\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n  color: #4a90e2;\n}\n.auth-login-form .form-group label[data-v-42c42d6a] {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-login-form .form-group input[data-v-42c42d6a] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-login-form .form-group input[data-v-42c42d6a]:focus {\n    border-color: #26B4FF !important;\n    -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n}\n.auth-login-form .form-group input.is-invalid[data-v-42c42d6a] {\n    border-color: #d9534f !important;\n}\n.auth-login-form .form-group .error[data-v-42c42d6a] {\n  height: 25px;\n  margin-top: 0.25rem;\n}\n.auth-login-form .form-group .error .invalid-feedback[data-v-42c42d6a] {\n    display: block;\n    margin: 0;\n}\n.auth-login-form .login-cta-element[data-v-42c42d6a] {\n  cursor: pointer;\n}\n.auth-login-form .login-cta-element i[data-v-42c42d6a] {\n    margin-right: 1rem;\n}\n.auth-login-form .login-cta-element .login-cta-labels .login-cta-label-desc[data-v-42c42d6a] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    opacity: 0.6;\n    font-size: 16px;\n    font-weight: 500;\n    color: #000000;\n}\n.auth-login-form .login-cta-element .login-cta-labels .login-cta-label[data-v-42c42d6a] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 24px;\n    font-weight: 500;\n    color: #000000;\n}\n", ""]);
 
 // exports
 
@@ -27120,148 +27158,221 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-42c42d6a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/auth/Login.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-42c42d6a\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/auth/Login.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "auth-login" }, [
+    _c("div", { staticClass: "container auth-login-container" }, [
+      _c("form", { staticClass: "auth-login-form" }, [
+        _c("div", { staticClass: "form-title text-center mb-5" }, [
+          _vm._v("\n                Login To Bibmark\n            ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group mb-5" }, [
+          _c("label", { staticClass: "mb-3", attrs: { for: "login-email" } }, [
+            _vm._v("Email")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.email,
+                expression: "email"
+              },
+              {
+                name: "validate",
+                rawName: "v-validate",
+                value: "required|email",
+                expression: "'required|email'"
+              }
+            ],
+            staticClass: "form-control",
+            class: { "is-invalid": _vm.errors.has("email") },
+            attrs: { type: "email", name: "email", id: "login-email" },
+            domProps: { value: _vm.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.email = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "error" }, [
+            _vm.errors.has("email")
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(_vm._s(_vm.errors.first("email")))
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group mb-4" }, [
+          _c(
+            "label",
+            { staticClass: "mb-3", attrs: { for: "login-password" } },
+            [_vm._v("Password")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.password,
+                expression: "password"
+              },
+              {
+                name: "validate",
+                rawName: "v-validate",
+                value: { required: true, min: 6 },
+                expression: "{ required: true, min: 6 }"
+              }
+            ],
+            staticClass: "form-control",
+            class: { "is-invalid": _vm.errors.has("password") },
+            attrs: { type: "password", id: "login-password", name: "password" },
+            domProps: { value: _vm.password },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.password = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "error" }, [
+            _vm.errors.has("password")
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(_vm._s(_vm.errors.first("password")))
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticStyle: { color: "red", height: "25px" } }, [
+          _vm._v(_vm._s(_vm.errorMSG))
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row d-flex justify-content-between" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "d-flex align-items-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "login-cta-element d-flex justify-content-md-end",
+                on: { click: _vm.submit }
+              },
+              [
+                _c("img", {
+                  staticStyle: { width: "64px", height: "64px" },
+                  attrs: { src: "img/auth/next.png" }
+                }),
+                _vm._v(" "),
+                _vm._m(2)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "auth-login" }, [
-      _c("div", { staticClass: "container auth-login-container" }, [
-        _c("form", { staticClass: "auth-login-form" }, [
-          _c("div", { staticClass: "form-title text-center mb-5" }, [
-            _vm._v("\n                Login To Bibmark\n            ")
-          ]),
+    return _c("div", { staticClass: "form-row mb-5" }, [
+      _c("div", { staticClass: "form-group col-md-6" }, [
+        _c("div", { staticClass: "form-check" }, [
+          _c("input", {
+            staticClass: "form-check-input",
+            attrs: { type: "checkbox", id: "login-remember" }
+          }),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group mb-5" }, [
-            _c("label", { attrs: { for: "login-email mb-3" } }, [
-              _vm._v("Email")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "email",
-                id: "login-email",
-                "aria-describedby": "emailHelp",
-                placeholder: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group mb-5" }, [
-            _c("label", { attrs: { for: "login-password mb-3" } }, [
-              _vm._v("Password")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "password", id: "login-password", placeholder: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-row mb-5" }, [
-            _c("div", { staticClass: "form-group col-md-6" }, [
-              _c("div", { staticClass: "form-check" }, [
-                _c("input", {
-                  staticClass: "form-check-input",
-                  attrs: { type: "checkbox", id: "login-remember" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "form-check-label",
-                    attrs: { for: "login-remember" }
-                  },
-                  [_vm._v("Remember Password")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group col-md-6 text-md-right" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "reset-password-cta",
-                  attrs: { href: "forgot-password" }
-                },
-                [_vm._v("Forgot My Password")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-row" }, [
-            _c("div", { staticClass: "form-group col-md-6" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "login-cta-element d-flex",
-                  attrs: { href: "join" }
-                },
-                [
-                  _c("img", {
-                    staticStyle: { width: "64px", height: "64px" },
-                    attrs: { src: "img/auth/add.png" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "login-cta-labels d-flex flex-column ml-4" },
-                    [
-                      _c("div", { staticClass: "login-cta-label-desc" }, [
-                        _vm._v("Don’t have an account?")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "login-cta-label" }, [
-                        _vm._v("Join Now")
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group col-md-6" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "login-cta-element d-flex justify-content-md-end"
-                },
-                [
-                  _c("img", {
-                    staticStyle: { width: "64px", height: "64px" },
-                    attrs: { src: "img/auth/next.png" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "login-cta-labels d-flex flex-column ml-4" },
-                    [
-                      _c("div", { staticClass: "login-cta-label-desc" }, [
-                        _vm._v("Let’s go")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "login-cta-label" }, [
-                        _vm._v("Login Now")
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ])
-          ])
+          _c(
+            "label",
+            {
+              staticClass: "form-check-label",
+              attrs: { for: "login-remember" }
+            },
+            [_vm._v("Remember Password")]
+          )
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group col-md-6 text-md-right" }, [
+        _c(
+          "a",
+          {
+            staticClass: "reset-password-cta",
+            attrs: { href: "forgot-password" }
+          },
+          [_vm._v("Forgot My Password")]
+        )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex align-items-center" }, [
+      _c(
+        "a",
+        { staticClass: "login-cta-element d-flex", attrs: { href: "join" } },
+        [
+          _c("img", {
+            staticStyle: { width: "64px", height: "64px" },
+            attrs: { src: "img/auth/add.png" }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "login-cta-labels d-flex flex-column ml-4" },
+            [
+              _c("div", { staticClass: "login-cta-label-desc" }, [
+                _vm._v("Don’t have an account??")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "login-cta-label" }, [
+                _vm._v("Join Now")
+              ])
+            ]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "login-cta-labels d-flex flex-column ml-4" },
+      [
+        _c("div", { staticClass: "login-cta-label-desc" }, [
+          _vm._v("Let’s go")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "login-cta-label" }, [_vm._v("Login Now")])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -38005,23 +38116,23 @@ if(false) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue":
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue");
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("71c55c2f", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("948407d4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -49991,19 +50102,19 @@ module.exports = Component.exports
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue")
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42c42d6a\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/js/pages/auth/Login.vue")
 }
 var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
 /* script */
 var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/pages/auth/Login.vue")
 /* template */
-var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-42c42d6a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/auth/Login.vue")
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-42c42d6a\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/pages/auth/Login.vue")
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-42c42d6a"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
