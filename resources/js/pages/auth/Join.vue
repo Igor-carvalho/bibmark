@@ -22,7 +22,7 @@
                         <div v-if="errors.has('email')" class="invalid-feedback">{{ errors.first('email') }}</div>
                     </div>
                 </div>
-                <div class="form-group mb-5">
+                <div class="form-group mb-3">
                     <label for="join-password" class="mb-3">Password</label>
                     <input v-model="password" type="password" class="form-control" id="join-password" name="password"
                            v-validate="{ required: true, min: 6 }"
@@ -32,9 +32,11 @@
                     </div>
                 </div>
 
+                <p style="color: red; height: 25px;">{{ errorMSG }}</p>
+
                 <div class="form-row d-flex justify-content-between">
                     <div class="d-flex align-items-center">
-                        <a href="join" class="join-cta-element d-flex">
+                        <a href="login" class="join-cta-element d-flex">
                             <img src="img/auth/add.png" style="width: 64px; height: 64px;"/>
                             <div class="join-cta-labels d-flex flex-column ml-4">
                                 <div class="join-cta-label-desc">Already have an account?</div>
@@ -63,13 +65,28 @@ export default {
     data: () => ({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        errorMSG: ''
     }),
     methods: {
         submit() {
+            const that = this
+            const data = {
+                name: this.name,
+                email: this.email,
+                password: this.password
+            }
             this.$validator.validate().then(valid => {
                 if (valid) {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.user))
+                    axios.post('/api/register', data).then(response => {
+                        if (response.data.success === 0) {
+                            window.location = 'login';
+                        }
+                    }).catch(error => {
+                        if (error.response.status === 422) {
+                            that.errorMSG = error.response.data.errors.email[0]
+                        }
+                    });
                 }
             });
         }
@@ -124,9 +141,11 @@ export default {
 
         .error {
             height: 25px;
+            margin-top: 0.25rem;
 
             .invalid-feedback {
                 display: block;
+                margin: 0;
             }
         }
     }

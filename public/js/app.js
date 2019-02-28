@@ -1743,6 +1743,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'AuthJoin',
@@ -1750,16 +1752,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             name: '',
             email: '',
-            password: ''
+            password: '',
+            errorMSG: ''
         };
     },
     methods: {
         submit: function submit() {
-            var _this = this;
-
+            var that = this;
+            var data = {
+                name: this.name,
+                email: this.email,
+                password: this.password
+            };
             this.$validator.validate().then(function (valid) {
                 if (valid) {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(_this.user));
+                    axios.post('/api/register', data).then(function (response) {
+                        if (response.data.success === 0) {
+                            window.location = 'login';
+                        }
+                    }).catch(function (error) {
+                        if (error.response.status === 422) {
+                            that.errorMSG = error.response.data.errors.email[0];
+                        }
+                    });
                 }
             });
         }
@@ -4907,7 +4922,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.auth-join[data-v-3b0025b8] {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-join-container[data-v-3b0025b8] {\n  max-width: 768px;\n}\n.auth-join-form .form-title[data-v-3b0025b8] {\n  font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-join-form .form-group label[data-v-3b0025b8] {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-join-form .form-group input[data-v-3b0025b8] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-join-form .form-group input[data-v-3b0025b8]:focus {\n    border-color: #26B4FF !important;\n    -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n}\n.auth-join-form .form-group input.is-invalid[data-v-3b0025b8] {\n    border-color: #d9534f !important;\n}\n.auth-join-form .form-group .error[data-v-3b0025b8] {\n  height: 25px;\n}\n.auth-join-form .form-group .error .invalid-feedback[data-v-3b0025b8] {\n    display: block;\n}\n.auth-join-form .join-cta-element[data-v-3b0025b8] {\n  cursor: pointer;\n}\n.auth-join-form .join-cta-element i[data-v-3b0025b8] {\n    margin-right: 1rem;\n}\n.auth-join-form .join-cta-element .join-cta-labels .join-cta-label-desc[data-v-3b0025b8] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    opacity: 0.6;\n    font-size: 16px;\n    font-weight: 500;\n    color: #000000;\n}\n.auth-join-form .join-cta-element .join-cta-labels .join-cta-label[data-v-3b0025b8] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 24px;\n    font-weight: 500;\n    color: #000000;\n}\n", ""]);
+exports.push([module.i, "\n.auth-join[data-v-3b0025b8] {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-join-container[data-v-3b0025b8] {\n  max-width: 768px;\n}\n.auth-join-form .form-title[data-v-3b0025b8] {\n  font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-join-form .form-group label[data-v-3b0025b8] {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-join-form .form-group input[data-v-3b0025b8] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-join-form .form-group input[data-v-3b0025b8]:focus {\n    border-color: #26B4FF !important;\n    -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n}\n.auth-join-form .form-group input.is-invalid[data-v-3b0025b8] {\n    border-color: #d9534f !important;\n}\n.auth-join-form .form-group .error[data-v-3b0025b8] {\n  height: 25px;\n  margin-top: 0.25rem;\n}\n.auth-join-form .form-group .error .invalid-feedback[data-v-3b0025b8] {\n    display: block;\n    margin: 0;\n}\n.auth-join-form .join-cta-element[data-v-3b0025b8] {\n  cursor: pointer;\n}\n.auth-join-form .join-cta-element i[data-v-3b0025b8] {\n    margin-right: 1rem;\n}\n.auth-join-form .join-cta-element .join-cta-labels .join-cta-label-desc[data-v-3b0025b8] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    opacity: 0.6;\n    font-size: 16px;\n    font-weight: 500;\n    color: #000000;\n}\n.auth-join-form .join-cta-element .join-cta-labels .join-cta-label[data-v-3b0025b8] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: 24px;\n    font-weight: 500;\n    color: #000000;\n}\n", ""]);
 
 // exports
 
@@ -26973,7 +26988,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group mb-5" }, [
+        _c("div", { staticClass: "form-group mb-3" }, [
           _c(
             "label",
             { staticClass: "mb-3", attrs: { for: "join-password" } },
@@ -27018,6 +27033,10 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
+        _c("p", { staticStyle: { color: "red", height: "25px" } }, [
+          _vm._v(_vm._s(_vm.errorMSG))
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "form-row d-flex justify-content-between" }, [
           _vm._m(0),
           _vm._v(" "),
@@ -27051,7 +27070,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "d-flex align-items-center" }, [
       _c(
         "a",
-        { staticClass: "join-cta-element d-flex", attrs: { href: "join" } },
+        { staticClass: "join-cta-element d-flex", attrs: { href: "login" } },
         [
           _c("img", {
             staticStyle: { width: "64px", height: "64px" },
