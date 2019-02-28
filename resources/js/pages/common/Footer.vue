@@ -300,6 +300,9 @@
     }
 
     @media only screen and  (max-width: 767px) {
+        .subscribe-text {
+            padding-left: 0px;
+        }
         .input-email {
             width: 350px;
             border-radius: 3px;

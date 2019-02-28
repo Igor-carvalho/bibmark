@@ -273,8 +273,25 @@
             padding: 0px 20px !important;
             text-align: center;
         }
+        #wrapper {
+            display: block !important;
+        }
         #sidebar-wrapper {
-            margin-left: -310px;
+            border: none;
+            margin: 0px;
+            min-height: unset;
+        }
+        .dashboard-link {
+            margin-bottom: 100px !important;
+            text-align: center;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+
+        .profile-usermenu ul li {
+            display: flex;
+            justify-content: center;
         }
 
         #page-content-wrapper {
@@ -283,7 +300,7 @@
         }
 
         #wrapper.toggled #sidebar-wrapper {
-            margin-left: -15rem;
+
         }
         .profile-sidebar {
             padding: 0px !important;
