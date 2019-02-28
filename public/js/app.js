@@ -4946,7 +4946,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n#sidebar-wrapper[data-v-766e2f6a] {\n  min-height: 100vh;\n  margin-left: -15rem;\n  -webkit-transition: margin .25s ease-out;\n  transition: margin .25s ease-out;\n}\n#sidebar-wrapper .sidebar-heading[data-v-766e2f6a] {\n  padding: 0.875rem 1.25rem;\n  font-size: 1.2rem;\n}\n#sidebar-wrapper .list-group[data-v-766e2f6a] {\n  width: 15rem;\n}\n#page-content-wrapper[data-v-766e2f6a] {\n  min-width: 100vw;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-766e2f6a] {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n#sidebar-wrapper[data-v-766e2f6a] {\n    margin-left: 0;\n}\n#page-content-wrapper[data-v-766e2f6a] {\n    min-width: 0;\n    width: 100%;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-766e2f6a] {\n    margin-left: -15rem;\n}\n}\n@media (min-width: 992px) {\n#menu-toggle[data-v-766e2f6a] {\n    display: none;\n}\n}\n#menu-toggle[data-v-766e2f6a] {\n  margin-left: 25px;\n  margin-top: 5px;\n}\n.profile-sidebar[data-v-766e2f6a] {\n  height: 100%;\n  border-right: solid 2px #cccccc;\n}\n.profile-usertitle-name[data-v-766e2f6a] {\n  font-size: 16px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 2px;\n  text-align: center;\n  color: #000000;\n}\n.profile-usermenu ul li a[data-v-766e2f6a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.profile-usermenu ul li a[data-v-766e2f6a]:hover {\n  background-color: #fafcfd;\n  color: #ffc600;\n}\n\n/* Profile Content */\n.profile-content[data-v-766e2f6a] {\n  padding: 20px;\n  background: #fff;\n  min-height: 460px;\n}\n.welcome[data-v-766e2f6a] {\n  font-size: 42px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n}\n.dashboard-lik[data-v-766e2f6a] {\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #4a90e2;\n}\nhr.sidebar-divider[data-v-766e2f6a] {\n  width: 70%;\n  margin-top: 2rem;\n  margin-bottom: 1rem;\n  border-top: 1px solid #cccccc;\n  border-bottom: 1px solid #cccccc;\n}\nhr.content-divider[data-v-766e2f6a] {\n  border: 1px solid #cccccc;\n}\n.content[data-v-766e2f6a] {\n  padding-bottom: 35px;\n}\n", ""]);
+exports.push([module.i, "\n@font-face {\n  font-family: \"HelveticaNeue\";\n  src: url(\"/fonts/HelveticaNeueCyr-Bold.eot\");\n  src: url(\"/fonts/HelveticaNeueCyr-Bold.woff\") format(\"woff\");\n}\n@font-face {\n  font-family: \"SFUIDisplay-Regular\";\n  src: url(\"/fonts/SFUIDisplay-Regular.ttf\") format(\"truetype\");\n}\n@font-face {\n  font-family: \"SFProText\";\n  src: url(\"/fonts/SFUIText-Bold.ttf\") format(\"truetype\");\n}\n@font-face {\n  font-family: \"SFProDisplay\";\n  src: url(\"/fonts/SourceSansPro-Bold.ttf\") format(\"truetype\");\n}\n@font-face {\n  font-family: \"SourceSansPro-Regular\";\n  src: url(\"/fonts/SourceSansPro-Regular.ttf\") format(\"truetype\");\n}\n#sidebar-wrapper[data-v-766e2f6a] {\n  min-height: 100vh;\n  margin-left: -15rem;\n  -webkit-transition: margin .25s ease-out;\n  transition: margin .25s ease-out;\n  border-right: solid 2px #cccccc;\n}\n#sidebar-wrapper .sidebar-heading[data-v-766e2f6a] {\n  padding: 0.875rem 1.25rem;\n  font-size: 1.2rem;\n}\n#sidebar-wrapper .list-group[data-v-766e2f6a] {\n  width: 15rem;\n}\n#page-content-wrapper[data-v-766e2f6a] {\n  min-width: 100vw;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-766e2f6a] {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n#menu-toggle[data-v-766e2f6a] {\n    display: none;\n}\n#sidebar-wrapper[data-v-766e2f6a] {\n    margin-left: 0;\n}\n#page-content-wrapper[data-v-766e2f6a] {\n    min-width: 0;\n    width: 100%;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-766e2f6a] {\n    margin-left: -15rem;\n}\n}\n@media (max-width: 768px) {\n#sidebar-wrapper[data-v-766e2f6a] {\n    margin-left: -310px;\n}\n#page-content-wrapper[data-v-766e2f6a] {\n    min-width: 0;\n    width: 100%;\n}\n#wrapper.toggled #sidebar-wrapper[data-v-766e2f6a] {\n    margin-left: -15rem;\n}\n.profile-sidebar[data-v-766e2f6a] {\n    padding: 0px !important;\n}\n}\n@media (min-width: 992px) {\n#menu-toggle[data-v-766e2f6a] {\n    display: none;\n}\n}\n#menu-toggle[data-v-766e2f6a] {\n  margin-left: 25px;\n  margin-top: 5px;\n}\n.profile-sidebar[data-v-766e2f6a] {\n  padding-left: 119px;\n  padding-right: 69px;\n}\n.profile-usertitle-name[data-v-766e2f6a] {\n  font-size: 16px;\n  font-weight: 500;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: 2px;\n  text-align: center;\n  color: #000000;\n  margin-top: 44px;\n  margin-bottom: 58px;\n  /*border-bottom: solid 1px #cccccc;*/\n  height: 19px;\n  opacity: 0.9;\n  font-family: SFProDisplay;\n}\n.profile-usermenu ul li a[data-v-766e2f6a] {\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n  margin: 14px 15px;\n}\n.profile-usermenu ul li a[data-v-766e2f6a]:hover {\n  background-color: #fafcfd;\n  color: #ffc600;\n}\n.profile-usermenu ul[data-v-766e2f6a] {\n  margin-bottom: 33px;\n}\n.nav-link[data-v-766e2f6a] {\n  padding: 0px;\n}\n.active[data-v-766e2f6a] {\n  border-bottom: solid 2px #ffc600 !important;\n  padding-bottom: 9px;\n  margin-bottom: 3px !important;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n\n/* Profile Content */\n.profile-content[data-v-766e2f6a] {\n  padding-right: 80px;\n  padding-left: 70px;\n  background: #fff;\n  min-height: 460px;\n}\n.welcome[data-v-766e2f6a] {\n  width: 786px;\n  height: 59px;\n  font-family: SFProDisplay;\n  font-size: 42px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #444444;\n  margin-bottom: 16px;\n}\n.dashboard-link[data-v-766e2f6a] {\n  margin-top: 34px;\n  margin-left: 130px;\n  margin-bottom: 275px;\n  height: 22px;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #4a90e2;\n}\nhr.sidebar-divider[data-v-766e2f6a] {\n  width: 100%;\n  border-color: #cccccc;\n  border-width: 2px;\n  /*margin-top: 2rem;*/\n  /*margin-bottom: 1rem;*/\n  /*border-top: 1px solid #cccccc;*/\n  /*border-bottom: 1px solid #cccccc;*/\n}\nhr.content-divider[data-v-766e2f6a] {\n  border-top: 1px solid #cccccc;\n}\n.content[data-v-766e2f6a] {\n  margin-bottom: 58px;\n  font-family: SFProText;\n  font-size: 18px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #000000;\n}\n#wrapper[data-v-766e2f6a] {\n  padding-top: 59px;\n}\n", ""]);
 
 // exports
 
@@ -5006,7 +5006,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*footer*/\n.subscribe-text[data-v-bd22e774] {\n    font-size: calc(8px + 0.78vw);\n    font-weight: 400;\n    line-height: 0.54;\n    color: #ffffff;\n    z-index: 1;\n}\n.input-email[data-v-bd22e774] {\n    width: 446px;\n    border-radius: 3px;\n    margin-left: 6vw;\n    background-color: #ffffff;\n}\n.search-btn[data-v-bd22e774] {\n    border-radius: 5px;\n    background-color: #ffe100;\n}\n.email-form[data-v-bd22e774] {\n    width: 115%;\n}\n.search-btn-text[data-v-bd22e774] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(10px + 0.46vw);\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000;\n}\n.yellow-line[data-v-bd22e774] {\n    width: 100%;\n    height: 3px;\n    background-color: #fff300;\n    z-index: 9;\n}\n.font-columns-style[data-v-bd22e774] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;;\n    font-size: 14px;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Bibmark-Inc[data-v-bd22e774] {\n    padding-left: 15vw;\n}\na.grey[data-v-bd22e774] {\n    color: grey;\n}\na[data-v-bd22e774]:hover {\n    color: lightblue;\n}\n@media only screen and (min-width: 1200px) {\n.input-email[data-v-bd22e774] {\n        margin-left: 6vw;\n        width: 446px;\n}\n.email-form[data-v-bd22e774] {\n        width: 120%;\n}\n.search-btn[data-v-bd22e774] {\n        width: 127px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and (max-width: 1119px) {\n.input-email[data-v-bd22e774] {\n        margin-left: 4vw;\n        width: 446px;\n}\n.email-form[data-v-bd22e774] {\n        width: 100%;\n}\n.search-btn[data-v-bd22e774] {\n        width: 90px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and  (max-width: 767px) {\n.input-email[data-v-bd22e774] {\n        width: 350px;\n        border-radius: 3px;\n        background-color: #ffffff;\n}\n.search-btn[data-v-bd22e774] {\n        width: 127px;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.email-form[data-v-bd22e774] {\n        padding-left: 5vw;\n        width: 110%;\n}\n}\n@media only screen and  (max-width: 576px) {\n.subscribe-text[data-v-bd22e774] {\n        padding-bottom: 2%;\n        font-size: calc(8px + 0.78vw);\n        text-align: center;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n.input-email[data-v-bd22e774] {\n        width: 100%;\n        margin-left: 0px;\n}\n.email-form[data-v-bd22e774] {\n        width: 100%;\n}\n.search-btn[data-v-bd22e774] {\n        width: 100%;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.subscribe-text[data-v-bd22e774] {\n        font-size: 12px;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*footer*/\n.subscribe-text[data-v-bd22e774] {\n    font-size: calc(8px + 0.78vw);\n    font-weight: 400;\n    line-height: 0.54;\n    color: #ffffff;\n    z-index: 1;\n}\n.input-email[data-v-bd22e774] {\n    width: 446px;\n    border-radius: 3px;\n    margin-left: 6vw;\n    background-color: #ffffff;\n}\n.search-btn[data-v-bd22e774] {\n    border-radius: 5px;\n    background-color: #ffe100;\n}\n.email-form[data-v-bd22e774] {\n    width: 115%;\n}\n.search-btn-text[data-v-bd22e774] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;\n    font-size: calc(10px + 0.46vw);\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000;\n}\n.yellow-line[data-v-bd22e774] {\n    width: 100%;\n    height: 3px;\n    background-color: #fff300;\n    z-index: 9;\n}\n.font-columns-style[data-v-bd22e774] {\n    font-family: \"SFProDisplay\", \"San Francisco\", sans-serif;;\n    font-size: 14px;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff;\n}\n.Bibmark-Inc[data-v-bd22e774] {\n    padding-left: 15vw;\n}\na.grey[data-v-bd22e774] {\n    color: grey;\n}\na[data-v-bd22e774]:hover {\n    color: lightblue;\n}\n@media only screen and (min-width: 1200px) {\n.subscribe-text[data-v-bd22e774] {\n        padding-left: 150px;\n}\n.input-email[data-v-bd22e774] {\n        margin-left: 6vw;\n        width: 446px;\n}\n.email-form[data-v-bd22e774] {\n        width: 120%;\n}\n.search-btn[data-v-bd22e774] {\n        width: 127px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and (max-width: 1119px) {\n.subscribe-text[data-v-bd22e774] {\n        padding-left: 150px;\n}\n.input-email[data-v-bd22e774] {\n        margin-left: 4vw;\n        width: 446px;\n}\n.email-form[data-v-bd22e774] {\n        width: 100%;\n}\n.search-btn[data-v-bd22e774] {\n        width: 90px;\n        display: block;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n}\n@media only screen and  (max-width: 767px) {\n.input-email[data-v-bd22e774] {\n        width: 350px;\n        border-radius: 3px;\n        background-color: #ffffff;\n}\n.search-btn[data-v-bd22e774] {\n        width: 127px;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.email-form[data-v-bd22e774] {\n        padding-left: 5vw;\n        width: 110%;\n}\n}\n@media only screen and  (max-width: 576px) {\n.subscribe-text[data-v-bd22e774] {\n        padding-bottom: 2%;\n        font-size: calc(8px + 0.78vw);\n        text-align: center;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n.input-email[data-v-bd22e774] {\n        width: 100%;\n        margin-left: 0px;\n}\n.email-form[data-v-bd22e774] {\n        width: 100%;\n}\n.search-btn[data-v-bd22e774] {\n        width: 100%;\n        border-radius: 5px;\n        background-color: #ffe100;\n}\n.subscribe-text[data-v-bd22e774] {\n        font-size: 12px;\n        font-weight: 400;\n        line-height: 0.54;\n        color: #ffffff;\n        z-index: 1;\n}\n}\n", ""]);
 
 // exports
 
@@ -18923,7 +18923,7 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "container-fluid",
+        staticClass: "container-fluid1",
         staticStyle: { background: "#ffffff" }
       },
       [
@@ -18932,8 +18932,8 @@ var staticRenderFns = [
             _c("div", { staticClass: "profile-sidebar" }, [
               _c("div", { staticClass: "text-center" }, [
                 _c("img", {
-                  staticClass: "img-responsive center",
-                  attrs: { src: " /img/profile/profile.png", alt: "" }
+                  staticClass: "img-responsive center profile_icon",
+                  attrs: { src: " /img/profile/profile-fit.png", alt: "" }
                 })
               ]),
               _vm._v(" "),
@@ -18952,7 +18952,7 @@ var staticRenderFns = [
               _c("hr", { staticClass: "sidebar-divider" }),
               _vm._v(" "),
               _c("div", { staticClass: "profile-usermenu" }, [
-                _c("ul", { staticClass: "nav flex-column px-4" }, [
+                _c("ul", { staticClass: "nav flex-column" }, [
                   _c("li", { staticClass: "nav-item" }, [
                     _c(
                       "a",
@@ -18992,18 +18992,12 @@ var staticRenderFns = [
                   ])
                 ]),
                 _vm._v(" "),
-                _c("hr", { staticClass: "sidebar-divider" }),
-                _vm._v(" "),
-                _c("div", [
-                  _c("h3", { staticClass: "pt-2 text-center" }, [
-                    _c(
-                      "a",
-                      { staticClass: "dashboard-lik", attrs: { href: "#" } },
-                      [_vm._v(" Business Dashboard")]
-                    )
-                  ])
-                ])
+                _c("hr", { staticClass: "pt-33 sidebar-divider" })
               ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-link" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" Business Dashboard")])
             ])
           ]),
           _vm._v(" "),
@@ -19025,7 +19019,7 @@ var staticRenderFns = [
               ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "container-fluid1" }, [
               _c("div", { staticClass: "profile-content" }, [
                 _c("h2", { staticClass: "welcome" }, [
                   _vm._v("Welcome to Bibmark")
@@ -28887,7 +28881,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("0ab717c7", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("51a6b3a7", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28914,7 +28908,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("5a053d60", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("47266b74", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28941,7 +28935,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("6cfc030b", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("5172032b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28968,7 +28962,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("a57cc688", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("7d0db648", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28995,7 +28989,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("71c55c2f", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("37024fe2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29022,7 +29016,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("61a91774", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("393a0734", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29049,7 +29043,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("a974c09a", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("42497fd3", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29076,7 +29070,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("ecb2fd80", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("58f054b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29103,7 +29097,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("5ab7eb47", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("45c10fa6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29130,7 +29124,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b85dcde2", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("fc1a4f22", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29157,7 +29151,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("34887d40", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("4bd7a086", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29184,7 +29178,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("de7bccb2", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("6ee3d907", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29211,7 +29205,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("04b530da", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b80f2ea6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags

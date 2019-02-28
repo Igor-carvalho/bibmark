@@ -258,6 +258,9 @@
     }
 
     @media only screen and (min-width: 1200px) {
+        .subscribe-text {
+            padding-left: 150px;
+        }
         .input-email {
             margin-left: 6vw;
             width: 446px;
@@ -276,6 +279,9 @@
     }
 
     @media only screen and (max-width: 1119px) {
+        .subscribe-text {
+            padding-left: 150px;
+        }
         .input-email {
             margin-left: 4vw;
             width: 446px;

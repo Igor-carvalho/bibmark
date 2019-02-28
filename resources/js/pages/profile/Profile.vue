@@ -1,12 +1,12 @@
 <template>
-    <div class="container-fluid" style="background: #ffffff">
+    <div class="container-fluid1" style="background: #ffffff">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
-            <div id="sidebar-wrapper">
+            <div id="sidebar-wrapper" >
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="text-center">
-                        <img src=" /img/profile/profile.png" class="img-responsive center" alt="">
+                        <img src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon" alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- USER TITLE -->
@@ -19,7 +19,7 @@
                     <!-- SIDEBAR MENU -->
                     <hr class="sidebar-divider">
                     <div class="profile-usermenu">
-                        <ul class="nav flex-column px-4">
+                        <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">My Profile</a>
                             </li>
@@ -39,14 +39,12 @@
                                 <a class="nav-link" href="#">Logout</a>
                             </li>
                         </ul>
-                        <hr class="sidebar-divider">
-                        <div>
-                            <h3 class="pt-2 text-center">
-                                <a href="#" class="dashboard-lik"> Business Dashboard</a>
-                            </h3>
-                        </div>
+                        <hr class="pt-33 sidebar-divider">
                     </div>
                     <!-- END MENU -->
+                </div>
+                <div class="dashboard-link">
+                    <a href="#"> Business Dashboard</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -56,13 +54,13 @@
                 <button type="button" id="menu-toggle" class="btn btn-warning btn-sm">
                     <span class="navbar-toggler-icon"><i style="font-size:15px" aria-hidden="true" class="fa fa-bars"></i></span>
                 </button>
-            <div class="container-fluid">
-                <div class="profile-content">
-                    <h2 class="welcome">Welcome to Bibmark</h2>
-                    <h5 class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia.</h5>
-                    <hr class="content-divider">
+                <div class="container-fluid1">
+                    <div class="profile-content">
+                        <h2 class="welcome">Welcome to Bibmark</h2>
+                        <h5 class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora numquam eum quod quia.</h5>
+                        <hr class="content-divider">
+                    </div>
                 </div>
-            </div>
             </div>
             <!-- /#page-content-wrapper -->
 
@@ -86,6 +84,29 @@ export default {
 
 <style lang="scss" scoped>
 
+    @font-face {
+        font-family: "HelveticaNeue";
+        src: url("/fonts/HelveticaNeueCyr-Bold.eot");
+        src: url("/fonts/HelveticaNeueCyr-Bold.woff") format("woff");
+    }
+    @font-face {
+        font-family: "SFUIDisplay-Regular";
+        src: url("/fonts/SFUIDisplay-Regular.ttf") format('truetype');
+    }
+    @font-face {
+        font-family: "SFProText";
+        src: url("/fonts/SFUIText-Bold.ttf") format('truetype');
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        src: url("/fonts/SourceSansPro-Bold.ttf") format('truetype');
+    }
+    @font-face {
+        font-family: "SourceSansPro-Regular";
+        src: url("/fonts/SourceSansPro-Regular.ttf") format('truetype');
+    }
+
+
 #sidebar-wrapper {
     min-height: 100vh;
     margin-left: -15rem;
@@ -93,6 +114,7 @@ export default {
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
+    border-right: solid 2px #cccccc;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -113,6 +135,9 @@ export default {
 }
 
 @media (min-width: 768px) {
+    #menu-toggle{
+        display: none;
+    }
     #sidebar-wrapper {
         margin-left: 0;
     }
@@ -127,8 +152,26 @@ export default {
     }
 }
 
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: -310px;
+    }
 
-@media (min-width: 992px) { 
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+    .profile-sidebar {
+        padding: 0px !important;
+    }
+}
+
+
+@media (min-width: 992px) {
     #menu-toggle{
         display: none;
     }
@@ -139,9 +182,9 @@ export default {
     margin-top:5px;
     }
 .profile-sidebar{
-    height: 100%;
-    border-right: solid 2px #cccccc;
-    }
+    padding-left: 119px;
+    padding-right:69px;
+}
 
 .profile-usertitle-name {
     font-size: 16px;
@@ -152,9 +195,16 @@ export default {
     letter-spacing: 2px;
     text-align: center;
     color: #000000;
+    margin-top: 44px;
+    margin-bottom: 58px;
+    /*border-bottom: solid 1px #cccccc;*/
+    height: 19px;
+    opacity: 0.9;
+    font-family: SFProDisplay;
 }
 
 .profile-usermenu ul li a {
+    font-family: HelveticaNeue;
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
@@ -162,25 +212,38 @@ export default {
     line-height: normal;
     letter-spacing: normal;
     color: #444444;
+    margin: 14px 15px;
 }
 
 .profile-usermenu ul li a:hover {
     background-color: #fafcfd;
     color: #ffc600;
 }
-
-.nav-item .active {
-    // border-bottom: solid 2px #ffc600 !important;
+.profile-usermenu ul {
+    margin-bottom: 33px;
+}
+.nav-link {
+    padding: 0px;
+}
+.active {
+    border-bottom: solid 2px #ffc600 !important;
+    padding-bottom: 9px;
+    margin-bottom: 3px !important;
+    width: fit-content;
 }
 
 /* Profile Content */
 .profile-content {
-    padding: 20px;
+    padding-right: 80px;
+    padding-left: 70px;
     background: #fff;
     min-height: 460px;
 }
 
 .welcome{
+    width: 786px;
+    height: 59px;
+    font-family: SFProDisplay;
     font-size: 42px;
     font-weight: bold;
     font-style: normal;
@@ -188,9 +251,15 @@ export default {
     line-height: normal;
     letter-spacing: normal;
     color: #444444;
+    margin-bottom: 16px;
 }
 
-.dashboard-lik{
+.dashboard-link{
+    margin-top: 34px;
+    margin-left: 130px;
+    margin-bottom: 275px;
+    height: 22px;
+    font-family: HelveticaNeue;
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
@@ -200,18 +269,32 @@ export default {
     color: #4a90e2;
 }
 hr.sidebar-divider {
-    width: 70%;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
+    width: 100%;
+    border-color: #cccccc;
+    border-width: 2px;
+    /*margin-top: 2rem;*/
+    /*margin-bottom: 1rem;*/
+    /*border-top: 1px solid #cccccc;*/
+    /*border-bottom: 1px solid #cccccc;*/
 }
 
 hr.content-divider{
-	border: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
 }
 .content{
-    padding-bottom: 35px;
+    margin-bottom: 58px;
+    font-family: SFProText;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+#wrapper {
+    padding-top: 59px;
 }
 
 </style>
