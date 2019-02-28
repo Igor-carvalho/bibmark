@@ -51,10 +51,6 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <button type="button" id="menu-toggle" class="btn btn-warning btn-sm">
-                    <span class="navbar-toggler-icon"><i style="font-size:15px" aria-hidden="true"
-                                                         class="fa fa-bars"></i></span>
-                </button>
                 <div class="container-fluid1">
                     <div class="profile-content">
                         <h2 class="welcome">Welcome to Bibmark</h2>
@@ -136,11 +132,6 @@
 
     #wrapper.toggled #sidebar-wrapper {
         margin-left: 0;
-    }
-
-    #menu-toggle {
-        margin-left: 25px;
-        margin-top: 5px;
     }
 
     .profile-sidebar {
@@ -263,9 +254,6 @@
     }
 
     @media (min-width: 768px) {
-        #menu-toggle {
-            display: none;
-        }
         #sidebar-wrapper {
             margin-left: 0;
         }
@@ -302,9 +290,9 @@
         }
     }
 
-    @media (min-width: 992px) {
-        #menu-toggle {
-            display: none;
+    @media (max-width: 900px) {
+        .profile-content {
+            padding: 0px 20px;
         }
     }
 </style>
