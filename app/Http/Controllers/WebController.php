@@ -22,6 +22,10 @@ class WebController extends Controller
         return view('front.auth.forgot-password');
     }
 
+    public function resetPasswordPage() {
+        return view('front.auth.reset-password');
+    }
+
     public function profilePage() {
         return view('front.profile');
     }

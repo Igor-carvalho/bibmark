@@ -1,45 +1,28 @@
 <template>
-    <div class="auth-login">
-        <div class="container auth-login-container">
-            <form class="auth-login-form">
-                <div class="form-title text-center mb-5">
-                    Login To Bibmark
+    <div class="auth-reset-password">
+        <div class="container auth-reset-password-container">
+            <form class="auth-reset-password-form">
+                <div class="form-title text-center">
+                    Reset Your Password
+                </div>
+                <div class="form-sub-title text-center mb-5">
+                    Enter a new password and confirm it!
                 </div>
                 <div class="form-group mb-5">
-                    <label for="login-email mb-3">Email</label>
-                    <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="">
+                    <label for="login-password mb-3">New Password</label>
+                    <input type="password" class="form-control" id="new-password">
                 </div>
                 <div class="form-group mb-5">
                     <label for="login-password mb-3">Password</label>
-                    <input type="password" class="form-control" id="login-password" placeholder="">
-                </div>
-                <div class="form-row mb-5">
-                    <div class="form-group col-md-6">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="login-remember">
-                            <label class="form-check-label" for="login-remember">Remember Password</label>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6 text-md-right">
-                        <a href="forgot-password" class="reset-password-cta">Forgot My Password</a>
-                    </div>
+                    <input type="password" class="form-control" id="confirm-password">
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <a href="join" class="login-cta-element d-flex">
-                            <img src="img/auth/add.png" style="width: 64px; height: 64px;" />
-                            <div class="login-cta-labels d-flex flex-column ml-4">
-                                <div class="login-cta-label-desc">Don’t have an account?</div>
-                                <div class="login-cta-label">Join Now</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <a class="login-cta-element d-flex justify-content-md-end">
                             <img src="img/auth/next.png" style="width: 64px; height: 64px;" />
                             <div class="login-cta-labels d-flex flex-column ml-4">
-                                <div class="login-cta-label-desc">Let’s go</div>
-                                <div class="login-cta-label">Login Now</div>
+                                <div class="login-cta-label-desc">Let’s get you back in</div>
+                                <div class="login-cta-label">Submit New Password</div>
                             </div>
                         </a>
                     </div>
@@ -60,26 +43,25 @@ export default {
 </script>
 
 <style lang="scss">
-    .auth-login {
+    .auth-reset-password {
         background: white;
         padding: 94px 0;
         min-height: 1000px;
     }
-    .auth-login-container {
+    .auth-reset-password-container {
         max-width: 768px;
     }
-    .auth-login-form {
+    .auth-reset-password-form {
         .form-title {
             font-family: SFProDisplay;
             font-size: 42px;
             font-weight: bold;
             color: #444444;
         }
-        .reset-password-cta {
-            font-family: HelveticaNeue;
+        .form-sub-title {
+            font-family: SFProText;
             font-size: 18px;
-            font-weight: bold;
-            color: #4a90e2;
+            color: black;
         }
         .form-group {
             label {
@@ -88,7 +70,7 @@ export default {
                 font-size: 18px;
                 font-weight: bold;
             }
-            input[type=email], input[type=password] {
+            input[type=password] {
                 border: 0 none;
                 border-bottom: solid 2px #cccccc;
                 border-radius: 0;

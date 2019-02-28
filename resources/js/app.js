@@ -32,10 +32,12 @@ Vue.component('home-slider', require('./pages/home/Slider.vue'))
 Vue.component('common-header', require('./pages/common/Header.vue'))
 Vue.component('common-footer', require('./pages/common/Footer.vue'))
 
-Vue.component('auth-login', require('./pages/auth/Login'))
-Vue.component('auth-join', require('./pages/auth/Join'))
+Vue.component('auth-login', require('./pages/auth/Login.vue'))
+Vue.component('auth-join', require('./pages/auth/Join.vue'))
+Vue.component('auth-forgot-password', require('./pages/auth/ForgotPassword.vue'))
+Vue.component('auth-reset-password', require('./pages/auth/ResetPassword.vue'))
 
-Vue.component('profile', require('./pages/profile/index.vue'))
+Vue.component('user-profile', require('./pages/profile/profile.vue'))
 
 // backend
 Vue.component('account-list', require('./pages/account/AccountList.vue'))

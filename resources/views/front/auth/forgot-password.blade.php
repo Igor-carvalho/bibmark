@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-<user-profile></user-profile>
+<auth-forgot-password></auth-forgot-password>
 @endsection

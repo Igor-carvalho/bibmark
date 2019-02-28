@@ -17,6 +17,7 @@ Route::get('/profile', 'WebController@profilePage');
 Route::get('/join', 'WebController@joinPage');
 Route::get('/login', 'WebController@loginPage');
 Route::get('/forgot-password', 'WebController@forgotPasswordPage');
+Route::get('/reset-password', 'WebController@resetPasswordPage');
 
 // backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
