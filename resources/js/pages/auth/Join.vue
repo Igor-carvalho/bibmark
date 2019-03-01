@@ -71,10 +71,12 @@ export default {
     methods: {
         submit() {
             const that = this
+
+            const strings = this.name.split(" ");
             const data = {
                 name: this.name,
-                firstname: 'firstname',
-                lastname: 'lastname',
+                firstname: strings[0],
+                lastname: strings[1] ? strings[1] : '',
                 email: this.email,
                 password: this.password
             }
