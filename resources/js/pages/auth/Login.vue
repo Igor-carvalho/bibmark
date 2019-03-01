@@ -129,6 +129,11 @@ export default {
             font-weight: bold;
         }
 
+        input[type=checkbox] {
+            font-size: 24px;
+            margin-top: 6px;
+        }
+
         input {
             border: 0 none;
             border-bottom: solid 2px #cccccc;
