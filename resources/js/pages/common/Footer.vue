@@ -28,32 +28,32 @@
 
                         <!-- Links -->
                         <div class="pt-lg-4">
-                            <img src="img/bibmark-footer-logo.svg">
+                            <img src="/img/bibmark-footer-logo.svg">
                         </div>
                         <ul class="list-unstyled list-inline pt-4">
                             <li class="list-inline-item pr-1 pt-1">
                                 <a href="javascript:void(0)">
-                                    <img src="img/instagram-icon.svg">
+                                    <img src="/img/instagram-icon.svg">
                                 </a>
                             </li>
                             <li class="list-inline-item pr-1 pt-1">
                                 <a href="javascript:void(0)">
-                                    <img src="img/fb-icon.svg">
+                                    <img src="/img/fb-icon.svg">
                                 </a>
                             </li>
                             <li class="list-inline-item pr-1 pt-1">
                                 <a href="javascript:void(0)">
-                                    <img src="img/twitter-icon.svg">
+                                    <img src="/img/twitter-icon.svg">
                                 </a>
                             </li>
                             <li class="list-inline-item pr-1 pt-1">
                                 <a href="javascript:void(0)">
-                                    <img src="img/youtube-icon.svg">
+                                    <img src="/img/youtube-icon.svg">
                                 </a>
                             </li>
                             <li class="list-inline-item pr-1 pt-1">
                                 <a href="javascript:void(0)">
-                                    <img src="img/snapchat-icon.svg">
+                                    <img src="/img/snapchat-icon.svg">
                                 </a>
                             </li>
                         </ul>

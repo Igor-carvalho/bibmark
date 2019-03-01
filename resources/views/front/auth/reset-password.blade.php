@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-<auth-reset-password></auth-reset-password>
+<auth-reset-password token={{$token}} email={{$email}}></auth-reset-password>
 @endsection

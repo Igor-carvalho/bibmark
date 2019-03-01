@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-md Rectangle w-100" style="">
-        <a class="navbar-brand" href="#"><img src="img/bibmark-logo.svg"  class="logo" ></a>
+        <a class="navbar-brand" href="#"><img src="/img/bibmark-logo.svg"  class="logo" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"><i class="fa fa-bars" style="font-size:24px; margin-top: -5px; margin-left: -3px;" aria-hidden="true"></i></span>
         </button>
@@ -28,13 +28,13 @@
                 </ul>
                 <ul class="navbar-nav ml-2">
                     <li class="nav-item">
-                        <a class="nav-link black" href="join">JOIN</a>
+                        <a class="nav-link black" href="/join">JOIN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link black" href="login">LOG&nbsp;IN</a>
+                        <a class="nav-link black" href="/login">LOG&nbsp;IN</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link shopping-cart-icon pt-2"><img src="img/shopping-cart-icon.svg" ></a>
+                        <a href="#" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
                     </li>
                 </ul>
             </div>

@@ -17,7 +17,8 @@ Route::get('/profile', 'WebController@profilePage');
 Route::get('/join', 'WebController@joinPage');
 Route::get('/login', 'WebController@loginPage');
 Route::get('/forgot-password', 'WebController@forgotPasswordPage');
-Route::get('/reset-password', 'WebController@resetPasswordPage');
+Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');
+Route::get('/reset-password', 'WebController@showResetForm');
 
 // backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
@@ -51,7 +52,9 @@ Route::middleware(['guest'])->group(function() {
     });
 });
 
-Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword');
+//Route::get('admin/password/reset/{token}', 'Admin\AdminController@resetPassword');
+Route::post('/forgot-password', 'Admin\AdminController@forgotPassword');
+Route::post('/reset-password', 'Admin\AdminController@resetPassword');
 
 Route::prefix('internal')->group(function() {
     Route::post('login', 'InternalController@login');
