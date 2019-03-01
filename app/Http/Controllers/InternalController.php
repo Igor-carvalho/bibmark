@@ -18,6 +18,7 @@ use App\Http\Requests\UploadImageRequest;
 use App\Services\{AccountService, CharityService, EventService, UserService, ProductService, LocationService, AddressService, OrderService, BillingService, DesignService, ExtraService, ShippingService};
 use App\Http\Resources\{AccountResource, AccountCollection, CharityResource, CharityCollection, EventResource, EventCollection, UserResource, UserCollection, ProductResource, ProductCollection};
 use App\Http\Resources\{LocationResource, LocationCollection, AddressResource, OrderItemResource, OrderItemCollection, OrderResource, OrderCollection, DesignResource, DesignCollection};
+use Illuminate\Support\Facades\Redirect;
 
 class InternalController extends Controller
 {
@@ -45,7 +46,8 @@ class InternalController extends Controller
         if ($authenticated) {
             return redirect('/dashboard');
         } else {
-            return redirect('/admin/login');
+            //return redirect('/admin/login');
+            return Redirect::back()->withErrors('Incorrect email or password');
         }
     }
 
