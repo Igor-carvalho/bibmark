@@ -1,7 +1,7 @@
 <template>
     <div class="auth-forgot-password">
         <div class="container auth-forgot-password-container">
-            <form class="auth-forgot-password-form">
+            <form class="auth-forgot-password-form" @submit.prevent="submit()">
                 <div class="form-title text-center">
                     Forgot Password
                 </div>
@@ -9,16 +9,20 @@
                     Don’t worry, we got your back!
                 </div>
                 <div class="form-group mb-5">
-                    <label for="login-email mb-3">Email</label>
-                    <input type="email" class="form-control" id="email">
+                    <label for="email">Email</label>
+                    <input v-model="email" type="email" class="form-control" id="email" autofocus required>
+                    <span v-if="error" style="color:red; font-size: 14px">{{error}}</span>
+                    <span v-if="msg" style="color:red; font-size: 14px">{{msg}}</span>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <a class="login-cta-element d-flex justify-content-md-end">
-                            <img src="img/auth/next.png" style="width: 64px; height: 64px;" />
+                            <button type="submit" class="submit_btn">
+                                <img src="/img/auth/next.png" style="width: 64px; height: 64px;" />
+                            </button>
                             <div class="login-cta-labels d-flex flex-column ml-4">
                                 <div class="login-cta-label-desc">Let’s reset it</div>
-                                <div class="login-cta-label">Submit</div>
+                                <div class="login-cta-label" >Submit</div>
                             </div>
                         </a>
                     </div>
@@ -32,13 +36,30 @@
 export default {
     name: 'AuthLogin',
     data: () => ({
+        email: '',
+        error: '',
+        msg: ''
     }),
     methods: {
+        submit() {
+            axios.post('forgot-password', {email: this.email}).then((res) => {
+                if (res.data.error)
+                    this.error = res.data.error;
+                else {
+                    this.msg = res.data.msg;
+                }
+            })
+        }
     }
 }
 </script>
 
 <style lang="scss">
+    .submit_btn {
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    }
     .auth-forgot-password {
         background: white;
         padding: 94px 0;

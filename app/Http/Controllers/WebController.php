@@ -22,12 +22,18 @@ class WebController extends Controller
         return view('front.auth.forgot-password');
     }
 
-    public function resetPasswordPage() {
-        return view('front.auth.reset-password');
+    public function resetPasswordPage($token, $email) {
+        return view('front.auth.reset-password')->with(
+            ['token' => $token, 'email' => $email]
+        );
+    }
+
+    public function showResetForm(Request $request) {
+
     }
 
     public function profilePage() {
         return view('front.profile');
     }
-    
+
 }

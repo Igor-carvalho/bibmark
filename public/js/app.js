@@ -1668,13 +1668,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'AuthLogin',
     data: function data() {
-        return {};
+        return {
+            email: '',
+            error: '',
+            msg: ''
+        };
     },
-    methods: {}
+    methods: {
+        submit: function submit() {
+            var _this = this;
+
+            axios.post('forgot-password', { email: this.email }).then(function (res) {
+                if (res.data.error) _this.error = res.data.error;else {
+                    _this.msg = res.data.msg;
+                }
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -1853,13 +1871,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'AuthLogin',
     data: function data() {
-        return {};
+        return {
+            password: '',
+            confirmPassword: '',
+            msg: ''
+        };
     },
-    methods: {}
+
+    props: ['token', 'email'],
+    methods: {
+        submit: function submit() {
+            var _this = this;
+
+            if (this.password != this.confirmPassword) this.msg = 'Please, confirm your password correctly.';else {
+                this.msg = '';
+                axios.post('/reset-password', { token: this.token, email: this.email, password: this.password }).then(function (res) {
+                    _this.msg = res.data.msg;
+                    // console.log('res', res);
+                });
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -4841,7 +4880,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.auth-reset-password {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-reset-password-container {\n  max-width: 768px;\n}\n.auth-reset-password-form .form-title {\n  font-family: SFProDisplay;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-reset-password-form .form-sub-title {\n  font-family: SFProText;\n  font-size: 18px;\n  color: black;\n}\n.auth-reset-password-form .form-group label {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-reset-password-form .form-group input[type=password] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-reset-password-form .login-cta-element i {\n  margin-right: 1rem;\n}\n.auth-reset-password-form .login-cta-element .login-cta-labels .login-cta-label-desc {\n  font-family: SFProDisplay;\n  opacity: 0.6;\n  font-size: 16px;\n  font-weight: 500;\n  color: #000000;\n}\n.auth-reset-password-form .login-cta-element .login-cta-labels .login-cta-label {\n  font-family: SFProDisplay;\n  font-size: 24px;\n  font-weight: 500;\n  color: #000000;\n}\n", ""]);
+exports.push([module.i, "\n.submit_btn {\n  border: none;\n  background-color: white;\n  cursor: pointer;\n}\n.auth-reset-password {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-reset-password-container {\n  max-width: 768px;\n}\n.auth-reset-password-form .form-title {\n  font-family: SFProDisplay;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-reset-password-form .form-sub-title {\n  font-family: SFProText;\n  font-size: 18px;\n  color: black;\n}\n.auth-reset-password-form .form-group label {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-reset-password-form .form-group input[type=password] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-reset-password-form .login-cta-element i {\n  margin-right: 1rem;\n}\n.auth-reset-password-form .login-cta-element .login-cta-labels .login-cta-label-desc {\n  font-family: SFProDisplay;\n  opacity: 0.6;\n  font-size: 16px;\n  font-weight: 500;\n  color: #000000;\n}\n.auth-reset-password-form .login-cta-element .login-cta-labels .login-cta-label {\n  font-family: SFProDisplay;\n  font-size: 24px;\n  font-weight: 500;\n  color: #000000;\n}\n", ""]);
 
 // exports
 
@@ -4931,7 +4970,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.auth-forgot-password {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-forgot-password-container {\n  max-width: 768px;\n}\n.auth-forgot-password-form .form-title {\n  font-family: SFProDisplay;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-forgot-password-form .form-sub-title {\n  font-family: SFProText;\n  font-size: 18px;\n  color: black;\n}\n.auth-forgot-password-form .form-group label {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-forgot-password-form .form-group input[type=email] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-forgot-password-form .login-cta-element i {\n  margin-right: 1rem;\n}\n.auth-forgot-password-form .login-cta-element .login-cta-labels .login-cta-label-desc {\n  font-family: SFProDisplay;\n  opacity: 0.6;\n  font-size: 16px;\n  font-weight: 500;\n  color: #000000;\n}\n.auth-forgot-password-form .login-cta-element .login-cta-labels .login-cta-label {\n  font-family: SFProDisplay;\n  font-size: 24px;\n  font-weight: 500;\n  color: #000000;\n}\n", ""]);
+exports.push([module.i, "\n.submit_btn {\n  border: none;\n  background-color: white;\n  cursor: pointer;\n}\n.auth-forgot-password {\n  background: white;\n  padding: 94px 0;\n  min-height: 1000px;\n}\n.auth-forgot-password-container {\n  max-width: 768px;\n}\n.auth-forgot-password-form .form-title {\n  font-family: SFProDisplay;\n  font-size: 42px;\n  font-weight: bold;\n  color: #444444;\n}\n.auth-forgot-password-form .form-sub-title {\n  font-family: SFProText;\n  font-size: 18px;\n  color: black;\n}\n.auth-forgot-password-form .form-group label {\n  color: #444444;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  font-weight: bold;\n}\n.auth-forgot-password-form .form-group input[type=email] {\n  border: 0 none;\n  border-bottom: solid 2px #cccccc;\n  border-radius: 0;\n  font-family: HelveticaNeue;\n  font-size: 18px;\n  margin-top: 0.5rem;\n}\n.auth-forgot-password-form .login-cta-element i {\n  margin-right: 1rem;\n}\n.auth-forgot-password-form .login-cta-element .login-cta-labels .login-cta-label-desc {\n  font-family: SFProDisplay;\n  opacity: 0.6;\n  font-size: 16px;\n  font-weight: 500;\n  color: #000000;\n}\n.auth-forgot-password-form .login-cta-element .login-cta-labels .login-cta-label {\n  font-family: SFProDisplay;\n  font-size: 24px;\n  font-weight: 500;\n  color: #000000;\n}\n", ""]);
 
 // exports
 
@@ -16143,16 +16182,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "auth-reset-password" }, [
-      _c("div", { staticClass: "container auth-reset-password-container" }, [
-        _c("form", { staticClass: "auth-reset-password-form" }, [
+  return _c("div", { staticClass: "auth-reset-password" }, [
+    _c("div", { staticClass: "container auth-reset-password-container" }, [
+      _c(
+        "form",
+        {
+          staticClass: "auth-reset-password-form",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              _vm.submit()
+            }
+          }
+        },
+        [
           _c("div", { staticClass: "form-title text-center" }, [
             _vm._v("\n                Reset Your Password\n            ")
           ]),
@@ -16164,58 +16207,117 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group mb-5" }, [
-            _c("label", { attrs: { for: "login-password mb-3" } }, [
+            _c("label", { attrs: { for: "new-password" } }, [
               _vm._v("New Password")
             ]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.password,
+                  expression: "password"
+                }
+              ],
               staticClass: "form-control",
-              attrs: { type: "password", id: "new-password" }
+              attrs: {
+                type: "password",
+                id: "new-password",
+                required: "",
+                autofocus: ""
+              },
+              domProps: { value: _vm.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.password = $event.target.value
+                }
+              }
             })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group mb-5" }, [
-            _c("label", { attrs: { for: "login-password mb-3" } }, [
+            _c("label", { attrs: { for: "confirm-password" } }, [
               _vm._v("Password")
             ]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.confirmPassword,
+                  expression: "confirmPassword"
+                }
+              ],
               staticClass: "form-control",
-              attrs: { type: "password", id: "confirm-password" }
+              attrs: { type: "password", id: "confirm-password", required: "" },
+              domProps: { value: _vm.confirmPassword },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.confirmPassword = $event.target.value
+                }
+              }
             })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-row" }, [
-            _c("div", { staticClass: "form-group col-md-12" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "login-cta-element d-flex justify-content-md-end"
-                },
-                [
-                  _c("img", {
-                    staticStyle: { width: "64px", height: "64px" },
-                    attrs: { src: "img/auth/next.png" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "login-cta-labels d-flex flex-column ml-4" },
-                    [
-                      _c("div", { staticClass: "login-cta-label-desc" }, [
-                        _vm._v("Let’s get you back in")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "login-cta-label" }, [
-                        _vm._v("Submit New Password")
-                      ])
-                    ]
-                  )
-                ]
+          _vm.msg
+            ? _c(
+                "span",
+                { staticStyle: { color: "red", "font-size": "14px" } },
+                [_vm._v(_vm._s(_vm.msg))]
               )
-            ])
-          ])
-        ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._m(0)
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-row" }, [
+      _c("div", { staticClass: "form-group col-md-12" }, [
+        _c(
+          "a",
+          { staticClass: "login-cta-element d-flex justify-content-md-end" },
+          [
+            _c(
+              "button",
+              { staticClass: "submit_btn", attrs: { type: "submit" } },
+              [
+                _c("img", {
+                  staticStyle: { width: "64px", height: "64px" },
+                  attrs: { src: "/img/auth/next.png" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "login-cta-labels d-flex flex-column ml-4" },
+              [
+                _c("div", { staticClass: "login-cta-label-desc" }, [
+                  _vm._v("Let’s get you back in")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "login-cta-label" }, [
+                  _vm._v("Submit New Password")
+                ])
+              ]
+            )
+          ]
+        )
       ])
     ])
   }
@@ -18648,16 +18750,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "auth-forgot-password" }, [
-      _c("div", { staticClass: "container auth-forgot-password-container" }, [
-        _c("form", { staticClass: "auth-forgot-password-form" }, [
+  return _c("div", { staticClass: "auth-forgot-password" }, [
+    _c("div", { staticClass: "container auth-forgot-password-container" }, [
+      _c(
+        "form",
+        {
+          staticClass: "auth-forgot-password-form",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              _vm.submit()
+            }
+          }
+        },
+        [
           _c("div", { staticClass: "form-title text-center" }, [
             _vm._v("\n                Forgot Password\n            ")
           ]),
@@ -18669,47 +18775,95 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group mb-5" }, [
-            _c("label", { attrs: { for: "login-email mb-3" } }, [
-              _vm._v("Email")
-            ]),
+            _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.email,
+                  expression: "email"
+                }
+              ],
               staticClass: "form-control",
-              attrs: { type: "email", id: "email" }
-            })
+              attrs: {
+                type: "email",
+                id: "email",
+                autofocus: "",
+                required: ""
+              },
+              domProps: { value: _vm.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.email = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.error
+              ? _c(
+                  "span",
+                  { staticStyle: { color: "red", "font-size": "14px" } },
+                  [_vm._v(_vm._s(_vm.error))]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.msg
+              ? _c(
+                  "span",
+                  { staticStyle: { color: "red", "font-size": "14px" } },
+                  [_vm._v(_vm._s(_vm.msg))]
+                )
+              : _vm._e()
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-row" }, [
-            _c("div", { staticClass: "form-group col-md-12" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "login-cta-element d-flex justify-content-md-end"
-                },
-                [
-                  _c("img", {
-                    staticStyle: { width: "64px", height: "64px" },
-                    attrs: { src: "img/auth/next.png" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "login-cta-labels d-flex flex-column ml-4" },
-                    [
-                      _c("div", { staticClass: "login-cta-label-desc" }, [
-                        _vm._v("Let’s reset it")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "login-cta-label" }, [
-                        _vm._v("Submit")
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ])
-          ])
-        ])
+          _vm._m(0)
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-row" }, [
+      _c("div", { staticClass: "form-group col-md-12" }, [
+        _c(
+          "a",
+          { staticClass: "login-cta-element d-flex justify-content-md-end" },
+          [
+            _c(
+              "button",
+              { staticClass: "submit_btn", attrs: { type: "submit" } },
+              [
+                _c("img", {
+                  staticStyle: { width: "64px", height: "64px" },
+                  attrs: { src: "/img/auth/next.png" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "login-cta-labels d-flex flex-column ml-4" },
+              [
+                _c("div", { staticClass: "login-cta-label-desc" }, [
+                  _vm._v("Let’s reset it")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "login-cta-label" }, [
+                  _vm._v("Submit")
+                ])
+              ]
+            )
+          ]
+        )
       ])
     ])
   }
@@ -19494,7 +19648,7 @@ var staticRenderFns = [
         _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
           _c("img", {
             staticClass: "logo",
-            attrs: { src: "img/bibmark-logo.svg" }
+            attrs: { src: "/img/bibmark-logo.svg" }
           })
         ]),
         _vm._v(" "),
@@ -19585,7 +19739,7 @@ var staticRenderFns = [
                 _c("li", { staticClass: "nav-item" }, [
                   _c(
                     "a",
-                    { staticClass: "nav-link black", attrs: { href: "join" } },
+                    { staticClass: "nav-link black", attrs: { href: "/join" } },
                     [_vm._v("JOIN")]
                   )
                 ]),
@@ -19593,7 +19747,10 @@ var staticRenderFns = [
                 _c("li", { staticClass: "nav-item" }, [
                   _c(
                     "a",
-                    { staticClass: "nav-link black", attrs: { href: "login" } },
+                    {
+                      staticClass: "nav-link black",
+                      attrs: { href: "/login" }
+                    },
                     [_vm._v("LOG IN")]
                   )
                 ]),
@@ -19607,7 +19764,7 @@ var staticRenderFns = [
                     },
                     [
                       _c("img", {
-                        attrs: { src: "img/shopping-cart-icon.svg" }
+                        attrs: { src: "/img/shopping-cart-icon.svg" }
                       })
                     ]
                   )
@@ -20081,37 +20238,39 @@ var staticRenderFns = [
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-md-3 mx-auto" }, [
                   _c("div", { staticClass: "pt-lg-4" }, [
-                    _c("img", { attrs: { src: "img/bibmark-footer-logo.svg" } })
+                    _c("img", {
+                      attrs: { src: "/img/bibmark-footer-logo.svg" }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("ul", { staticClass: "list-unstyled list-inline pt-4" }, [
                     _c("li", { staticClass: "list-inline-item pr-1 pt-1" }, [
                       _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("img", { attrs: { src: "img/instagram-icon.svg" } })
+                        _c("img", { attrs: { src: "/img/instagram-icon.svg" } })
                       ])
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "list-inline-item pr-1 pt-1" }, [
                       _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("img", { attrs: { src: "img/fb-icon.svg" } })
+                        _c("img", { attrs: { src: "/img/fb-icon.svg" } })
                       ])
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "list-inline-item pr-1 pt-1" }, [
                       _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("img", { attrs: { src: "img/twitter-icon.svg" } })
+                        _c("img", { attrs: { src: "/img/twitter-icon.svg" } })
                       ])
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "list-inline-item pr-1 pt-1" }, [
                       _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("img", { attrs: { src: "img/youtube-icon.svg" } })
+                        _c("img", { attrs: { src: "/img/youtube-icon.svg" } })
                       ])
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "list-inline-item pr-1 pt-1" }, [
                       _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("img", { attrs: { src: "img/snapchat-icon.svg" } })
+                        _c("img", { attrs: { src: "/img/snapchat-icon.svg" } })
                       ])
                     ])
                   ])
