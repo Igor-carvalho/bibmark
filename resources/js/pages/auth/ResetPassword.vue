@@ -53,7 +53,10 @@ export default {
                 this.msg = '';
                 axios.post('/reset-password', {token: this.token, email: this.email, password: this.password}).then((res) => {
                     this.msg = res.data.msg;
-                    // console.log('res', res);
+
+                    if (res.data.success == true) {
+                        window.location.href = '/login';
+                    }
                 })
             }
         }

@@ -1894,7 +1894,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.msg = '';
                 axios.post('/reset-password', { token: this.token, email: this.email, password: this.password }).then(function (res) {
                     _this.msg = res.data.msg;
-                    // console.log('res', res);
+
+                    if (res.data.success == true) {
+                        window.location.href = '/login';
+                    }
                 });
             }
         }

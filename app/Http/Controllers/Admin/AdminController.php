@@ -89,9 +89,10 @@ class AdminController extends Controller
      * forgot-password
      *
      * @author Igor
-     *
+     * @param @return \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
      */
-    public function forgotPassword(PasswordResetRequest $request)
+    public function forgotPassword(Request $request)
     {
         $email = $request->get('email');
         $user = User::where('email', $email)->first();
@@ -107,12 +108,15 @@ class AdminController extends Controller
         return response()->json(['success'=>true, 'msg' => 'The email was sent. Please check your email box']);
     }
 
+    /**
+     * reset password
+     *
+     * @author Igor
+     * @param @return \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
+     */
     public function resetPassword(Request $request)
     {
-//        $email = $request->get('email');
-//        $token = $request->get('token');
-//        $password = $request->get('password');
-
         $user = User::where('email', $request->get('email'))->first();
         if (!$user) {
             return response()->json(['success'=>false,'error' => 'The user for this email does not exist.']);
