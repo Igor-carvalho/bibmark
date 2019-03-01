@@ -1759,10 +1759,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         submit: function submit() {
             var that = this;
+
+            var strings = this.name.split(" ");
             var data = {
                 name: this.name,
-                firstname: 'firstname',
-                lastname: 'lastname',
+                firstname: strings[0],
+                lastname: strings[1] ? strings[1] : '',
                 email: this.email,
                 password: this.password
             };
@@ -1874,11 +1876,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$validator.validate().then(function (valid) {
                 if (valid) {
                     axios.post('/api/login', data).then(function (response) {
-                        if (response.data.success === 0) {
-                            window.location = 'login';
+                        if (response.data.status === 1) {
+                            window.location = '/';
                         }
                     }).catch(function (error) {
-                        that.errorMSG = error.response.data.error;
+                        if (error.response.status === 500) {
+                            that.errorMSG = error.response.data.error;
+                        }
                     });
                 }
             });

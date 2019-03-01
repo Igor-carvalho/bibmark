@@ -80,11 +80,13 @@ export default {
             this.$validator.validate().then(valid => {
                 if (valid) {
                     axios.post('/api/login', data).then(response => {
-                        if (response.data.success === 0) {
-                            window.location = 'login';
+                        if (response.data.status === 1) {
+                            window.location = '/';
                         }
                     }).catch(error => {
-                        that.errorMSG = error.response.data.error
+                        if (error.response.status === 500) {
+                            that.errorMSG = error.response.data.error
+                        }
                     });
                 }
             });

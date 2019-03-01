@@ -51,12 +51,12 @@ class LoginController extends Controller
         $data = $request->all();
         $authenticated = Auth::attempt([
             'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'password' => $data['password']
         ]);
         if ($authenticated) {
             $user = Auth::user();
             $result['user_id'] = $user->id;
-            $result['token'] = $user->createToken('BibMark')->accessToken;
+//            $result['token'] = $user->createToken('BibMark')->accessToken;
             return $this->sendSuccess($result);
         } else {
             return $this->sendError('Email or Password is not correct.');
