@@ -36,4 +36,8 @@ class WebController extends Controller
         return view('front.profile');
     }
 
+    public function editAccountPage() {
+        return view('front.edit-account');
+    }
+
 }

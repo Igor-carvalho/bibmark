@@ -14,6 +14,7 @@
 // frontend
 Route::get('/', 'WebController@profilePage');
 Route::get('/profile', 'WebController@profilePage');
+Route::get('/edit-account', 'WebController@editAccountPage');
 Route::get('/join', 'WebController@joinPage');
 Route::get('/login', 'WebController@loginPage');
 Route::get('/forgot-password', 'WebController@forgotPasswordPage');
