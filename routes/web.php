@@ -10,14 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
 // frontend
 Route::get('/', 'WebController@profilePage');
-Route::get('/profile', 'WebController@profilePage');
-Route::get('/edit-account', 'WebController@editAccountPage');
-Route::get('/join', 'WebController@joinPage');
-Route::get('/login', 'WebController@loginPage');
-Route::get('/forgot-password', 'WebController@forgotPasswordPage');
+
+Route::middleware(['guest'])->group(function() {
+    Route::get('/join', 'WebController@joinPage');
+    Route::post('login', 'WebController@doLogin')->name('dologin');
+    Route::get('/forgot-password', 'WebController@forgotPasswordPage');
+});
+Route::get('/login', 'WebController@loginPage')->middleware('frontauth');
+
+Route::middleware(['auth'])->group(function() {
+    Route::get('/profile', 'WebController@profilePage');
+    Route::get('/edit-account', 'WebController@editAccountPage');
+    Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
+});
+
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');
 Route::get('/reset-password', 'WebController@showResetForm');
 

@@ -12,11 +12,16 @@
 {{-- <auth-login></auth-login> --}}
 <div class="auth-login">
     <div class="container auth-login-container">
-        <form class="auth-login-form" action="{{ route('login') }}">
+        <form class="auth-login-form" method="POST" action="{{ route('dologin') }}">
                 @csrf
             <div class="form-title text-center mb-5">
                 Login To Bibmark
             </div>
+            @if (count($errors))
+            <div class="alert alert-danger">
+                {{ implode('', $errors->all(':message')) }}
+            </div>
+            @endif
             <div class="form-group mb-5">
                 <label for="login-email" class="mb-3">Email</label>
                 <input type="email" name="email" class="form-control" id="login-email" value="{{ old('email') }}" required autofocus>
@@ -35,8 +40,6 @@
                 </div>
                 @endif
             </div>
-
-            <p style="color: red; height: 25px;"></p>
 
             <div class="form-row mb-5">
                 <div class="form-group col-md-6">
@@ -61,13 +64,13 @@
                     </a>
                 </div>
                 <div class="d-flex align-items-center">
-                    <a class="login-cta-element d-flex justify-content-md-end">
+                    <button class="login-cta-element d-flex justify-content-md-end">
                         <img src="img/auth/next.png" style="width: 64px; height: 64px;"/>
                         <div class="login-cta-labels d-flex flex-column ml-4">
                             <div class="login-cta-label-desc">Let’s go</div>
                             <div class="login-cta-label">Login Now</div>
                         </div>
-                    </a>
+                    </button>
                 </div>
             </div>
         </form>
