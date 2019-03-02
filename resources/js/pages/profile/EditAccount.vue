@@ -21,7 +21,7 @@
                     <div class="profile-usermenu">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">My Profile</a>
+                                <a class="nav-link" href="/profile">My Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">My Events</a>
@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="#">My Orders</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Edit Account</a>
+                                <a class="nav-link active" href="/edit-account">Edit Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Logout</a>
@@ -96,7 +96,7 @@
                                 <h6 class="card-subtitle">
                                     To reset your password, simply click the button below.  We will send you an email with a reset link.
                                     <div class="col text-center">
-                                        <button class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center" type="submit"><span class="search-btn-text">Send Me A Reset Link</span></button>
+                                        <a href="/reset-password" class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center"><span class="search-btn-text">Send Me A Reset Link</span></a>
                                     </div>
                                 </h6>
                                 

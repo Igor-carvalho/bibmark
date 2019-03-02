@@ -21,7 +21,7 @@
                     <div class="profile-usermenu">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">My Profile</a>
+                                <a class="nav-link active" href="/profile">My Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">My Events</a>
@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="#">My Orders</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Edit Account</a>
+                                <a class="nav-link" href="/edit-account">Edit Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Logout</a>
