@@ -1,7 +1,6 @@
 @extends('front.layouts.header-footer-layout')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 @endsection
 
 @section('scripts')
