@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +24,17 @@ Route::get('/login', 'WebController@loginPage')->middleware('frontauth');
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/profile', 'WebController@profilePage');
-    Route::get('/edit-account', 'WebController@editAccountPage');
+    Route::get('/profile/edit-account', 'WebController@editAccountPage');
+    Route::patch('profile/{id}', 'ProfileController@update');
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
 });
 
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');
 Route::get('/reset-password', 'WebController@showResetForm');
+Route::get('/password/email', 'WebController@sendPasswordResetNotification');
+// Route::get('/password/email', 'WebController@sendlink');
+
+//Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 // backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {

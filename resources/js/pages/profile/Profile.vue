@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="#">My Orders</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/edit-account">Edit Account</a>
+                                <a class="nav-link" href="/profile/edit-account">Edit Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Logout</a>

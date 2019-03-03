@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="#">My Orders</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/edit-account">Edit Account</a>
+                                <a class="nav-link active" href="/profile/edit-account">Edit Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Logout</a>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="form-group mb-4">
                                 <label for="join-email" class="mb-3">Email</label>
-                                <input v-model="user.email" type="email" name="email" class="form-control" id="join-email"
+                                <input v-model="email" type="email" name="email" class="form-control" id="join-email"
                                     v-validate="'required|email'" :class="{ 'is-invalid': errors.has('email') }">
                                 <div class="error">
                                     <div v-if="errors.has('email')" class="invalid-feedback">{{ errors.first('email') }}</div>
@@ -80,7 +80,7 @@
                             <div class="form-row d-flex justify-content-between float-right">
                                 <div class="d-flex align-items-center">
                                     <a class="join-cta-element d-flex justify-content-md-end" @click="submit">
-                                        <img src="img/auth/next.png" style="width: 64px; height: 64px;"/>
+                                        <img src="/img/auth/next.png" style="width: 64px; height: 64px;"/>
                                         <div class="join-cta-labels d-flex flex-column ml-4">
                                             <div class="join-cta-label-desc">Let’s go</div>
                                             <div class="join-cta-label">Submit</div>
@@ -96,7 +96,7 @@
                                 <h6 class="card-subtitle">
                                     To reset your password, simply click the button below.  We will send you an email with a reset link.
                                     <div class="col text-center">
-                                        <a href="/reset-password" class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center"><span class="search-btn-text">Send Me A Reset Link</span></a>
+                                        <a href="/password/email" class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center"><span class="search-btn-text">Send Me A Reset Link</span></a>
                                     </div>
                                 </h6>
                                 
@@ -120,11 +120,40 @@
         data() {
             return {
                 user: Laravel.user,
-                name: Laravel.user.firstname+' '+Laravel.user.lastname
+                email: Laravel.user.email,
+                name: Laravel.user.firstname+' '+Laravel.user.lastname,
+                errorMSG: ''
             };
         },
-        mounted() {
+        methods: {
+        submit() {
+            const strings = this.name.split(" ");
+            const data = {
+                name: this.name,
+                firstname: strings[0],
+                lastname: strings[1] ? strings[1] : '',
+                email: this.email
+            }
+            console.log(data)
+            this.$validator.validate().then(valid => {
+                if (valid) {
+                    axios.patch('/profile/'+ this.user.id, data).then(response => {
+                        // if (response.data.success === 0) {
+                        // window.location = 'login';
+                            
+                        // }
+                        console.log(response.data.message);
+                        alert(response.data.message)
+                    }).catch(error => {
+                        if (error.response.status === 422) {
+                            that.errorMSG = error.response.data.errors.email[0]
+                        }
+                        console.log(error.response)
+                    });
+                }
+            });
         }
+    }
     }
 
 </script>
@@ -445,6 +474,8 @@
     }
     
 }
+
+
 
 @media (max-width: 768px) {
     .auth-join-container .card{
