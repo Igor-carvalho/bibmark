@@ -31,10 +31,11 @@ Route::middleware(['auth'])->group(function() {
 
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');
 Route::get('/reset-password', 'WebController@showResetForm');
-Route::get('/password/email', 'WebController@sendPasswordResetNotification');
-// Route::get('/password/email', 'WebController@sendlink');
-
-//Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::group([  'prefix' => 'password'], function () {    
+    Route::post('create', 'PasswordResetController@create');
+    // Route::get('find/{token}', 'PasswordResetController@find');
+    // Route::post('reset', 'PasswordResetController@reset');
+});
 
 // backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {

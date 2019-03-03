@@ -96,7 +96,7 @@
                                 <h6 class="card-subtitle">
                                     To reset your password, simply click the button below.  We will send you an email with a reset link.
                                     <div class="col text-center">
-                                        <a href="/password/email" class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center"><span class="search-btn-text">Send Me A Reset Link</span></a>
+                                        <a href="#" @click.prevent="sendResetPassword" class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center"><span class="search-btn-text">Send Me A Reset Link</span></a>
                                     </div>
                                 </h6>
                                 
@@ -138,20 +138,25 @@
             this.$validator.validate().then(valid => {
                 if (valid) {
                     axios.patch('/profile/'+ this.user.id, data).then(response => {
-                        // if (response.data.success === 0) {
-                        // window.location = 'login';
-                            
-                        // }
                         console.log(response.data.message);
                         alert(response.data.message)
                     }).catch(error => {
-                        if (error.response.status === 422) {
-                            that.errorMSG = error.response.data.errors.email[0]
-                        }
                         console.log(error.response)
                     });
                 }
             });
+        },
+        sendResetPassword(){
+            const data = {
+                email: this.email
+            }
+            console.log(data)
+            axios.post('/password/create', data).then(response => {
+                    console.log(response.data.message);
+                    alert(response.data.message)
+                }).catch(error => {
+                    console.log(error.response)
+                });
         }
     }
     }
@@ -159,7 +164,6 @@
 </script>
 
 <style lang="scss" scoped>
-
     @font-face {
         font-family: "HelveticaNeue";
         src: url("/fonts/HelveticaNeueCyr-Bold.eot");
