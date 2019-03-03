@@ -40,6 +40,7 @@ Vue.component('auth-forgot-password', require('./pages/auth/ForgotPassword.vue')
 Vue.component('auth-reset-password', require('./pages/auth/ResetPassword.vue'))
 
 Vue.component('user-profile', require('./pages/profile/profile.vue'))
+Vue.component('edit-account', require('./pages/profile/EditAccount.vue'))
 
 // backend
 Vue.component('account-list', require('./pages/account/AccountList.vue'))

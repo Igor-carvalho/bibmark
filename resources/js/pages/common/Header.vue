@@ -27,11 +27,14 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-2">
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="!authenticated">
                         <a class="nav-link black" href="/join">JOIN</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="!authenticated">
                         <a class="nav-link black" href="/login">LOG&nbsp;IN</a>
+                    </li>
+                    <li class="nav-item" v-if="authenticated">
+                        <a class="nav-link black" href="/doLogout">LOGOUT</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
@@ -45,7 +48,15 @@
 
 <script>
     export default {
-        name: "Header"
+        name: "Header",
+        data() {
+            return {
+                authenticated: Laravel.user.authenticated
+            };
+        },
+        mounted() {
+
+        }
     }
 </script>
 

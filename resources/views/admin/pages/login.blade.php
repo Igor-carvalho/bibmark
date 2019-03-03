@@ -22,6 +22,11 @@
             <form class="my-5" method="POST" action="{{ url('internal/login') }}">
             @csrf
 
+                @if (count($errors))
+                <div class="alert alert-danger">
+                    {{ implode('', $errors->all(':message')) }}
+                </div>
+                @endif
                 <div class="form-group">
                     <label class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" required/>

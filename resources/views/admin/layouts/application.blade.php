@@ -19,6 +19,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     @yield('styles')
+    <script>
+        window.Laravel = {!! json_encode([
+            'user' => [
+                'authenticated' => auth()->check(),
+                'id' => auth()->check() ? auth()->user()->id : null,
+                'firstname' => auth()->check() ? auth()->user()->firstname : null,
+                'lastname' => auth()->check() ? auth()->user()->lastname : null,
+                'email' => auth()->check() ? auth()->user()->email : null,
+                'phone' => auth()->check() ? auth()->user()->phone : null,
+            ]
+        ]) !!}
+    </script>
 </head>
 <body>
     <div class="page-loader"><div class="bg-primary"></div></div>
