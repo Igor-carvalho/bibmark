@@ -2,52 +2,53 @@
     <div class="container-fluid1" style="background: #ffffff">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <div class="profile-sidebar">
-                    <!-- SIDEBAR USERPIC -->
-                    <div class="text-center">
-                        <img src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon" alt="">
-                    </div>
-                    <!-- END SIDEBAR USERPIC -->
-                    <!-- USER TITLE -->
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name text-center">
-                            AKSHAY KOLTE
-                        </div>
-                    </div>
-                    <!-- END SIDEBAR USER TITLE -->
-                    <!-- SIDEBAR MENU -->
-                    <hr class="sidebar-divider">
-                    <div class="profile-usermenu">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/profile">My Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">My Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">My Designs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">My Orders</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/profile/edit-account">Edit Account</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Logout</a>
-                            </li>
-                        </ul>
-                        <hr class="pt-33 sidebar-divider">
-                    </div>
-                    <!-- END MENU -->
-                </div>
-                <div class="dashboard-link">
-                    <a href="#"> Business Dashboard</a>
-                </div>
-            </div>
+            <!--<div id="sidebar-wrapper">-->
+                <!--<div class="profile-sidebar">-->
+                    <!--&lt;!&ndash; SIDEBAR USERPIC &ndash;&gt;-->
+                    <!--<div class="text-center">-->
+                        <!--<img src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon" alt="">-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; END SIDEBAR USERPIC &ndash;&gt;-->
+                    <!--&lt;!&ndash; USER TITLE &ndash;&gt;-->
+                    <!--<div class="profile-usertitle">-->
+                        <!--<div class="profile-usertitle-name text-center">-->
+                            <!--AKSHAY KOLTE-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; END SIDEBAR USER TITLE &ndash;&gt;-->
+                    <!--&lt;!&ndash; SIDEBAR MENU &ndash;&gt;-->
+                    <!--<hr class="sidebar-divider">-->
+                    <!--<div class="profile-usermenu">-->
+                        <!--<ul class="nav flex-column">-->
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link" href="/profile">My Profile</a>-->
+                            <!--</li>-->
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link" href="#">My Events</a>-->
+                            <!--</li>-->
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link" href="#">My Designs</a>-->
+                            <!--</li>-->
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link" href="#">My Orders</a>-->
+                            <!--</li>-->
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link active" href="/profile/edit-account">Edit Account</a>-->
+                            <!--</li>-->
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link" href="#">Logout</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<hr class="pt-33 sidebar-divider">-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; END MENU &ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="dashboard-link">-->
+                    <!--<a href="#"> Business Dashboard</a>-->
+                <!--</div>-->
+            <!--</div>-->
             <!-- /#sidebar-wrapper -->
+            <SideBar></SideBar>
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
@@ -99,7 +100,7 @@
                                         <a href="#" @click.prevent="sendResetPassword" class="btn btn-sm  ml-2 mr-2 reset-btn align-content-sm-center"><span class="search-btn-text">Send Me A Reset Link</span></a>
                                     </div>
                                 </h6>
-                                
+
                             </div>
                         </div>
                         </div>
@@ -114,9 +115,10 @@
 </template>
 
 <script>
+    import SideBar from "./SideBar";
     export default {
         name: 'EditAccount',
-        components: {},
+        components: {SideBar},
         data() {
             return {
                 user: Laravel.user,
@@ -476,7 +478,7 @@
             }
         }
     }
-    
+
 }
 
 

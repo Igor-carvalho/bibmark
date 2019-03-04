@@ -1,35 +1,82 @@
 <template>
-    <div class="container-fluid1" style="background: #ffffff">
-        <div class="d-flex" id="wrapper">
-            <!-- Sidebar -->
-            <SideBar></SideBar>
-            <!-- /#sidebar-wrapper -->
-
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <div class="container-fluid1">
-                    <div class="profile-content">
-                        <h2 class="welcome">Welcome to Bibmark</h2>
-                        <h5 class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora
-                            numquam eum quod quia.</h5>
-                        <hr class="content-divider">
-                    </div>
+    <div id="sidebar-wrapper">
+        <div class="profile-sidebar">
+            <!-- SIDEBAR USERPIC -->
+            <div class="text-center">
+                <img src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon" alt="">
+            </div>
+            <!-- END SIDEBAR USERPIC -->
+            <!-- USER TITLE -->
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name text-center">
+                    AKSHAY KOLTE
                 </div>
             </div>
-            <!-- /#page-content-wrapper -->
-
+            <!-- END SIDEBAR USER TITLE -->
+            <!-- SIDEBAR MENU -->
+            <hr class="sidebar-divider">
+            <div class="profile-usermenu">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" :class="{ active: isActive('/profile') }" href="/profile">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Designs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" :class="{ active: isActive('/profile/edit-account') }" href="/profile/edit-account">Edit Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/doLogout">Logout</a>
+                    </li>
+                </ul>
+                <hr v-if="canRead" class="pt-33 sidebar-divider">
+            </div>
+            <!-- END MENU -->
         </div>
-        <!-- /#wrapper -->
+        <div class="dashboard-link">
+            <a v-if="canRead" href="/dashboard"> Business Dashboard</a>
+        </div>
     </div>
 </template>
 
 <script>
-    import SideBar from "./SideBar";
     export default {
-        components: {SideBar},
+        name: "SideBar",
+        data() {
+            return {
+                canRead: false
+            };
+        },
+        mounted() {
+            this.getPermission();
+        },
+        methods: {
+            getPermission() {
+                axios.get('/profile/permission').then((res) => {
+                    if (res.data.success) {
+                        this.canRead = true;
+                    } else {
+                        this.canRead = false;
+                    }
+                });
+            },
+            isActive(url) {
+                if (location.pathname == url) {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
-
 </script>
+
 
 <style lang="scss" scoped>
 
