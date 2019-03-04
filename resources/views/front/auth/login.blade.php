@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="form-group col-md-6 text-md-right">
-                    <a href="" class="reset-password-cta">Forgot My Password</a>
+                    <a href="/forgot-password" class="reset-password-cta">Forgot My Password</a>
                 </div>
             </div>
 

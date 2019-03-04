@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'firstname', 'lastname', 'email', 'phone', 'password', 'is_superadmin',
+        'name', 'firstname', 'lastname', 'email', 'phone', 'password', 'is_superadmin', 'photo'
     ];
 
     /**
@@ -32,7 +32,7 @@ class User extends Authenticatable
 
     /**
      * check if a user is super admin
-     * 
+     *
      * @return boolean
      */
     public function isSuperAdmin()
@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     /**
      * check if a certain user has admin access to
-     * 
+     *
      * @param UserableType $type
      * @param integer $type_id
      * @return boolean
@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     /**
      * check if a certain user has read access to
-     * 
+     *
      * @param UserableType $type
      * @param integer $type_id
      * @return boolean
@@ -73,10 +73,10 @@ class User extends Authenticatable
 
         return $count > 0;
     }
-    
+
     /**
      * Get all of the accounts that are assigned this user.
-     * 
+     *
      * @return array
      */
     public function accounts()
@@ -86,7 +86,7 @@ class User extends Authenticatable
 
     /**
      * Get all of the charities that are assigned this user.
-     * 
+     *
      * @return array
      */
     public function charities()
@@ -96,7 +96,7 @@ class User extends Authenticatable
 
     /**
      * Get all of the events that are assigned this user.
-     * 
+     *
      * @return array
      */
     public function events()
@@ -106,7 +106,7 @@ class User extends Authenticatable
 
     /**
      * Get all of the user's assets
-     * 
+     *
      * @return array
      */
     public function assets()
@@ -116,7 +116,7 @@ class User extends Authenticatable
 
     /**
      * Get all of the user's cards
-     * 
+     *
      * @return array
      */
     public function cards()
@@ -126,7 +126,7 @@ class User extends Authenticatable
 
     /**
      * Get all of the user's charges
-     * 
+     *
      * @return array
      */
     public function charges()
@@ -136,7 +136,7 @@ class User extends Authenticatable
 
     /**
      * Search users by name and email
-     * 
+     *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param string $search
      * @return \Illuminate\Database\Eloquent\Builder

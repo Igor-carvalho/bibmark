@@ -28,6 +28,8 @@ Route::middleware(['auth'])->group(function() {
     Route::patch('profile/{id}', 'ProfileController@update');
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
     Route::get('/profile/permission', 'ProfileController@getPermission');
+    Route::post('/profile/editPhoto', 'ProfileController@editPhoto');
+    Route::get('/profile/getPhoto', 'ProfileController@getPhoto');
 });
 
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');

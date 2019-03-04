@@ -3,7 +3,18 @@
         <div class="profile-sidebar">
             <!-- SIDEBAR USERPIC -->
             <div class="text-center">
-                <img src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon" alt="">
+                <div class="avatar-upload">
+                    <div class="avatar-edit">
+                        <input @change="editPhoto" type='file' id="imageUpload" accept=".png, .jpg, .jpeg"/>
+                        <label for="imageUpload"><i class="fa fa-pen" aria-hidden="true"></i></label>
+                    </div>
+                    <img v-if="photo == ''" src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon"
+                         alt="">
+                    <div v-else class="avatar-preview">
+                        <div id="imagePreview" :style="'background-image: url(' + photo + ');'">
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- END SIDEBAR USERPIC -->
             <!-- USER TITLE -->
@@ -30,7 +41,8 @@
                         <a class="nav-link" href="#">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" :class="{ active: isActive('/profile/edit-account') }" href="/profile/edit-account">Edit Account</a>
+                        <a class="nav-link" :class="{ active: isActive('/profile/edit-account') }"
+                           href="/profile/edit-account">Edit Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/doLogout">Logout</a>
@@ -51,11 +63,13 @@
         name: "SideBar",
         data() {
             return {
-                canRead: false
+                canRead: false,
+                photo: ''
             };
         },
         mounted() {
             this.getPermission();
+            this.getPhoto();
         },
         methods: {
             getPermission() {
@@ -72,6 +86,41 @@
                     return true;
                 }
                 return false;
+            },
+            readURL(input) {
+            },
+            editPhoto(e) {
+                let files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return;
+                if (files && files[0]) {
+                    // let reader = new FileReader();
+                    // reader.onload = (e) => {
+                    //     $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    //     $('#imagePreview').hide();
+                    //     $('#imagePreview').fadeIn(650);
+                    // }
+                    // reader.readAsDataURL(files[0]);
+
+                    let formData = new FormData();
+                    formData.append('image', files[0]);
+                    formData.append('type', 'profile');
+
+                    axios.post('/profile/editPhoto', formData, {headers: {'Content-Type': 'multipart/form-data'}})
+                        .then((res) => {
+                            if (res.data.success) {
+                                this.photo = res.data.url;
+                            }
+                        })
+                        .catch((err) => {
+                            console.log('FAILURE!!', err);
+                        });
+                }
+            },
+            getPhoto() {
+                axios.get('/profile/getPhoto').then((res) => {
+                        this.photo = res.data.url;
+                });
             }
         }
     }
@@ -195,18 +244,6 @@
         min-height: 460px;
     }
 
-    .welcome {
-        font-family: SFProDisplay;
-        font-size: 42px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #444444;
-        margin-bottom: 16px;
-    }
-
     .dashboard-link {
         margin-top: 34px;
         margin-left: 130px;
@@ -287,7 +324,6 @@
             margin-right: 0px;
         }
 
-
         .profile-usermenu ul li {
             display: flex;
             justify-content: center;
@@ -309,6 +345,57 @@
     @media (max-width: 900px) {
         .profile-content {
             padding: 0px 20px;
+        }
+    }
+
+    .avatar-upload {
+        position: relative;
+        max-width: 205px;
+        .avatar-edit {
+            position: absolute;
+            right: 12px;
+            z-index: 1;
+            top: 10px;
+            input {
+                display: none;
+                + label {
+                    font-family: 'FontAwesome';
+                    color: #757575;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 34px;
+                    height: 34px;
+                    margin-bottom: 0;
+                    border-radius: 100%;
+                    background: #FFFFFF;
+                    border: 1px solid transparent;
+                    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+                    cursor: pointer;
+                    font-weight: normal;
+                    transition: all .2s ease-in-out;
+                    &:hover {
+                        background: #f1f1f1;
+                        border-color: #d6d6d6;
+                    }
+                }
+            }
+        }
+        .avatar-preview {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            border-radius: 100%;
+            border: 6px solid #F8F8F8;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+            > div {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
         }
     }
 </style>
