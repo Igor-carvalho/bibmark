@@ -53,7 +53,7 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid1">
                     <div class="profile-content">
-                        <h2 class="welcome">Edit You Account</h2>
+                        <h2 class="welcome">Edit Your Account</h2>
                         <h5 class="content">Use the fields below to update your name, email or reset your password.</h5>
                         <hr class="content-divider">
                         <div class="container auth-join-container">
