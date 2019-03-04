@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="#">My Orders</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/profile/edit-account">Edit Account</a>
+                                <a class="nav-link" href="/dashboard">Edit Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Logout</a>
@@ -44,7 +44,7 @@
                     <!-- END MENU -->
                 </div>
                 <div class="dashboard-link">
-                    <a v-if="canRead" href="#"> Business Dashboard</a>
+                    <a v-if="canRead" href="/dashboard"> Business Dashboard</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
