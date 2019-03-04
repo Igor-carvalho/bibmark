@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\User\{PasswordResetRequest};
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
+use App\Enums\{ MorphType, UserRole };
+use phpDocumentor\Reflection\Types\Boolean;
 
 class AdminController extends Controller
 {
@@ -89,7 +91,7 @@ class AdminController extends Controller
      * forgot-password
      *
      * @author Igor
-     * @param @return \Illuminate\Http\Request
+     * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
     public function forgotPassword(Request $request)
@@ -112,7 +114,7 @@ class AdminController extends Controller
      * reset password
      *
      * @author Igor
-     * @param @return \Illuminate\Http\Request
+     * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
     public function resetPassword(Request $request)
@@ -136,5 +138,24 @@ class AdminController extends Controller
         \DB::table('password_resets')->where('email', $token->email)->delete();
 
         return response()->json(['success'=>true, 'msg'=>'Your password has been reset.']);
+    }
+
+
+    /**
+     * have access to an Account, Charity or Event or if super admin
+     *
+     * @author Igor
+     * @return \Illuminate\Http\Response
+     */
+    public function getPermission() {
+        $user = Auth::user();
+        $roleCount = \DB::table('userables')
+            ->where('role', [UserRole::Admin, UserRole::ReadOnly])
+            ->count();
+
+        if (isset($user) && $user->is_superadmin == 0 && $roleCount > 0) {
+            return response()->json(['success'=>true, 'msg'=>'You have a permission.']);
+        }
+        return response()->json(['success'=>false, 'msg'=>'You have no permission.']);
     }
 }

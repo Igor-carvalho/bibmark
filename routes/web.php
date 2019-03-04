@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/profile', 'WebController@profilePage');
     Route::get('/edit-account', 'WebController@editAccountPage');
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
+    Route::get('/profile/permission', 'Admin\AdminController@getPermission');
 });
 
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');

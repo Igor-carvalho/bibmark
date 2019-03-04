@@ -39,12 +39,12 @@
                                 <a class="nav-link" href="#">Logout</a>
                             </li>
                         </ul>
-                        <hr class="pt-33 sidebar-divider">
+                        <hr v-if="canRead" class="pt-33 sidebar-divider">
                     </div>
                     <!-- END MENU -->
                 </div>
                 <div class="dashboard-link">
-                    <a href="#"> Business Dashboard</a>
+                    <a v-if="canRead" href="#"> Business Dashboard</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -67,13 +67,27 @@
     </div>
 </template>
 
-<script src="./Profile.js">
+<script>
     export default {
         components: {},
         data() {
-            return {};
+            return {
+                canRead: false
+            };
         },
         mounted() {
+            this.getPermission();
+        },
+        methods: {
+            getPermission() {
+                axios.get('/profile/permission').then((res) => {
+                    if (res.data.success) {
+                        this.canRead = true;
+                    } else {
+                        this.canRead = false;
+                    }
+                });
+            }
         }
     }
 
