@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddImageToDesignTable extends Migration
+class AddImageToDesignsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddImageToDesignTable extends Migration
      */
     public function up()
     {
-        Schema::table('design', function (Blueprint $table) {
+        Schema::table('designs', function (Blueprint $table) {
             $table->string('image');
         });
     }
@@ -25,7 +25,7 @@ class AddImageToDesignTable extends Migration
      */
     public function down()
     {
-        Schema::table('design', function (Blueprint $table) {
+        Schema::table('designs', function (Blueprint $table) {
             $table->dropColumn('image');
         });
     }
