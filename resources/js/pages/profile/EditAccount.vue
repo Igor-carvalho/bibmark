@@ -1,52 +1,6 @@
 <template>
     <div class="container-fluid1" style="background: #ffffff">
         <div class="d-flex" id="wrapper">
-            <!-- Sidebar -->
-            <!--<div id="sidebar-wrapper">-->
-                <!--<div class="profile-sidebar">-->
-                    <!--&lt;!&ndash; SIDEBAR USERPIC &ndash;&gt;-->
-                    <!--<div class="text-center">-->
-                        <!--<img src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon" alt="">-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; END SIDEBAR USERPIC &ndash;&gt;-->
-                    <!--&lt;!&ndash; USER TITLE &ndash;&gt;-->
-                    <!--<div class="profile-usertitle">-->
-                        <!--<div class="profile-usertitle-name text-center">-->
-                            <!--AKSHAY KOLTE-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; END SIDEBAR USER TITLE &ndash;&gt;-->
-                    <!--&lt;!&ndash; SIDEBAR MENU &ndash;&gt;-->
-                    <!--<hr class="sidebar-divider">-->
-                    <!--<div class="profile-usermenu">-->
-                        <!--<ul class="nav flex-column">-->
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link" href="/profile">My Profile</a>-->
-                            <!--</li>-->
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link" href="#">My Events</a>-->
-                            <!--</li>-->
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link" href="#">My Designs</a>-->
-                            <!--</li>-->
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link" href="#">My Orders</a>-->
-                            <!--</li>-->
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link active" href="/profile/edit-account">Edit Account</a>-->
-                            <!--</li>-->
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link" href="#">Logout</a>-->
-                            <!--</li>-->
-                        <!--</ul>-->
-                        <!--<hr class="pt-33 sidebar-divider">-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; END MENU &ndash;&gt;-->
-                <!--</div>-->
-                <!--<div class="dashboard-link">-->
-                    <!--<a href="#"> Business Dashboard</a>-->
-                <!--</div>-->
-            <!--</div>-->
             <!-- /#sidebar-wrapper -->
             <SideBar></SideBar>
 
@@ -93,7 +47,7 @@
                         <br>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Reset password</h5>
+                                <h5 class="card-title">Reset Password</h5>
                                 <h6 class="card-subtitle">
                                     To reset your password, simply click the button below.  We will send you an email with a reset link.
                                     <div class="col text-center">
@@ -141,9 +95,9 @@
                 if (valid) {
                     axios.patch('/profile/'+ this.user.id, data).then(response => {
                         console.log(response.data.message);
-                        alert(response.data.message)
+                        this.$toastr('success', response.data.message, 'Success')
                     }).catch(error => {
-                        console.log(error.response)
+                        this.$toastr('error', 'An error occured, please try again', 'Error')
                     });
                 }
             });
@@ -155,9 +109,11 @@
             console.log(data)
             axios.post('/password/create', data).then(response => {
                     console.log(response.data.message);
-                    alert(response.data.message)
+                    //alert(response.data.message)
+                    this.$toastr('success', response.data.message, 'Success')
                 }).catch(error => {
                     console.log(error.response)
+                    this.$toastr('error', 'An error occured, please try again', 'Error')
                 });
         }
     }
@@ -331,7 +287,7 @@
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #000000;
+        // color: #000000;
     }
 
     #wrapper {
@@ -407,6 +363,7 @@
 
 .auth-join-container {
     max-width: 723px;
+    padding-top:30px;
 }
 
 .auth-join-form {
@@ -498,13 +455,16 @@
     padding: 0.7rem !important;
 }
 .card-title{
-    font-size: 20px;
+    font-size: 24px;
     color: #444444;
+    font-family: SFProDisplay;
 }
 .card-subtitle{
-    font-size: 16px;
-    color: #000000;
+    font-size: 17px;
+    // color: #000000;
     margin-top: 10px;
+    font-family: SFProText;
+    line-height: 28px;
 }
 .reset-btn {
     border-radius: 5px;
