@@ -60,7 +60,7 @@ class InternalController extends Controller
     {
         Auth::logout();
 
-        return redirect('/admin/login');
+        return redirect('/login');
     }
 
     /**
