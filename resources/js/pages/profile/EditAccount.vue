@@ -36,7 +36,7 @@
                                 <a class="nav-link active" href="/profile/edit-account">Edit Account</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Logout</a>
+                                <a class="nav-link" href="/doLogout">Logout</a>
                             </li>
                         </ul>
                         <hr class="pt-33 sidebar-divider">
@@ -114,6 +114,14 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+    import VueToastr from '@deveodk/vue-toastr'
+    import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css'
+    Vue.use(VueToastr, {
+        defaultPosition: 'toast-top-left',
+        defaultType: 'info',
+        defaultTimeout: 800
+    })
     export default {
         name: 'EditAccount',
         components: {},
@@ -139,9 +147,9 @@
                 if (valid) {
                     axios.patch('/profile/'+ this.user.id, data).then(response => {
                         console.log(response.data.message);
-                        alert(response.data.message)
+                        this.$toastr('success', response.data.message, 'Success')
                     }).catch(error => {
-                        console.log(error.response)
+                        this.$toastr('error', 'An error occured, please try again', 'Error')
                     });
                 }
             });
@@ -153,9 +161,11 @@
             console.log(data)
             axios.post('/password/create', data).then(response => {
                     console.log(response.data.message);
-                    alert(response.data.message)
+                    //alert(response.data.message)
+                    this.$toastr('success', response.data.message, 'Success')
                 }).catch(error => {
                     console.log(error.response)
+                    this.$toastr('error', 'An error occured, please try again', 'Error')
                 });
         }
     }

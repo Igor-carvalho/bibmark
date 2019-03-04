@@ -36,7 +36,7 @@
                                 <a class="nav-link" href="/profile/edit-account">Edit Account</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Logout</a>
+                                <a class="nav-link" href="/doLogout">Logout</a>
                             </li>
                         </ul>
                         <hr class="pt-33 sidebar-divider">
