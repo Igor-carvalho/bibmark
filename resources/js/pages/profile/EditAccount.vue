@@ -92,7 +92,7 @@
                         <br>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Reset password</h5>
+                                <h5 class="card-title">Reset Password</h5>
                                 <h6 class="card-subtitle">
                                     To reset your password, simply click the button below.  We will send you an email with a reset link.
                                     <div class="col text-center">
@@ -339,7 +339,7 @@
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #000000;
+        // color: #000000;
     }
 
     #wrapper {
@@ -415,6 +415,7 @@
 
 .auth-join-container {
     max-width: 723px;
+    padding-top:30px;
 }
 
 .auth-join-form {
@@ -506,13 +507,16 @@
     padding: 0.7rem !important;
 }
 .card-title{
-    font-size: 20px;
+    font-size: 24px;
     color: #444444;
+    font-family: SFProDisplay;
 }
 .card-subtitle{
-    font-size: 16px;
-    color: #000000;
+    font-size: 17px;
+    // color: #000000;
     margin-top: 10px;
+    font-family: SFProText;
+    line-height: 28px;
 }
 .reset-btn {
     border-radius: 5px;
