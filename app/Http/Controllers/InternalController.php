@@ -28,42 +28,6 @@ class InternalController extends Controller
     }
 
     /**
-     * Authenticate a user
-     *
-     * @param App\Http\Requests\User\LoginRequest $request
-     * @return Illuminate\Http\RedirectResponse
-     */
-
-    public function login(LoginRequest $request)
-    {
-        $data = $request->all();
-        $remember = isset($data['remember']) && $data['remember'] == 1;
-        $authenticated = Auth::attempt([
-            'email' => $data['email'],
-            'password' => $data['password']
-        ], $remember);
-
-        if ($authenticated) {
-            return redirect('/dashboard');
-        } else {
-            //return redirect('/admin/login');
-            return Redirect::back()->withErrors('Incorrect email or password');
-        }
-    }
-
-    /**
-     * Log out a user
-     *
-     * @return Illuminate\Http\RedirectResponse
-     */
-    public function logout()
-    {
-        Auth::logout();
-
-        return redirect('/admin/login');
-    }
-
-    /**
      * Get all accounts
      *
      * @param App\Services\AccountService $accountService
