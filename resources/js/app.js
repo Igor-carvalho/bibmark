@@ -75,6 +75,8 @@ Vue.component('design-edit', require('./pages/design/DesignEdit.vue'))
 
 Vue.component('dashboard', require('./pages/dashboard/Dasboard.vue'))
 
+Vue.component('cart', require('./pages/cart/Cart.vue'))
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
