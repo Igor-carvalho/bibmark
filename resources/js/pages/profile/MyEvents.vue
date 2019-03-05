@@ -33,11 +33,14 @@
                             <div class="card-datatable table-responsive">
                                 <table id="upcoming-event-list" class="table">
                                     <tr v-for="(upcomingEvent, key) in upcomingEventsList" :key="key">
-                                        <td class="td-date">{{ upcomingEvent.created_at | moment("Do MMMM, YYYY") }}</td>
+                                        <td class="td-date">{{ upcomingEvent.created_at | moment("Do MMMM, YYYY") }}
+                                        </td>
                                         <td class="td-name">{{upcomingEvent.name}}</td>
                                         <td class="td-CN">{{upcomingEvent.confirmation_number}}</td>
                                         <td class="text-right">
-                                            <button @click="$modal.show('addModal'); event_id=upcomingEvent.event_id" class="add-btn">Add</button>
+                                            <button @click="$modal.show('addModal'); event_id=upcomingEvent.event_id"
+                                                    class="add-btn">Add
+                                            </button>
                                         </td>
                                     </tr>
                                 </table>
@@ -130,15 +133,20 @@
                 });
             },
             submit() {
-                axios.post('/profile/my-events/' + this.user.id, {'event_id': this.event_id,'confirmation_number': this.confirmation_number})
-                    .then(response => {
-                        if (response.data.success) {
-                            this.$modal.hide('addModal');
-                            this.getEvents();
-                        }
-                    }).catch(error => {
+                if (this.confirmation_number) {
+                    axios.post('/profile/my-events/' + this.user.id, {
+                        'event_id': this.event_id,
+                        'confirmation_number': this.confirmation_number
+                    })
+                        .then(response => {
+                            if (response.data.success) {
+                                this.$modal.hide('addModal');
+                                this.getEvents();
+                            }
+                        }).catch(error => {
                         console.log('Error', error);
                     });
+                }
             }
         }
     }

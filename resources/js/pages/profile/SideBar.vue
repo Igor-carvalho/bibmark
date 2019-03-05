@@ -8,7 +8,8 @@
                         <input @change="editPhoto" type='file' id="imageUpload" accept=".png, .jpg, .jpeg"/>
                         <label for="imageUpload"><i class="fa fa-pen" aria-hidden="true"></i></label>
                     </div>
-                    <img v-if="photo == ''" src=" /img/profile/profile-fit.png" class="img-responsive center profile_icon"
+                    <img v-if="photo == '' || photo == null" src=" /img/profile/profile-fit.png"
+                         class="img-responsive center profile_icon"
                          alt="">
                     <div v-else class="avatar-preview">
                         <div id="imagePreview" :style="'background-image: url(' + photo + ');'">
@@ -65,7 +66,7 @@
         data() {
             return {
                 canRead: false,
-                photo: ''
+                photo: null
             };
         },
         mounted() {
@@ -88,21 +89,11 @@
                 }
                 return false;
             },
-            readURL(input) {
-            },
             editPhoto(e) {
                 let files = e.target.files || e.dataTransfer.files;
                 if (!files.length)
                     return;
                 if (files && files[0]) {
-                    // let reader = new FileReader();
-                    // reader.onload = (e) => {
-                    //     $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
-                    //     $('#imagePreview').hide();
-                    //     $('#imagePreview').fadeIn(650);
-                    // }
-                    // reader.readAsDataURL(files[0]);
-
                     let formData = new FormData();
                     formData.append('image', files[0]);
                     formData.append('type', 'profile');
@@ -120,7 +111,7 @@
             },
             getPhoto() {
                 axios.get('/profile/getPhoto').then((res) => {
-                        this.photo = res.data.url;
+                    this.photo = res.data.url;
                 });
             }
         }
@@ -264,10 +255,6 @@
         width: 100%;
         border-color: #cccccc;
         border-width: 2px;
-        /*margin-top: 2rem;*/
-        /*margin-bottom: 1rem;*/
-        /*border-top: 1px solid #cccccc;*/
-        /*border-bottom: 1px solid #cccccc;*/
     }
 
     hr.content-divider {
@@ -353,6 +340,7 @@
         display: flex;
         justify-content: center;
     }
+
     .avatar-upload {
         position: relative;
         max-width: 205px;

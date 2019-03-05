@@ -90,8 +90,10 @@
         }
     }
 }
-button, html [type="button"], [type="reset"], [type="submit"] {
-    -webkit-appearance: button;
-    background-color: transparent !important;
-    border: 0 !important;
+.auth-login {
+    button, html [type="button"], [type="reset"], [type="submit"] {
+        -webkit-appearance: button;
+        background-color: transparent !important;
+        border: 0 !important;
+    }
 }
