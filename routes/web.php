@@ -30,6 +30,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/profile/permission', 'ProfileController@getPermission');
     Route::post('/profile/editPhoto', 'ProfileController@editPhoto');
     Route::get('/profile/getPhoto', 'ProfileController@getPhoto');
+    Route::get('/profile/my-events', 'WebController@myEventsPage');
+    Route::get('/profile/my-events/{id}', 'ProfileController@getEvents');
+    Route::post('/profile/my-events/{id}', 'ProfileController@updateConfirmationNumber');
 });
 
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');

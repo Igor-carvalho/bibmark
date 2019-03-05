@@ -2,7 +2,7 @@
     <div id="sidebar-wrapper">
         <div class="profile-sidebar">
             <!-- SIDEBAR USERPIC -->
-            <div class="text-center">
+            <div class="avatar">
                 <div class="avatar-upload">
                     <div class="avatar-edit">
                         <input @change="editPhoto" type='file' id="imageUpload" accept=".png, .jpg, .jpeg"/>
@@ -32,7 +32,8 @@
                         <a class="nav-link" :class="{ active: isActive('/profile') }" href="/profile">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My Events</a>
+                        <a class="nav-link" :class="{ active: isActive('/profile/my-events') }"
+                           href="/profile/my-events">My Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Designs</a>
@@ -348,6 +349,10 @@
         }
     }
 
+    .avatar {
+        display: flex;
+        justify-content: center;
+    }
     .avatar-upload {
         position: relative;
         max-width: 205px;

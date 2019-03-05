@@ -59,7 +59,7 @@ class WebController extends Controller
         if ($validator->fails()) {
             return Redirect::to('login')
                 ->withErrors($validator) // send back all errors to the login form
-                ->withInput(Input::except('password')); 
+                ->withInput(Input::except('password'));
         } else {
 
             // create our user data for the authentication
@@ -73,9 +73,9 @@ class WebController extends Controller
 
                 return Redirect::to('/profile');
 
-            } else {        
+            } else {
 
-                // validation not successful, send back to form 
+                // validation not successful, send back to form
                 // return Redirect::to('login');
                 return Redirect::back()->withErrors('Incorrect email or password');
 
@@ -88,6 +88,11 @@ class WebController extends Controller
         Auth::logout();
 
         return redirect('/login');
+    }
+
+
+    public function myEventsPage() {
+        return view('front.my-events');
     }
 
 }
