@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/profile/permission', 'ProfileController@getPermission');
     Route::post('/profile/editPhoto', 'ProfileController@editPhoto');
     Route::get('/profile/getPhoto', 'ProfileController@getPhoto');
+    // Cart route
+    Route::get('/cart', 'CartController@index');
 });
 
 Route::get('/reset-password/{token}/{email}', 'WebController@resetPasswordPage');
