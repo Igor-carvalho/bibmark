@@ -49,7 +49,7 @@ class ProfileController extends Controller
             ->where('role', [UserRole::Admin, UserRole::ReadOnly])
             ->count();
 
-        if (isset($user) && $user->is_superadmin == 0 && $roleCount > 0) {
+        if ((isset($user) && $user->is_superadmin == 0) || $roleCount > 0) {
             return response()->json(['success'=>true, 'msg'=>'You have a permission.']);
         }
         return response()->json(['success'=>false, 'msg'=>'You have no permission.']);
