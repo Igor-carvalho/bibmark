@@ -75,6 +75,30 @@ class User extends Authenticatable
     }
 
     /**
+     * check if a user has read access to
+     *
+     * @return boolean
+     */
+    public function isAccess()
+    {
+        $types = [MorphType::Charity, MorphType::Event, MorphType::Account];
+
+        $result = false;
+        foreach ($types as $type) {
+            $count = $this->morphedByMany($type, 'userable')
+                ->wherePivotIn('role', [UserRole::Admin, UserRole::ReadOnly])
+                ->count();
+
+            if ($count > 0) {
+                $result = true;
+                break;
+            }
+        }
+
+        return $result || $this->isSuperAdmin();
+    }
+
+    /**
      * Get all of the accounts that are assigned this user.
      *
      * @return array

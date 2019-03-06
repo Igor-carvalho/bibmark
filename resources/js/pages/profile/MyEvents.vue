@@ -21,7 +21,7 @@
                                         <td class="td-date">{{ myEvent.created_at | moment("Do MMMM, YYYY") }}</td>
                                         <td class="td-name">{{myEvent.name}}</td>
                                         <td class="td-CN">{{myEvent.confirmation_number}}</td>
-                                        <td class="text-right"><img src="/img/profile/menu.png"/></td>
+                                        <td class="td-btn text-right"><img src="/img/profile/menu.png"/></td>
                                     </tr>
                                 </table>
                             </div>
@@ -37,8 +37,8 @@
                                         </td>
                                         <td class="td-name">{{upcomingEvent.name}}</td>
                                         <td class="td-CN">{{upcomingEvent.confirmation_number}}</td>
-                                        <td class="text-right">
-                                            <button @click="$modal.show('addModal'); event_id=upcomingEvent.event_id"
+                                        <td class="td-btn text-right">
+                                            <button v-if="!upcomingEvent.confirmation_number"  @click="$modal.show('addModal'); selected_key=key"
                                                     class="add-btn">Add
                                             </button>
                                         </td>
@@ -63,7 +63,7 @@
 
                                 <div class="form-group mb-5">
                                     <label class="mb-3">Confirmation Number</label>
-                                    <input v-model="confirmation_number" name="confirmation_number"
+                                    <input v-model="confirmation_number" type="number" name="confirmation_number" min="1"
                                            class="form-control">
                                 </div>
 
@@ -102,7 +102,7 @@
                 myEventsList: [],
                 upcomingEventsList: [],
                 confirmation_number: '',
-                event_id: '',
+                selected_key: '',
                 modalWidth: 825
             };
         },
@@ -134,14 +134,17 @@
             },
             submit() {
                 if (this.confirmation_number) {
-                    axios.post('/profile/my-events/' + this.user.id, {
-                        'event_id': this.event_id,
+                    axios.post('/profile/my-events', {
+                        'user_id': this.user.id,
+                        'event_instance_id': this.upcomingEventsList[this.selected_key].id,
                         'confirmation_number': this.confirmation_number
                     })
                         .then(response => {
                             if (response.data.success) {
+                                this.upcomingEventsList[this.selected_key].confirmation_number = this.confirmation_number
+                                console.log('dd',this.upcomingEventsList[this.selected_key].confirmation_number, this.upcomingEventsList);
+
                                 this.$modal.hide('addModal');
-                                this.getEvents();
                             }
                         }).catch(error => {
                         console.log('Error', error);
@@ -249,6 +252,10 @@
         .td-date {
             width: 200px;
         }
+        .td-CN, .td-btn {
+            width: 150px;
+        }
+
         #sidebar-wrapper {
             margin-left: 0;
         }
@@ -325,6 +332,8 @@
         letter-spacing: normal;
         text-align: center;
         color: #000000;
+        border: none;
+        cursor: pointer;
     }
 
     .btn-close {
@@ -385,6 +394,16 @@
                 &.is-invalid {
                     border-color: #d9534f !important;
                 }
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield;
             }
 
             .error {

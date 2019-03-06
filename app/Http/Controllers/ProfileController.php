@@ -45,16 +45,12 @@ class ProfileController extends Controller
     public function getPermission()
     {
         $user = Auth::user();
-        $result = $user->canRead(MorphType::User, $user->id);
-        return response()->json(['success' => $result]);
+        return response()->json(['success' => $user->isAccess()]);
     }
 
     /**
      * Upload a photo to AWS S3 and edit user avatar
      *
-     * @param App\Http\Requests\UploadImageRequest $request
-     * @param App\Services\ExtraService $extraService
-     * @return \Illuminate\Http\Response
      */
     public function editPhoto(UploadImageRequest $request, ExtraService $extraService)
     {
@@ -75,8 +71,6 @@ class ProfileController extends Controller
     /**
      * get user avatar
      *
-     * @param App\Http\Requests\UploadImageRequest $request
-     * @return \Illuminate\Http\Response
      */
     public function getPhoto(Request $request)
     {
@@ -87,19 +81,25 @@ class ProfileController extends Controller
     /**
      * get myEvents
      *
-     * @param User id
-     * @return \Illuminate\Http\Response
      */
     public function getEvents($user_id)
     {
         $user = Auth::user();
-        $event_ids = $user->events()->pluck('events.id')->toArray();
 
-        $myEvents = EventInstance::whereIn('event_id', $event_ids)
-            ->where('event_date', '<', date('Y-m-d H:i:s'))
-            ->get()->toArray();
+        $events = $user->events()->with('eventInstances')->has('eventInstances')->get()
+            ->transform(function ($event) {
+                $event->confirmation_number = EventRegistration::where('event_instance_id', $event->eventInstances->pluck('id')->first())
+                    ->pluck('confirmation_number')->first();
 
-        $upcomingEvents = EventInstance::where('event_date', '>', date('Y-m-d H:i:s'))->get()->toArray();
+                if ($event->confirmation_number)
+                    return $event;
+            })->toArray();
+        $myEvents = array_filter($events);
+
+        $upcomingEvents = EventInstance::leftJoin('event_registrations', 'event_instances.id', '=', 'event_registrations.event_instance_id')
+            ->where('event_date', '>', now())
+            ->get(['event_instances.id', 'event_instances.created_at', 'confirmation_number', 'event_instances.name'])
+            ->toArray();
 
         return response()->json([
             'my_events' => $myEvents,
@@ -108,22 +108,12 @@ class ProfileController extends Controller
     }
 
     /**
-     * update comfirmation number of upcoming event
+     * update confirmation number of upcoming event
      *
-     * @param App\Http\Requests\UploadImageRequest $request
-     * @param User id
-     * @param App\Services\EventService $eventService
-     * @return \Illuminate\Http\Response
      */
-    public function updateConfirmationNumber(Request $request, $user_id, EventService $eventService)
+    public function registerEvent(Request $request, EventService $eventService)
     {
-        $eventInstance_id = EventInstance::where('event_id', $request->get('event_id'))->pluck('id')->first();
-        $data = [
-            'user_id' => $user_id,
-            'event_instance_id' => $eventInstance_id,
-            'confirmation_number' => $request->get('confirmation_number')
-        ];
-        $result = $eventService->registerEvent($data);
+        $result = $eventService->registerEvent($request);
         return response()->json(['success' => $result == null ? false : true]);
     }
 
