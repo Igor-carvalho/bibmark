@@ -157,6 +157,8 @@ thead th{
     line-height: normal;
     letter-spacing: normal;
     color: #000000;
+    margin-bottom: 7px;
+    margin-top: 7px;
 }
 .total{
     font-family: SFProText;
@@ -167,6 +169,8 @@ thead th{
     line-height: normal;
     letter-spacing: normal;
     color: #000000;
+    margin-bottom: 7px;
+    margin-top: 7px;
 }
 .border-bottom-total{
     border-bottom:solid 1px #cccccc;
