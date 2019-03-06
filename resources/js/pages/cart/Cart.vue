@@ -9,39 +9,39 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid1">
                     <div class="profile-content">
-                        <div class="col-10">
+                        <div class="col-lg-10 col-xs-12">
                             <h2 class="welcome">My Shopping Cart</h2>
                             <hr class="content-divider">
-                            <div class="container">
-                                <!-- <ul class="progressbar">
-                                    <li >Step 1</li>
-                                    <li>Step 2</li>
-                                    <li>Step 3</li>
-                                    <li>Step 4</li>
-                                    <li>Step 5</li>
-                                </ul> -->
-                                <ol class="step-indicator">
-                                    <li class="active">
-                                        <div class="step"></div>
-                                        <div class="caption hidden-xs hidden-sm">CART </div>
-                                    </li>
-                                    <li class="">
-                                        <div class="step"></div>
-                                        <div class="caption hidden-xs hidden-sm">SHIPPING </div>
-                                    </li>
-                                    <li class="">
-                                        <div class="step"></div>
-                                        <div class="caption hidden-xs hidden-sm">BILLING </div>
-                                    </li>
-                                    <li class="">
-                                        <div class="step"></div>
-                                        <div class="caption hidden-xs hidden-sm">REVIEW</div>
-                                    </li>
-                                    <li class="">
-                                        <div class="step"></div>
-                                        <div class="caption hidden-xs hidden-sm">CONFIRMATION</div>
-                                    </li>
-                                </ol>
+                            <div class="container1">
+                                <div class="main-step">
+                                    <!-- <div class="wizard"> -->
+                                        <vue-good-wizard
+                                            :steps="steps"
+                                            :onNext="nextClicked"
+                                            :onBack="backClicked">
+                                            <div slot="page1">
+                                                <!-- <h4>Step 1</h4>
+                                                <p>This is the CART step</p> -->
+                                                <product/>
+                                            </div>
+                                            <div slot="page2">
+                                                <h4>Step 2</h4>
+                                                <p>This is the SHIPPING step</p>
+                                            </div>
+                                            <div slot="page3">
+                                                <h4>Step 3</h4>
+                                                <p>This is the BILLING step</p>
+                                            </div>
+                                            <div slot="page4">
+                                                <h4>Step 4</h4>
+                                                <p>This is the REVIEW step</p>
+                                            </div>
+                                            <div slot="page5">
+                                                <h4>Step 5</h4>
+                                                <p>This is the CONFIRMATION step</p>
+                                            </div>
+                                        </vue-good-wizard>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -55,8 +55,40 @@
 </template>
 
 <script>
+import GoodWizard from './Wizard.vue';
+import Product from './Product.vue';
     export default {
-        components: {},
+        components: {'vue-good-wizard': GoodWizard, Product},
+        name: 'cart',
+        data(){
+            return {
+            steps: [
+                {
+                label: 'CART',
+                slot: 'page1',
+                },
+                {
+                label: 'SHIPPING',
+                slot: 'page2',
+                },
+                {
+                label: 'BILLING',
+                slot: 'page3',
+                },
+                {
+                label: 'REVIEW',
+                slot: 'page4',
+                },
+                {
+                label: 'CONFIRMATION',
+                slot: 'page5',
+                options: {
+                    nextDisabled: true, // control whether next is disabled or not
+                },
+                }
+            ],
+            };
+        }
     }
 
 </script>
@@ -159,7 +191,10 @@
 
     @media (max-width: 768px) {
         .profile-content {
-            padding: 0px 20px !important;
+            padding-top: 0px !important;
+            padding-right: 2px !important;
+            padding-bottom: 0px !important;
+            padding-left: 2px !important;
             text-align: center;
         }
         #wrapper {
@@ -187,10 +222,6 @@
             min-width: 0;
             width: 100%;
         }
-
-        #wrapper.toggled #sidebar-wrapper {
-
-        }
         .profile-sidebar {
             padding: 0px !important;
         }
@@ -206,99 +237,14 @@
     .col-10 {
         padding-right: 0;
         padding-left: 0;
-    }
-    /* .container{
-        position: absolute;
-        z-index: 1;
+    }    
+
+/* Custom css */
+
+    .main-step{
+        /* max-width: 700px; */
         margin-left: auto;
         margin-right: auto;
-    }
-    .progressbar li{
-        float: left;
-        width: 20%;
-        position: relative;
-        text-align: center;
-    }
-    .container ul > li{
-        text-decoration: none;
-    } */
-    .step-wrapper {
-    padding: 20px 0;
-    display: none;
-    }
-    .step-wrapper.active {
-    display: block;
-    }
-
-    .step-indicator {
-    border-collapse: separate;
-    display: table;
-    margin-left: 0px;
-    position: relative;
-    table-layout: fixed;
-    text-align: center;
-    vertical-align: middle;
-    padding-left: 0;
-    padding-top: 20px;
-    }
-    .step-indicator li {
-    display: table-cell;
-    position: relative;
-    float: none;
-    padding: 0;
-    width: 1%;
-    }
-    .step-indicator li:after {
-    background-color: #ccc;
-    content: "";
-    display: block;
-    height: 1px;
-    position: absolute;
-    width: 100%;
-    top: 32px;
-    }
-    .step-indicator li:after {
-    left: 50%;
-    }
-    .step-indicator li:last-child:after {
-    display: none;
-    }
-    .step-indicator li.active .step {
-    border-color: #4183D7;
-    color: #4183D7;
-    }
-    .step-indicator li.active .caption {
-    color: #4183D7;
-    }
-    .step-indicator li.complete:after {
-    background-color: #87D37C;
-    }
-    .step-indicator li.complete .step {
-    border-color: #87D37C;
-    color: #87D37C;
-    }
-    .step-indicator li.complete .caption {
-    color: #87D37C;
-    }
-    .step-indicator .step {
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    color: #ccc;
-    font-size: 24px;
-    line-height: 64px;
-    margin: 0 auto;
-    position: relative;
-    width: 27px;
-    height: 27px;
-    z-index: 1;
-    }
-    .step-indicator .step:hover {
-    cursor: pointer;
-    }
-    .step-indicator .caption {
-    color: #ccc;
-    padding: 11px 16px;
     }
 
 </style>

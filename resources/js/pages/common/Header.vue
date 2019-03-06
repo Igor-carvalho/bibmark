@@ -37,7 +37,7 @@
                         <a class="nav-link black" href="/doLogout">LOGOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
+                        <a href="/cart" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
                     </li>
                 </ul>
             </div>

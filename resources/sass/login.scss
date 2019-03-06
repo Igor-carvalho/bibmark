@@ -90,8 +90,7 @@
         }
     }
 }
-button, html [type="button"], [type="reset"], [type="submit"] {
-    -webkit-appearance: button;
+.login-cta-element {
     background-color: transparent !important;
     border: 0 !important;
 }
