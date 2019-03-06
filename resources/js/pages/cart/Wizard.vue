@@ -274,8 +274,7 @@ export default {
 }
 
 .wizard__step__label{
-  /* color:  #98a4af;
-  font-weight: bold; */
+  padding-left: 10px;
   font-family: SFProDisplay;
   font-size: 14px;
   font-weight: bold;

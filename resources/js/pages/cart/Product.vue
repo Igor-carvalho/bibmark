@@ -42,7 +42,11 @@
                     </td>
                     <td class="price text-center border-bottom-total">$30.00</td>
                     <td class="price text-center border-bottom-total">$30.00</td>
-                    <td class="border-bottom-total"><span class="remove float-right">X</span></td>
+                    <td class="border-bottom-total">
+                        <span class="remove float-right">
+                            <!-- <i class="fa fa-times"></i> -->
+                            <a href="javascript:void(0)"><img src="/img/remove_icon.png" class="img-responsive" style="margin-top:5px"/></a>
+                        </span></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -136,9 +140,10 @@ thead th{
     letter-spacing: normal;
     color: #000000;
 }
-.remove{
+.remove .fa{
     color: #626469;
     font-size: 14px;
+    font-weight: 600;
 }
 .cart{
     margin-top:25px;
