@@ -21,7 +21,7 @@
             <!-- USER TITLE -->
             <div class="profile-usertitle">
                 <div class="profile-usertitle-name text-center">
-                    AKSHAY KOLTE
+                    {{user.firstname + ' ' + user.lastname}}
                 </div>
             </div>
             <!-- END SIDEBAR USER TITLE -->
@@ -66,7 +66,8 @@
         data() {
             return {
                 canRead: false,
-                photo: null
+                photo: null,
+                user: Laravel.user,
             };
         },
         mounted() {
