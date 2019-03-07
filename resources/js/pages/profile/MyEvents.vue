@@ -14,7 +14,7 @@
                         <hr class="content-divider">
 
                         <h3 class="subtitle">My Events</h3>
-                        <div class="card1">
+                        <div class="carad-myevents">
                             <div v-if="myEventsList.length > 0" class="card-datatable table-responsive">
                                 <table id="my-event-list" class="table">
                                     <tr v-for="(myEvent, key) in myEventsList" :key="key">
@@ -509,8 +509,11 @@
 
     .card-datatable {
         padding: 0px !important;
-        #my-event-list {
-            margin-bottom: 145px;
+        table {
+            margin-bottom: 0px !important;
         }
+    }
+    .carad-myevents {
+        margin-bottom: 185px;
     }
 </style>
