@@ -510,7 +510,7 @@
     .card-datatable {
         padding: 0px !important;
         #my-event-list {
-            margin-bottom: 185px;
+            margin-bottom: 145px;
         }
     }
 </style>
