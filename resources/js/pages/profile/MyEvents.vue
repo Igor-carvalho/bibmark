@@ -15,75 +15,78 @@
 
                         <h3 class="subtitle">My Events</h3>
                         <div class="card1">
-                            <div class="card-datatable table-responsive">
+                            <div v-if="myEventsList.length > 0" class="card-datatable table-responsive">
                                 <table id="my-event-list" class="table">
                                     <tr v-for="(myEvent, key) in myEventsList" :key="key">
-                                        <td class="td-date">{{ myEvent.created_at | moment("Do MMMM, YYYY") }}</td>
+                                        <td class="td-date">{{ myEvent.event_date | moment("Do MMMM, YYYY") }}</td>
                                         <td class="td-name">{{myEvent.name}}</td>
                                         <td class="td-CN">{{myEvent.confirmation_number}}</td>
                                         <td class="td-btn text-right"><img src="/img/profile/menu.png"/></td>
                                     </tr>
                                 </table>
                             </div>
+                            <div v-else class="my-lg-3 mx-2 no-results">There are no events you have registered to yet.</div>
                         </div>
-
 
                         <h3 class="subtitle">Upcoming Events</h3>
                         <div class="card1">
-                            <div class="card-datatable table-responsive">
+                            <div v-if="upcomingEventsList.length > 0" class="card-datatable table-responsive">
                                 <table id="upcoming-event-list" class="table">
                                     <tr v-for="(upcomingEvent, key) in upcomingEventsList" :key="key">
-                                        <td class="td-date">{{ upcomingEvent.created_at | moment("Do MMMM, YYYY") }}
+                                        <td class="td-date">{{ upcomingEvent.event_date | moment("Do MMMM, YYYY") }}
                                         </td>
                                         <td class="td-name">{{upcomingEvent.name}}</td>
                                         <td class="td-CN">{{upcomingEvent.confirmation_number}}</td>
                                         <td class="td-btn text-right">
-                                            <button v-if="!upcomingEvent.confirmation_number"  @click="$modal.show('addModal'); selected_key=key"
-                                                    class="add-btn">Register
+                                            <button v-if="!upcomingEvent.confirmation_number" class="add-btn"
+                                                    @click="$modal.show('addModal'); seleted_id=upcomingEvent.id">
+                                                Register
                                             </button>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
+                            <div v-else class="my-lg-3 mx-2 no-results">There are no upcoming events at the moment.</div>
                         </div>
-
-                        <modal name="addModal"
-                               :draggable=true
-                               :width="modalWidth"
-                               :height="'auto'"
-                               @before-open="beforeOpen"
-                               @before-close="beforeClose">
-                            <div class="modal-container">
-                                <a @click="$modal.hide('addModal')" class="btn-close closemodal">&times;</a>
-                                <h2 class="modal-title">Register An Event</h2>
-                                <h5 class="modal-detail">To add an event you have registered for, simply add your
-                                    confirmation number below.
-                                    We will automatically get your Bibmark # from the event organizer to print on your
-                                    apparel.</h5>
-
-                                <div class="form-group mb-5">
-                                    <label class="mb-3">Confirmation Number</label>
-                                    <input v-model="confirmation_number" type="number" name="confirmation_number" min="1"
-                                           class="form-control">
-                                </div>
-
-                                <div class="form-row d-flex justify-content-between float-right">
-                                    <div class="d-flex align-items-center">
-                                        <a class="join-cta-element d-flex justify-content-md-end" @click="submit">
-                                            <img src="/img/auth/next.png" style="width: 64px; height: 64px;"/>
-                                            <div class="join-cta-labels d-flex flex-column ml-4">
-                                                <div class="join-cta-label-desc">Let’s go</div>
-                                                <div class="join-cta-label">Submit</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </modal>
                     </div>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->
+
+            <!--modal-->
+            <modal name="addModal"
+                   :draggable=true
+                   :width="modalWidth"
+                   :height="'auto'"
+                   @before-open="beforeOpen"
+                   @before-close="beforeClose">
+                <div class="modal-container">
+                    <a @click="$modal.hide('addModal')" class="btn-close closemodal">&times;</a>
+                    <h2 class="modal-title">Register An Event</h2>
+                    <h5 class="modal-detail">To add an event you have registered for, simply add your
+                        confirmation number below.
+                        We will automatically get your Bibmark # from the event organizer to print on your
+                        apparel.</h5>
+
+                    <div class="form-group mb-5">
+                        <label class="mb-3">Confirmation Number</label>
+                        <input v-model="confirmation_number" type="number" name="confirmation_number" min="1"
+                               class="form-control">
+                    </div>
+
+                    <div class="form-row d-flex justify-content-between float-right">
+                        <div class="d-flex align-items-center">
+                            <a class="join-cta-element d-flex justify-content-md-end" @click="submit">
+                                <img src="/img/auth/next.png" style="width: 64px; height: 64px;"/>
+                                <div class="join-cta-labels d-flex flex-column ml-4">
+                                    <div class="join-cta-label-desc">Let’s go</div>
+                                    <div class="join-cta-label">Submit</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </modal>
 
         </div>
         <!-- /#wrapper -->
@@ -102,7 +105,7 @@
                 myEventsList: [],
                 upcomingEventsList: [],
                 confirmation_number: '',
-                selected_key: '',
+                seleted_id: '',
                 modalWidth: 825
             };
         },
@@ -120,7 +123,7 @@
             },
             beforeClose(event) {
                 this.confirmation_number = '';
-                this.event_id = '';
+                this.seleted_id = '';
             },
             getEvents() {
                 axios.get('/profile/my-events/' + this.user.id).then(response => {
@@ -136,14 +139,12 @@
                 if (this.confirmation_number) {
                     axios.post('/profile/my-events', {
                         'user_id': this.user.id,
-                        'event_instance_id': this.upcomingEventsList[this.selected_key].id,
+                        'event_instance_id': this.seleted_id,
                         'confirmation_number': this.confirmation_number
                     })
                         .then(response => {
                             if (response.data.success) {
-                                this.upcomingEventsList[this.selected_key].confirmation_number = this.confirmation_number
-                                console.log('dd',this.upcomingEventsList[this.selected_key].confirmation_number, this.upcomingEventsList);
-
+                                this.getEvents();
                                 this.$modal.hide('addModal');
                             }
                         }).catch(error => {
@@ -221,6 +222,14 @@
         color: #444444;
         margin-top: 38px;
         margin-top: 28px;
+    }
+
+    .no-results {
+        font-family: SFProText;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
     }
 
     hr.sidebar-divider {

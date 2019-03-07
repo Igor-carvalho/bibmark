@@ -51,6 +51,9 @@ class ProfileController extends Controller
     /**
      * Upload a photo to AWS S3 and edit user avatar
      *
+     * @param App\Http\Requests\UploadImageRequest $request
+     * @param App\Services\ExtraService $extraService
+     * @return \Illuminate\Http\Response
      */
     public function editPhoto(UploadImageRequest $request, ExtraService $extraService)
     {
@@ -69,20 +72,22 @@ class ProfileController extends Controller
     }
 
     /**
-     * get user avatar
+     * Get the user avatar
      *
+     * @return \Illuminate\Http\Response
      */
-    public function getPhoto(Request $request)
+    public function getPhoto()
     {
         $user = Auth::user();
         return response()->json(['url' => $user->photo]);
     }
 
     /**
-     * get myEvents
+     * Get myEvents and upcomingEvents
      *
+     * @return \Illuminate\Http\Response
      */
-    public function getEvents($user_id)
+    public function getEvents()
     {
         $user = Auth::user();
 
@@ -91,6 +96,7 @@ class ProfileController extends Controller
                 $event->confirmation_number = EventRegistration::where('event_instance_id', $event->eventInstances->pluck('id')->first())
                     ->pluck('confirmation_number')->first();
 
+                $event->event_date = $event->eventInstances->pluck('event_date')->first();
                 if ($event->confirmation_number)
                     return $event;
             })->toArray();
@@ -98,7 +104,8 @@ class ProfileController extends Controller
 
         $upcomingEvents = EventInstance::leftJoin('event_registrations', 'event_instances.id', '=', 'event_registrations.event_instance_id')
             ->where('event_date', '>', now())
-            ->get(['event_instances.id', 'event_instances.created_at', 'confirmation_number', 'event_instances.name'])
+            ->whereNull('confirmation_number')
+            ->get(['event_date', 'name', 'confirmation_number', 'event_instances.id'])
             ->toArray();
 
         return response()->json([
@@ -108,8 +115,11 @@ class ProfileController extends Controller
     }
 
     /**
-     * update confirmation number of upcoming event
+     * Register an event
      *
+     * @param App\Http\Requests\UploadImageRequest $request
+     * @param App\Services\EventService $eventService
+     * @return \Illuminate\Http\Response
      */
     public function registerEvent(Request $request, EventService $eventService)
     {
