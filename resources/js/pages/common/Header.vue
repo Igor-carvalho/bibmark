@@ -61,6 +61,34 @@
 </script>
 
 <style scoped>
+    /* font */
+
+    @font-face {
+        font-family: "HelveticaNeue";
+        src: url("/fonts/HelveticaNeueCyr-Bold.eot");
+        src: url("/fonts/HelveticaNeueCyr-Bold.woff") format("woff");
+    }
+
+    @font-face {
+        font-family: "SFUIDisplay-Regular";
+        src: url("/fonts/SFUIDisplay-Regular.ttf") format('truetype');
+    }
+
+    @font-face {
+        font-family: "SFProText";
+        src: url("/fonts/SFUIText-Bold.ttf") format('truetype');
+    }
+
+    @font-face {
+        font-family: "SFProDisplay";
+        src: url("/fonts/SourceSansPro-Bold.ttf") format('truetype');
+    }
+
+    @font-face {
+        font-family: "SourceSansPro-Regular";
+        src: url("/fonts/SourceSansPro-Regular.ttf") format('truetype');
+    }
+
     /* navbar */
     .Rectangle {
         max-width: 100%;
@@ -69,14 +97,14 @@
         padding: 0 4vw;
         align-items: center;
         display: flex;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+        /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);*/
     }
 
     .nav-link {
         /*padding: 1.625rem 0.5vw;*/
         position: relative;
         opacity: 0.9;
-        font-family: "SFProDisplay", "San Francisco", sans-serif;
+        font-family: SFProDisplay;
         font-size: calc(8px + 0.41vw);
         font-weight: 500;
         font-style: normal;
@@ -85,6 +113,9 @@
         letter-spacing: calc(1px + 0.05vw);
         color: #000000;
     }
+    .navbar-nav {
+        margin-left: 110px;
+    }
 
     .nav-item {
         display: flex;
@@ -92,11 +123,16 @@
     }
 
     .default-space {
-        padding-left: 4%;
+        padding-right: 3rem !important;
     }
 
     .logo {
         width: 15vw;
+    }
+
+    .navbar-brand {
+        margin-left: 1rem !important;
+        margin-right: 0rem !important;
     }
 
     @media (max-width: 767px) {
@@ -115,6 +151,19 @@
         .shopping-cart-icon>img {
             width: 5vw;
             margin-left: -16px;
+        }
+        .navbar-expand-md .navbar-nav .nav-link {
+            padding-right: 0.5rem !important;
+            padding-left: 0.5rem !important;
+        }
+        .Rectangle {
+            padding: 0px;
+        }
+        .default-space[data-v-7abe1f90] {
+            padding-right: 1rem !important;
+        }
+        .navbar-nav[data-v-7abe1f90] {
+            margin-left: 2rem !important;
         }
     }
 

@@ -39,7 +39,7 @@
                                         <td class="td-CN">{{upcomingEvent.confirmation_number}}</td>
                                         <td class="td-btn text-right">
                                             <button v-if="!upcomingEvent.confirmation_number"  @click="$modal.show('addModal'); selected_key=key"
-                                                    class="add-btn">Add
+                                                    class="add-btn">Register
                                             </button>
                                         </td>
                                     </tr>
@@ -55,7 +55,7 @@
                                @before-close="beforeClose">
                             <div class="modal-container">
                                 <a @click="$modal.hide('addModal')" class="btn-close closemodal">&times;</a>
-                                <h2 class="modal-title">Add An Event</h2>
+                                <h2 class="modal-title">Register An Event</h2>
                                 <h5 class="modal-detail">To add an event you have registered for, simply add your
                                     confirmation number below.
                                     We will automatically get your Bibmark # from the event organizer to print on your
@@ -245,7 +245,7 @@
     }
 
     #wrapper {
-        padding-top: 59px;
+        padding-top: 58px;
     }
 
     @media (min-width: 768px) {
