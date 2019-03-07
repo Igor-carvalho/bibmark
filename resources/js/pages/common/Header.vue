@@ -37,7 +37,7 @@
                         <a class="nav-link black" href="/doLogout">LOGOUT</a>
                         
                     </li> -->
-                    <div class="hello"> <span>HELLO {{ firstname }}</span></div>
+                    <div class="hello" v-if="authenticated"> <span>HELLO {{ firstname }}</span></div>
                     <li class="nav-item">
                         <a href="/cart" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
                     </li>
