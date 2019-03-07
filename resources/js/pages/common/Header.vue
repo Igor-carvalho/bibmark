@@ -118,7 +118,7 @@
     }
     .navbar-nav {
         /* margin-left: 110px; */
-        padding-left: 20px;
+        padding-left: 45px;
     }
 
     .nav-item {
@@ -127,11 +127,11 @@
     }
 
     .default-space {
-        padding-right: 3rem !important;
+        padding-right: 2.4rem !important;
     }
 
     .logo {
-        width: 15vw;
+        width: 14vw;
     }
 
     .navbar-brand {
@@ -141,7 +141,7 @@
 
     @media (max-width: 767px) {
         .logo {
-            width: 97%;
+            width: 95%;
         }
         .Rectangle {
             min-height: auto;
@@ -163,10 +163,10 @@
         .Rectangle {
             padding: 0px;
         }
-        .default-space[data-v-7abe1f90] {
+        .default-space {
             padding-right: 1rem !important;
         }
-        .navbar-nav[data-v-7abe1f90] {
+        .navbar-nav {
             margin-left: 2rem !important;
         }
     }
