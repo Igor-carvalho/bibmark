@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-md Rectangle w-100" style="">
-        <a class="navbar-brand" href="#"><img src="/img/bibmark-logo.svg"  class="logo" ></a>
+        <a class="navbar-brand" href="/"><img src="/img/bibmark-logo.svg"  class="logo" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"><i class="fa fa-bars" style="font-size:24px; margin-top: -5px; margin-left: -3px;" aria-hidden="true"></i></span>
         </button>
@@ -33,9 +33,11 @@
                     <li class="nav-item" v-if="!authenticated">
                         <a class="nav-link black" href="/login">LOG&nbsp;IN</a>
                     </li>
-                    <li class="nav-item" v-if="authenticated">
+                    <!-- <li class="" v-if="authenticated">
                         <a class="nav-link black" href="/doLogout">LOGOUT</a>
-                    </li>
+                        
+                    </li> -->
+                    <div class="hello"> <span>HELLO {{ firstname }}</span></div>
                     <li class="nav-item">
                         <a href="/cart" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
                     </li>
@@ -51,7 +53,8 @@
         name: "Header",
         data() {
             return {
-                authenticated: Laravel.user.authenticated
+                authenticated: Laravel.user.authenticated,
+                firstname: Laravel.user.firstname
             };
         },
         mounted() {
@@ -114,7 +117,8 @@
         color: #000000;
     }
     .navbar-nav {
-        margin-left: 110px;
+        /* margin-left: 110px; */
+        padding-left: 20px;
     }
 
     .nav-item {
@@ -131,7 +135,7 @@
     }
 
     .navbar-brand {
-        margin-left: 1rem !important;
+        margin-left: 0.8rem !important;
         margin-right: 0rem !important;
     }
 
@@ -166,5 +170,28 @@
             margin-left: 2rem !important;
         }
     }
-
+    .hello{
+        opacity: 0.9;
+        font-family: SFProText;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: calc(1px + 0.05vw);
+        color: #000000;
+        min-width: 130px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .hello span{
+        text-transform: uppercase;
+    }
+    @media (max-width: 767px) {
+        .hello {
+            min-width: 200px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+    }
 </style>
