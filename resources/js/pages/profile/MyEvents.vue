@@ -8,13 +8,13 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid1">
                     <div class="profile-content">
-                        <h2 class="welcome">My Events</h2>
-                        <h5 class="content">See events you have added for and add new events from the upcoming events
+                        <h2 class="welcome text-left">My Events</h2>
+                        <h5 class="content text-left">See events you have added for and add new events from the upcoming events
                             list.</h5>
                         <hr class="content-divider">
 
-                        <h3 class="subtitle">My Events</h3>
-                        <div class="carad-myevents">
+                        <h3 class="subtitle text-left">My Events</h3>
+                        <div class="carad-events">
                             <div v-if="myEventsList.length > 0" class="card-datatable table-responsive">
                                 <table id="my-event-list" class="table">
                                     <tr v-for="(myEvent, key) in myEventsList" :key="key">
@@ -25,11 +25,11 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div v-else class="my-lg-3 mx-2 no-results">There are no events you have registered to yet.</div>
+                            <div v-else class="my-lg-3 mx-2 no-results text-left">There are no events you have registered to yet.</div>
                         </div>
 
-                        <h3 class="subtitle">Upcoming Events</h3>
-                        <div class="card1">
+                        <h3 class="subtitle text-left">Upcoming Events</h3>
+                        <div class="carad-events">
                             <div v-if="upcomingEventsList.length > 0" class="card-datatable table-responsive">
                                 <table id="upcoming-event-list" class="table">
                                     <tr v-for="(upcomingEvent, key) in upcomingEventsList" :key="key">
@@ -46,7 +46,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div v-else class="my-lg-3 mx-2 no-results">There are no upcoming events at the moment.</div>
+                            <div v-else class="my-lg-3 mx-2 no-results text-left">There are no upcoming events at the moment.</div>
                         </div>
                     </div>
                 </div>
@@ -513,7 +513,7 @@
             margin-bottom: 0px !important;
         }
     }
-    .carad-myevents {
-        margin-bottom: 185px;
+    .carad-events {
+        padding-bottom: 148px;
     }
 </style>
