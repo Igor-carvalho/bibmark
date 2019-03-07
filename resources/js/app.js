@@ -11,11 +11,13 @@ import Vue from 'vue'
 import Axios from 'axios'
 import VueMoment from 'vue-moment'
 import VeeValidate from 'vee-validate'
+import VModal from 'vue-js-modal'
 
 window.Vue = Vue
 window.axios = Axios
 Vue.use(VueMoment)
 Vue.use(VeeValidate)
+Vue.use(VModal)
 
 /**
  * The following block of code may be used to automatically register your
@@ -41,6 +43,7 @@ Vue.component('auth-reset-password', require('./pages/auth/ResetPassword.vue'))
 
 Vue.component('user-profile', require('./pages/profile/profile.vue'))
 Vue.component('edit-account', require('./pages/profile/EditAccount.vue'))
+Vue.component('my-events', require('./pages/profile/MyEvents.vue'))
 
 // backend
 Vue.component('account-list', require('./pages/account/AccountList.vue'))

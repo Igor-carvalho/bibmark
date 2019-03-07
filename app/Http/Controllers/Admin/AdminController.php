@@ -89,7 +89,6 @@ class AdminController extends Controller
     /**
      * forgot-password
      *
-     * @author Igor
      * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
@@ -112,7 +111,6 @@ class AdminController extends Controller
     /**
      * reset password
      *
-     * @author Igor
      * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */

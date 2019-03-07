@@ -202,7 +202,7 @@
     }
 
     #wrapper {
-        padding-top: 59px;
+        padding-top: 58px;
     }
 
     @media (min-width: 768px) {

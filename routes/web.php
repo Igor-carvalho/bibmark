@@ -23,15 +23,20 @@ Route::middleware(['guest'])->group(function() {
 Route::get('/login', 'WebController@loginPage')->middleware('frontauth')->name('login');
 
 Route::middleware(['auth'])->group(function() {
+    Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
     Route::get('/profile', 'WebController@profilePage');
     Route::get('/profile/edit-account', 'WebController@editAccountPage');
     Route::patch('profile/{id}', 'ProfileController@update');
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
     Route::get('/admin/logout', 'WebController@doLogout');
+
     Route::get('/profile/permission', 'ProfileController@getPermission');
-    Route::post('/profile/editPhoto', 'ProfileController@editPhoto');
     Route::get('/profile/getPhoto', 'ProfileController@getPhoto');
-    // Cart route
+    Route::post('/profile/editPhoto', 'ProfileController@editPhoto');
+    Route::get('/profile/my-events', 'WebController@myEventsPage');
+    Route::get('/profile/my-events/{id}', 'ProfileController@getEvents');
+    Route::post('/profile/my-events', 'ProfileController@registerEvent');
+
     Route::get('/cart', 'CartController@index');
 });
 
