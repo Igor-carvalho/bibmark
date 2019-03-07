@@ -511,6 +511,9 @@
         padding: 0px !important;
         table {
             margin-bottom: 0px !important;
+            td {
+                padding-left: 0px !important;
+            }
         }
     }
     .carad-events {
