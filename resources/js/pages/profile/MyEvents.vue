@@ -25,7 +25,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div v-else class="my-lg-3 mx-2 no-results text-left">There are no events you have registered to yet.</div>
+                            <div v-else class="my-lg-3 no-results text-left">There are no events you have registered to yet.</div>
                         </div>
 
                         <h3 class="subtitle text-left">Upcoming Events</h3>
@@ -46,7 +46,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div v-else class="my-lg-3 mx-2 no-results text-left">There are no upcoming events at the moment.</div>
+                            <div v-else class="my-lg-3 no-results text-left">There are no upcoming events at the moment.</div>
                         </div>
                     </div>
                 </div>
