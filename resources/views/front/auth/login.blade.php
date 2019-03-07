@@ -63,7 +63,7 @@
                     </a>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button class="login-cta-element d-flex justify-content-md-end">
+                    <button class="shadow-none login-cta-element d-flex justify-content-md-end">
                         <img src="img/auth/next.png" style="width: 64px; height: 64px;"/>
                         <div class="login-cta-labels d-flex flex-column ml-4">
                             <div class="login-cta-label-desc">Let’s go</div>

@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/profile/edit-account', 'WebController@editAccountPage');
     Route::patch('profile/{id}', 'ProfileController@update');
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
+    Route::get('/admin/logout', 'WebController@doLogout');
     Route::get('/profile/permission', 'ProfileController@getPermission');
     Route::post('/profile/editPhoto', 'ProfileController@editPhoto');
     Route::get('/profile/getPhoto', 'ProfileController@getPhoto');
@@ -44,6 +45,7 @@ Route::group([  'prefix' => 'password'], function () {
 
 // backend
 Route::namespace('Admin')->middleware(['auth'])->group(function() {
+
     Route::prefix('dashboard')->group(function() {
         Route::get('/', 'AdminController@dashboard')->name('dashboard');
         // account

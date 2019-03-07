@@ -94,3 +94,8 @@
     background-color: transparent !important;
     border: 0 !important;
 }
+
+.d-flex button:focus {
+    outline: 1px dotted;
+    outline: none;
+}

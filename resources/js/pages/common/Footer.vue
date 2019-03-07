@@ -1,7 +1,7 @@
 <template>
     <div>
         <footer class="page-footer font-small" style="background-color: black">
-            <div class="container pl-3 pr-3">
+            <!-- <div class="pl-3">
                 <div class="row pt-1">
                     <div class="col-md-6 mb-2  m-0 mt-1 text-sm-center text-md-left text-lg-right pt-3 text-white subscribe-text">
                         Get&nbsp;the&nbsp;latest&nbsp;on&nbsp;news,&nbsp;events&nbsp;and&nbsp;races&nbsp;from&nbsp;Bibmark.
@@ -12,6 +12,24 @@
                             <button class="btn btn-sm  ml-2 mr-2 search-btn align-content-sm-center" type="submit"><span class="search-btn-text">Search</span></button>
                         </div>
                     </div>
+                </div>
+            </div> -->
+
+            <div class="container first-row">
+                <div class="row">
+                        <div class="col-sm-7">
+                            <p class="footer-text">Get the latest on news, events and races from Bibmark.</p>
+                        </div>
+                        <div class="col-sm-5">
+                            <!-- <input class="form-control col-md-7 col-sm-auto input-email align-content-sm-center" type="search" placeholder="E-mail" aria-label="Search">
+                            <button class="btn btn-sm  ml-2 mr-2 search-btn align-content-sm-center" type="submit"><span class="search-btn-text">Search</span></button> -->
+                            <form class="form-inline">
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                </div>
+                                <button type="submit" class="btn btn-primary mb-2">Search</button>
+                            </form>
+                        </div>
                 </div>
             </div>
 
@@ -191,8 +209,15 @@
 </script>
 
 <style scoped>
+    @font-face {
+            font-family: "SFProDisplay";
+            src: url("/fonts/SF-Pro-Display-Regular.otf") format('truetype');
+        }
+    @font-face {
+        font-family: "SFProText";
+        src: url("/fonts/SFProText-Regular.ttf") format('truetype');
+    }
     /*footer*/
-
     .subscribe-text {
         font-size: calc(8px + 0.78vw);
         font-weight: 400;
@@ -355,5 +380,106 @@
             color: #ffffff;
             z-index: 1;
         }
+    }
+    /* New style */
+    .first-row{
+        padding-top: 20px;
+    }
+    .footer-text{
+        font-family: SFProDisplay;
+        font-size: 26px;
+        /* font-weight: 600; */
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 0.54;
+        letter-spacing: normal;
+        color: #ffffff;
+        padding-top: 13px;
+    }
+    .form-control {
+        min-width: 250px;
+    }
+    @media (max-width: 900px) {
+        .footer-text{
+            font-size: 14px;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 0.54;
+            letter-spacing: normal;
+            color: #ffffff;
+            padding-top: 0px;
+        }
+        .form-control {
+        min-width:220px;
+        }
+    }
+
+    /* @media (min-width: 576px) {
+    html { font-size: 1.25rem; }
+    }
+    
+    @media (min-width: 768px) {
+        html { font-size: 1.5rem; }
+    } */
+    @media (max-width: 992px) {
+        .form-control {
+        min-width:220px;
+        }
+        .footer-text{
+            font-size: 14px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+        .form-control {
+            min-width:150px;
+        }
+        .footer-text{
+            font-size: 22px;
+        }
+    }
+    /*
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        .form-control {
+            min-width:100px;
+        }
+        .footer-text{
+            font-size: 16px;
+        }
+    } */
+    /* @media (min-width: 576px) and (max-width: 768px) {
+        .form-control {
+            width:100%;
+        }
+        .footer-text{
+            font-size: 10px;
+        }
+        .btn-primary{
+            width: 100%;
+        }
+    } */
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        .form-control {
+            min-width:100px;
+        }
+        .footer-text{
+            font-size: 16px;
+        }
+    }
+
+    .btn-primary{
+        background: #ffe100;;
+        font-family: SFProText;
+        font-size: 17px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+    }
+    .btn-primary:hover {
+        border-color: transparent;
+        background: #ffe100;
+        color: #000000;
     }
 </style>

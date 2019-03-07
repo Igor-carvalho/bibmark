@@ -339,7 +339,7 @@ export default {
 @media (max-width: 768px) {
     .wizard__body__actions {
       position: absolute;
-      bottom: 3px;
+      bottom: 20px;
       height: 50px;
       width: 100%;
       margin-bottom: 20px;
