@@ -9,8 +9,8 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid1">
                     <div class="profile-content">
-                        <h2 class="welcome">Welcome to Bibmark</h2>
-                        <h5 class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora
+                        <h2 class="welcome text-left">Welcome to Bibmark</h2>
+                        <h5 class="content text-left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora
                             numquam eum quod quia.</h5>
                         <hr class="content-divider">
                     </div>
