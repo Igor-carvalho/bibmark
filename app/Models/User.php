@@ -95,7 +95,7 @@ class User extends Authenticatable
             }
         }
 
-        return $result || $this->isSuperAdmin() == 0;
+        return $result || $this->isSuperAdmin();
     }
 
     /**
