@@ -221,7 +221,7 @@
         letter-spacing: normal;
         color: #444444;
         margin-top: 38px;
-        margin-top: 28px;
+        margin-bottom: 30px;
     }
 
     .no-results {
@@ -505,5 +505,12 @@
         line-height: normal;
         letter-spacing: normal;
         color: #000000;
+    }
+
+    .card-datatable {
+        padding: 0px !important;
+        #my-event-list {
+            margin-bottom: 185px;
+        }
     }
 </style>

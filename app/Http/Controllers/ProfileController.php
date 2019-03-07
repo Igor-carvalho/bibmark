@@ -91,20 +91,17 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-        $events = $user->events()->with('eventInstances')->has('eventInstances')->get()
-            ->transform(function ($event) {
-                $event->confirmation_number = EventRegistration::where('event_instance_id', $event->eventInstances->pluck('id')->first())
-                    ->pluck('confirmation_number')->first();
-
-                $event->event_date = $event->eventInstances->pluck('event_date')->first();
-                if ($event->confirmation_number)
-                    return $event;
-            })->toArray();
-        $myEvents = array_filter($events);
+        $event_ids = $user->events()->with('eventInstances')->has('eventInstances')->pluck('events.id')->toArray();
+        $myEvents = EventInstance::leftJoin('event_registrations', 'event_instances.id', '=', 'event_registrations.event_instance_id')
+            ->whereNotNull('confirmation_number')
+            ->whereIn('event_id', $event_ids)
+            ->get()
+            ->toArray();
 
         $upcomingEvents = EventInstance::leftJoin('event_registrations', 'event_instances.id', '=', 'event_registrations.event_instance_id')
-            ->where('event_date', '>', now())
             ->whereNull('confirmation_number')
+            ->whereIn('event_id', $event_ids)
+            ->where('event_date', '>', now())
             ->get(['event_date', 'name', 'confirmation_number', 'event_instances.id'])
             ->toArray();
 
