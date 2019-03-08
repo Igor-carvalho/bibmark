@@ -1,8 +1,10 @@
 <template>
     <nav class="navbar navbar-expand-md Rectangle w-100" style="">
-        <a class="navbar-brand" href="/"><img src="/img/bibmark-logo.svg"  class="logo" ></a>
+        <a class="navbar-brand" href="/"><img src="/img/bibmark-logo.svg" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"><i class="fa fa-bars" style="font-size:24px; margin-top: -5px; margin-left: -3px;" aria-hidden="true"></i></span>
+            <span class="navbar-toggler-icon"><i class="fa fa-bars"
+                                                 style="font-size:24px; margin-top: -5px; margin-left: -3px;"
+                                                 aria-hidden="true"></i></span>
         </button>
         <div class="collapse navbar-collapse align-self-center" id="collapsibleNavbar">
             <div class="d-flex justify-content-between w-100">
@@ -35,11 +37,15 @@
                     </li>
                     <!-- <li class="" v-if="authenticated">
                         <a class="nav-link black" href="/doLogout">LOGOUT</a>
-                        
+
                     </li> -->
-                    <div class="hello" v-if="authenticated"> <span>HELLO {{ firstname }}</span></div>
+                    <div class="hello" v-if="authenticated">
+                        <a class="nav-link black" href="/profile">
+                            <span>HELLO {{ firstname }}</span>
+                        </a>
+                    </div>
                     <li class="nav-item">
-                        <a href="/cart" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg" ></a>
+                        <a href="/cart" class="nav-link shopping-cart-icon pt-2"><img src="/img/shopping-cart-icon.svg"></a>
                     </li>
                 </ul>
             </div>
@@ -116,6 +122,7 @@
         letter-spacing: calc(1px + 0.05vw);
         color: #000000;
     }
+
     .navbar-nav {
         /* margin-left: 110px; */
         padding-left: 45px;
@@ -143,6 +150,7 @@
         .logo {
             width: 95%;
         }
+
         .Rectangle {
             min-height: auto;
         }
@@ -152,25 +160,31 @@
         .default-space {
             padding-left: 0;
         }
-        .shopping-cart-icon>img {
+
+        .shopping-cart-icon > img {
             width: 5vw;
             margin-left: -16px;
         }
+
         .navbar-expand-md .navbar-nav .nav-link {
             padding-right: 0.5rem !important;
             padding-left: 0.5rem !important;
         }
+
         .Rectangle {
             padding: 0px;
         }
+
         .default-space {
             padding-right: 1rem !important;
         }
+
         .navbar-nav {
             margin-left: 2rem !important;
         }
     }
-    .hello{
+
+    .hello {
         opacity: 0.9;
         font-family: SFProText;
         font-size: 14px;
@@ -184,9 +198,11 @@
         margin-top: auto;
         margin-bottom: auto;
     }
-    .hello span{
+
+    .hello span {
         text-transform: uppercase;
     }
+
     @media (max-width: 767px) {
         .hello {
             min-width: 200px;
