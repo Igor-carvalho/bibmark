@@ -131,7 +131,7 @@
     }
 
     .logo {
-        width: 14vw;
+        width: 10vw;
     }
 
     .navbar-brand {
