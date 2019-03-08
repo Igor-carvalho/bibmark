@@ -17,7 +17,7 @@ class CheckAuth
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            return redirect('/login');
+            return redirect('/profile');
         }
         return $next($request);
     }

@@ -15,11 +15,16 @@ use Illuminate\Support\Facades\Route;
 // frontend
 Route::get('/', 'WebController@homePage');
 
-Route::get('/login', 'WebController@loginPage')->name('login');
+// Add frontauth middleware to avoid access to login, join route after fully authenticated
+Route::get('/login', 'WebController@loginPage')->middleware('frontauth')->name('login');
+Route::get('/join', 'WebController@joinPage')->middleware('frontauth');
+
 Route::post('login', 'WebController@doLogin')->name('dologin');
 
-Route::get('/join', 'WebController@joinPage');
-Route::get('/forgot-password', 'WebController@forgotPasswordPage');
+Route::middleware(['guest'])->group(function() {
+    Route::post('login', 'WebController@doLogin')->name('dologin');
+    Route::get('/forgot-password', 'WebController@forgotPasswordPage');
+});
 
 Route::middleware(['auth'])->group(function() {
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
