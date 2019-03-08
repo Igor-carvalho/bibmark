@@ -417,7 +417,7 @@
     /* @media (min-width: 576px) {
     html { font-size: 1.25rem; }
     }
-    
+
     @media (min-width: 768px) {
         html { font-size: 1.5rem; }
     } */

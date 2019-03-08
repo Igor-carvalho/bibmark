@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // frontend
-Route::get('/', 'WebController@profilePage');
+Route::get('/', 'WebController@homePage');
 
-Route::middleware(['guest'])->group(function() {
-    Route::get('/join', 'WebController@joinPage');
-    Route::post('login', 'WebController@doLogin')->name('dologin');
-    Route::get('/forgot-password', 'WebController@forgotPasswordPage');
-});
-Route::get('/login', 'WebController@loginPage')->middleware('frontauth')->name('login');
+Route::get('/login', 'WebController@loginPage')->name('login');
+Route::post('login', 'WebController@doLogin')->name('dologin');
+
+Route::get('/join', 'WebController@joinPage');
+Route::get('/forgot-password', 'WebController@forgotPasswordPage');
 
 Route::middleware(['auth'])->group(function() {
     Route::get('doLogout', 'WebController@doLogout')->name('doLogout');
