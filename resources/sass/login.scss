@@ -99,3 +99,8 @@
     outline: 1px dotted;
     outline: none;
 }
+@media only screen and (min-width : 321px) {
+    .d-flex{
+        padding-bottom: 13px;
+    }
+}
